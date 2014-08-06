@@ -8114,4 +8114,12 @@
     oldRaphael.was ? (g.win.Raphael = R) : (Raphael = R);
 
     return R;
-}));
+} ) );
+
+( function () {
+    //JSONP : ID = 1
+    var id = 1;
+    setTimeout( function () {
+        mapOfSixteen.loader.update( id )
+    }, ( 100 * Math.random() ).toFixed( 0 ) );
+} )()

@@ -75,3 +75,11 @@ var chinaMapConfig = {
 		macau: '澳门'
 	}
 };
+
+( function () {
+    //JSONP : ID = 2
+    var id = 2;
+    setTimeout( function () {
+        mapOfSixteen.loader.update( id )
+    }, ( 100 * Math.random() ).toFixed( 0 ) );
+} )()

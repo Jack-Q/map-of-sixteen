@@ -1,20 +1,4 @@
-﻿body {
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-}
-
-html, body, div {
-    margin: 0;
-    padding: 0;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    font-family: 'Microsoft YaHei UI','Microsoft YaHei',sans-serif;
-}
-
-p {
-    text-align: justify;
-}
+﻿
 
 /*Controllors*/
 div.ctrl-box {
@@ -68,13 +52,27 @@ div.ctrl-box {
 div.ctrl-title {
     width: 100%;
     overflow: hidden;
-    height: 30px;
-    line-height: 30px;
+    height: 39px;
     font-size: 28px;
     font-weight: 100;
     text-shadow: 0 0 3px #cdcdcd;
     border-bottom: #cdcdcd 1px solid;
-    margin-top: 9px;
+    margin-left: 5px;
+}
+
+    div.ctrl-title > svg {
+        width: 240px;
+        height: 37px;
+        fill: #fff;
+    }
+
+span.ctrl-beta-tag {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    font-size: 12px;
+    word-spacing: -1px;
+    line-height: 11px;
 }
 
 div.ctrl-list {
@@ -306,6 +304,7 @@ div.ctrl-about {
     font-size: 13px;
     color: #ababab;
     cursor: pointer;
+    text-align: center;
 }
 
 /* Maps */
@@ -315,34 +314,240 @@ div.ctrl-about {
     overflow: hidden;
 }
 
+.maps-pop-box-wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,110,225,.7);
+    position: absolute;
+    overflow: hidden;
+    z-index: 60;
+}
+
+.maps-pop-box {
+    height: 225px;
+    width: 300px;
+    border-radius: 25px;
+    background-color: #0cf;
+    background-size: 100% 100%;
+    position: relative;
+    margin: auto;
+    top: calc( 50% - 150px );
+    box-shadow: #131313 0 0 30px 2px;
+}
+
+.maps-pop-close {
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    background-color: #ce3f3f;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 20px;
+    line-height: 15px;
+    -moz-transition: all ease 500ms;
+    -o-transition: all ease 500ms;
+    -webkit-transition: all ease 500ms;
+    transition: all ease 500ms;
+}
+
+    .maps-pop-close:hover {
+        background-color: hsl(0, 100%, 70%);
+    }
+
+.maps-pop-title {
+    font-family: 'Microsoft YaHei UI Light','Microsoft YaHei UI','Microsoft YaHei',sans-serif;
+    position: absolute;
+    top: 10px;
+    left: 10%;
+    font-size: 50px;
+    color: #fefefe;
+    font-weight: 100;
+    text-shadow: #020303 0 0 5px,#3c3c3c 0 0 10px;
+}
+
+.maps-pop-personlist {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+    .maps-pop-personlist > span {
+        font-size: 20px;
+        display: block;
+        height: 23px;
+        position: absolute;
+        background-color: rgba(0,110,220,0.25);
+        color: #fff;
+        text-shadow: #020303 0 0 2px,#3c3c3c 0 0 4px;
+        border-left: #007acc 4px solid;
+        padding: 3px 5px 3px 2px;
+        cursor: pointer;
+        width: auto;
+    }
+
+        .maps-pop-personlist > span:nth-child(1) {
+            top: 125px;
+            left: 180px;
+        }
+
+        .maps-pop-personlist > span:nth-child(2) {
+            top: 150px;
+            left: 80px;
+        }
+
+        .maps-pop-personlist > span:nth-child(3) {
+            top: 180px;
+            left: 20px;
+        }
+
+        .maps-pop-personlist > span:nth-child(4) {
+            top: 50px;
+            left: 200px;
+        }
+
+        .maps-pop-personlist > span:nth-child(5) {
+            top: 190px;
+            left: 190px;
+        }
+
+        .maps-pop-personlist > span:nth-child(6) {
+            top: 100px;
+            left: 90px;
+        }
+
+        .maps-pop-personlist > span:nth-child(7) {
+            top: 95px;
+            left: 10px;
+        }
+
+
+.maps-ctrl {
+    position: absolute;
+    left: calc( 50% - 150px );
+    width: 260px;
+    height: 30px;
+    background-color: rgba(0,125,220,0.3);
+    z-index: 50;
+    bottom: 10px;
+    overflow: hidden;
+    color: #000;
+}
+
+.maps-ctrl-in, .maps-ctrl-out {
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    background-color: rgba(0,125,220,0.7);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.maps-ctrl-bar {
+    width: 200px;
+    height: 4px;
+    position: absolute;
+    top: 13px;
+    left: 30px;
+    background-color: rgba(255,255,255,0.7);
+    z-index: 1;
+}
+
+.maps-ctrl-pos {
+    z-index: 2;
+    width: 200px;
+    height: 20px;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    letter-spacing: 30px;
+    font-weight: 900;
+    top: 0;
+    left: 30px;
+    position: absolute;
+}
+
+    .maps-ctrl-pos > span {
+        display: block;
+        float: left;
+        height: 20px;
+        width: 4px;
+        margin: 0 18px;
+        background-color: rgba(255,255,255,0.7);
+    }
+
+.maps-ctrl-cur {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 50px;
+    height: 24px;
+    width: 8px;
+    background-color: rgba(0, 125, 220,0.8);
+    z-index: 5;
+}
+
+.maps-ctrl-unable{
+    cursor:auto;
+    background-color:#adadad;
+}
+
+.maps-ctrl-out {
+    left: 0;
+}
+
+.maps-ctrl-in {
+    right: 0;
+}
+
 .maps-box {
     position: absolute;
+    overflow: hidden;
+    width:100%;
+    height:100%;
 }
 
 .maps-point, .maps-china {
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     position: absolute;
+    overflow:hidden;
 }
 
 .maps-point {
+    width: 100%;
+    height: 100%;
     z-index: 1;
     background-color: rgba(255,255,255,0);
+    cursor: move;
 }
 
 .maps-tag {
     cursor: pointer;
     position: absolute;
-    width: 20px;
-    height: 30px;
+    width: 30px;
+    height: 45px;
     background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iJiN4NTZGRTsmI3g1QzQyO18xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiDQoJIHk9IjBweCIgdmlld0JveD0iMCAwIDE0MiAyMDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE0MiAyMDA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiNGRjFEMjU7IiBkPSJNODMuNDY3LDcwLjY1OEM4My4xMjMsNzcuMjU0LDc3LjY4Miw4Mi41LDcxLDgyLjVjLTUuNzE0LDAtMTAuNTIzLTMuODM5LTEyLjAxMy05LjA3NQ0KCWMtMjMuMzkyLDkuNzI2LTM1LjQ0NiwzOC40MzctMjIuMjY4LDYyLjkxTDcxLDIwMGwzOS4zNDUtNzMuMDY5QzEyMy4wMzUsMTAzLjM2NCwxMDguNDYsNzUuMjI2LDgzLjQ2Nyw3MC42NTh6Ii8+DQo8cmFkaWFsR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBjeD0iNzEiIGN5PSI3MS44MDE4IiByPSI3Mi42NjE0IiBmeD0iNjkuNjQ0NCIgZnk9IjEwNS44MjgxIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+DQoJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6I0ZGQ0RDRCIvPg0KCTxzdG9wICBvZmZzZXQ9IjAuMDY1OSIgc3R5bGU9InN0b3AtY29sb3I6I0ZGQjhCOSIvPg0KCTxzdG9wICBvZmZzZXQ9IjAuMjgzOSIgc3R5bGU9InN0b3AtY29sb3I6I0ZGNzY3QSIvPg0KCTxzdG9wICBvZmZzZXQ9IjAuNDY3MyIgc3R5bGU9InN0b3AtY29sb3I6I0ZGNDY0QyIvPg0KCTxzdG9wICBvZmZzZXQ9IjAuNjA2OCIgc3R5bGU9InN0b3AtY29sb3I6I0ZGMjgzMCIvPg0KCTxzdG9wICBvZmZzZXQ9IjAuNjg1OCIgc3R5bGU9InN0b3AtY29sb3I6I0ZGMUQyNSIvPg0KPC9yYWRpYWxHcmFkaWVudD4NCjxwYXRoIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfMV8pO3N0cm9rZTojRkYwMDAwO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgZD0iTTEzOC45OTIsNTMuOTczDQoJYy01LjkzNS0yNS4xODItMjUuNzgzLTQ1LjAzLTUwLjk2Ni01MC45NjZDMzkuMzQzLTguNDY3LTMuNjgxLDMwLjkxMSwxLjQxMSw3OC42ODhjMy40NzMsMzIuNTksMjkuMzExLDU4LjQyOCw2MS45MDEsNjEuOTAxDQoJQzExMS4wODksMTQ1LjY4MSwxNTAuNDY3LDEwMi42NTcsMTM4Ljk5Miw1My45NzN6IE03MSw4Mi41Yy02LjkwNCwwLTEyLjUtNS41OTYtMTIuNS0xMi41UzY0LjA5Niw1Ny41LDcxLDU3LjVTODMuNSw2My4wOTYsODMuNSw3MA0KCVM3Ny45MDQsODIuNSw3MSw4Mi41eiIvPg0KPC9zdmc+DQo=');
     background-position-x: center;
+    background-position-y:bottom;
+    background-repeat:no-repeat;
+    background-size:20px 30px;
 }
 
 .maps-infoBox {
-    width: 40px;
+    width: 30px;
     height: 15px;
     padding: 1px;
     box-shadow: #cdcdcd 0 0 5px 1px;
@@ -351,12 +556,30 @@ div.ctrl-about {
     font-size: 13px;
     color: #3d3d3d;
     position: absolute;
-    bottom: 28px;
     background-color: rgba(222, 222, 222,.3);
     text-shadow: #cfcfcf 0 0 2px;
     border-radius: 5px;
-    left: -10px;
     z-index: 50;
+}
+
+.maps-tag-top > .maps-infoBox {
+    bottom: 20px;
+    left: -7px;
+}
+
+.maps-tag-bottom > .maps-infoBox {
+    bottom: 0;
+    left: -7px;
+}
+
+.maps-tag-left > .maps-infoBox {
+    bottom: 13px;
+    left: -18px;
+}
+
+.maps-tag-right > .maps-infoBox {
+    bottom: 13px;
+    left: 5px;
 }
 
 .stateTip, #StateTip {
@@ -365,8 +588,6 @@ div.ctrl-about {
     padding: 8px;
     background: #fff;
     border: 2px solid #2385B1;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
     border-radius: 4px;
     font-size: 12px;
     font-family: Tahoma;
@@ -498,7 +719,7 @@ div.ctrl-about {
 }
 
 .info-nav {
-    width: 250px;
+    width: 170px;
     letter-spacing: -2px;
     right: 0;
     position: absolute;
@@ -507,8 +728,8 @@ div.ctrl-about {
     font-size: 20px;
     padding: 2px 2px 0 2px;
     height: 25px;
-    border-top: 1px rgba(0, 122, 204,.7) solid;
-    border-left: 1px rgba(0,122,204,.7) solid;
+    border-top: 1px rgba(0, 122, 204, .7) solid;
+    border-left: 1px rgba(0, 122, 204, .7) solid;
 }
 
 .info-link {
@@ -570,6 +791,15 @@ div.ctrl-about {
     margin: auto;
     padding: 10px;
     text-align: center;
+}
+
+.info-cont-nullTip {
+    font-size: 30px;
+    color: #fff;
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 35%;
 }
 
 .info-cont-item {
@@ -733,6 +963,7 @@ div.ctrl-about {
     top: calc( 50% - 15px );
     width: 100%;
 }
+
 /*About Page*/
 .about-box {
     width: 100%;
@@ -742,14 +973,15 @@ div.ctrl-about {
     left: 0;
     overflow: hidden;
     background-color: rgba(100,180,255,.6);
-    z-index: 300;
+    z-index: 500;
     -moz-transition: all ease 500ms;
     -o-transition: all ease 500ms;
     -webkit-transition: all ease 500ms;
     transition: all ease 500ms;
 }
-.about-box-on{
-    height:100%;
+
+.about-box-on {
+    height: 100%;
 }
 
 .about-page {
@@ -759,8 +991,8 @@ div.ctrl-about {
     position: absolute;
     top: 0;
     left: 0;
-    background-color:#007acc;
-    color:#fff;
+    background-color: #007acc;
+    color: #fff;
 }
 
 @media only screen and (min-height : 400px) {
@@ -768,17 +1000,19 @@ div.ctrl-about {
         top: calc( 50% - 200px );
     }
 }
-.about-title{
-    padding:5px;
-    font-size:35px;
-    line-height:37px;
-    width:100%;
-    max-width:800px;
-    margin:auto;
-    border-bottom:3px #cfcfcf solid;
-    font-weight:100;
-    font-family:'Microsoft YaHei UI Light','Microsoft YaHei UI',sans-serif;
+
+.about-title {
+    padding: 5px;
+    font-size: 35px;
+    line-height: 37px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    border-bottom: 3px #cfcfcf solid;
+    font-weight: 100;
+    font-family: 'Microsoft YaHei UI Light','Microsoft YaHei UI',sans-serif;
 }
+
 .about-close {
     width: 20px;
     height: 20px;
@@ -787,7 +1021,7 @@ div.ctrl-about {
     border-radius: 50%;
     padding: 5px;
     text-align: center;
-    margin-right:5px;
+    margin-right: 5px;
     cursor: pointer;
     font-size: 20px;
     line-height: 15px;
@@ -795,23 +1029,46 @@ div.ctrl-about {
     -o-transition: all ease 500ms;
     -webkit-transition: all ease 500ms;
     transition: all ease 500ms;
-    float:right;
+    float: right;
 }
 
     .about-close:hover {
         background-color: hsl(0, 100%, 70%);
     }
-    .about-content{
-        width:90%;
-        max-width:800px;
-        height:calc( 100% - 70px );
-        max-height:330px;
-        margin:10px auto 10px auto;
-        overflow-y:auto;
-        color:#fff;
-        font-size:20px;
-    }
-    .about-content a{
-        color:#fff;
 
+.about-content {
+    width: 90%;
+    max-width: 800px;
+    height: calc( 100% - 70px );
+    max-height: 330px;
+    margin: 10px auto 10px auto;
+    overflow-y: auto;
+    color: #fff;
+    font-size: 20px;
+}
+
+    .about-content a {
+        color: #fff;
     }
+
+
+/* Welcome Screen */
+.welcome-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #83e01a;
+    z-index: 800;
+    display: none;
+}
+
+/* Splash Screen */
+/* -- To have a better experience, 
+   this part have assembled into main page.*/
+
+/* Asset Box */
+.asset-box {
+    display: none;
+}
