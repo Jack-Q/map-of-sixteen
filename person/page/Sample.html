@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="favicon.ico" type="image/x-icon" rel="icon">
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <title>Map of Sixteen</title>
+    <style>
+        /*Overall*/
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        html, body, div {
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            font-family: 'Microsoft YaHei UI','Microsoft YaHei',sans-serif;
+        }
+
+        p {
+            text-align: justify;
+        }
+            .info-det-box {
+                text-align: center;
+                padding: 15px 10px;
+            }
+
+            .info-det-item, .info-det-item-wide {
+                padding: 0;
+                margin: 0;
+                display: inline-block;
+                font-size: 20px;
+            }
+
+                .info-det-item:nth-child(4n), .info-det-item:nth-child(4n+1) {
+                    background-color: rgba(255,255,255,.2);
+                }
+
+                .info-det-item:nth-child(4n+2), .info-det-item:nth-child(4n+3) {
+                    background-color: rgba(255,255,255,.5);
+                }
+
+                .info-det-item-wide:nth-child(2n) {
+                    background-color: rgba(255,255,255,.5);
+                }
+
+                .info-det-item-wide:nth-child(2n+1) {
+                    background-color: rgba(255,255,255,.2);
+                }
+
+            .info-det-title {
+                height: 100%;
+                float: left;
+                width: 40%;
+                color: #fefefe;
+                background-color: rgba(0, 148, 255,.5);
+            }
+
+            .info-det-cont {
+                float: left;
+                height: 100%;
+                vertical-align: middle;
+                margin: 0;
+                color: #250105;
+                text-shadow: #fff 0 0 3px;
+                font-weight: 800;
+                text-align: left;
+            }
+
+            .info-det-item-wide > .info-det-title {
+                width: 40%;
+                float: none;
+            }
+
+            @media only screen and (min-width: 700px) {
+                .info-det-box {
+                    padding: 200px 10px 0 10px;
+                }
+
+                .info-det-item {
+                    width: 40%;
+                }
+
+
+                .info-det-item-wide {
+                    width: 80%;
+                }
+            }
+
+            @media only screen and (min-width: 500px) and (max-width: 699px) {
+                .info-det-box {
+                    padding: 200px 10px 0 10px;
+                }
+
+                .info-det-item {
+                    width: 49%;
+                }
+
+                .info-det-item-wide {
+                    width: 100%;
+                }
+            }
+
+            @media only screen and (max-width: 499px) {
+                .info-det-box {
+                    padding: 10px 10px 0 10px;
+                }
+
+                .info-det-item {
+                    width: 100%;
+                }
+
+                .info-det-item-wide {
+                    width: 100%;
+                }
+
+                    .info-det-item:nth-child(2n), .info-det-item-wide:nth-child(2n) {
+                        background-color: rgba(255,255,255,.5);
+                    }
+
+                    .info-det-item:nth-child(2n+1), .info-det-item-wide:nth-child(2n+1) {
+                        background-color: rgba(255,255,255,.2);
+                    }
+            }
+    </style>
+</head>
+<body>
+
+    <div class="info-det-box">
+        <style>
+        </style>
+        <div class="info-det-item">
+            <div class="info-det-title">常用网名</div>
+            <div class="info-det-cont">思露、花雨</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">生日</div>
+            <div class="info-det-cont">1995.10.21</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">手机</div>
+            <div class="info-det-cont">15234209665</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">QQ</div>
+            <div class="info-det-cont">645776361</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">专业</div>
+            <div class="info-det-cont">工商管理</div>
+        </div>
+        <div>
+            <div class="info-det-item-wide">个人签名</div>
+            <div class="info-det-cont">不忘初心，方得始终。</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

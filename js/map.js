@@ -1219,7 +1219,5 @@
 ( function () {
     //JSONP : ID = 3
     var id = 3;
-    setTimeout( function () {
-        mapOfSixteen.loader.update( id )
-    }, ( 100 * Math.random() ).toFixed( 0 ) );
+    mapOfSixteen.loader.update( id );
 } )()
