@@ -39,7 +39,7 @@ mapOfSixteen.main = ( function () {
         'mapPinchDist': 0,
         'personData': [
             //About This Data: Copied From Excel, Last Updated:August 8th, 2014
-{ id: 1, name: "高靖男", province: "beijing", city: "北京", school: "首都经贸大学", photo: "26", phone: "13994305596", qq: "549431978", },
+{ id: 1, name: "高靖男", province: "beijing", city: "北京", school: "首都经贸大学", major: "公共管理", detailPage: "5", backgroundPhoto: "5", photo: "73", phone: "13994305596", qq: "549431978", },
 { id: 2, name: "张亦之", province: "beijing", city: "北京", school: "北京邮电大学(宏福校区)", photo: "31", qq: "739383613", },
 { id: 3, name: "王慧康", province: "beijing", city: "北京", school: "北京交通大学", photo: "52", },
 { id: 4, name: "张赟", province: "beijing", city: "北京", school: "北京工商大学", photo: "57", },
@@ -101,6 +101,7 @@ mapOfSixteen.main = ( function () {
 { id: 60, name: "王佳颉", province: "tianjin", city: "天津", school: "南开大学", photo: "1", qq: "954628981", },
 { id: 61, name: "王鹤媛", province: "tianjin", city: "天津", school: "南开大学", photo: "12", phone: "15296625164", qq: "2952203838", },
 { id: 62, name: "董宁", province: "zhejiang", city: "杭州", school: "浙江理工大学", photo: "33", phone: "13994338807", qq: "380245935", },
+
 
         ],
         'cityList': [
