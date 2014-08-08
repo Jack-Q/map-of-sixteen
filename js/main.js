@@ -43,7 +43,7 @@ mapOfSixteen.main = ( function () {
 { id: 2, name: "张亦之", province: "beijing", city: "北京", school: "北京邮电大学(宏福校区)", photo: "31", qq: "739383613", },
 { id: 3, name: "王慧康", province: "beijing", city: "北京", school: "北京交通大学", photo: "52", },
 { id: 4, name: "张赟", province: "beijing", city: "北京", school: "北京工商大学", photo: "57", },
-{ id: 5, name: "张彩云", province: "guangdong", city: "珠海", school: "暨南大学", photo: "10", phone: "13403428612", qq: "2084498307", },
+{ id: 5, name: "张彩云", province: "guangdong", city: "珠海", school: "暨南大学", major: "自动化", detailPage: "6", backgroundPhoto: "6", wechat: "A13403428612", photo: "10", phone: "13403428612", email: "13403428612@163.com", qq: "2084498307", },
 { id: 6, name: "赵明", province: "guangdong", city: "广州", school: "广东工业大学", photo: "46", phone: "13613525998", qq: "927257754", },
 { id: 7, name: "石文龙", province: "heilongjiang", city: "哈尔滨", school: "东北林业大学", photo: "9", qq: "2285874983", },
 { id: 8, name: "韩蕾", province: "henan", city: "郑州", school: "郑州大学", photo: "2", qq: "1279456545", },
@@ -63,7 +63,7 @@ mapOfSixteen.main = ( function () {
 { id: 22, name: "任凯", province: "jilin", city: "吉林", school: "吉林化工大学", photo: "48", qq: "532465106", },
 { id: 23, name: "王圣元", province: "jilin", city: "长春", school: "长春理工大学", detailPage: "1", backgroundPhoto: "1", photo: "40", phone: "18235227290", qq: "294335470", },
 { id: 24, name: "许圣华", province: "jilin", city: "长春", school: "吉林大学", photo: "15", qq: "1786404107", },
-{ id: 25, name: "李海", province: "jilin", city: "长春", school: "吉林大学", photo: "21", phone: "18234250560", qq: "1019928979", },
+{ id: 25, name: "李海", province: "jilin", city: "长春", school: "吉林大学", major: "工商管理", detailPage: "7", backgroundPhoto: "7", wechat: "Y18234250560Y", photo: "21", phone: "18234250560", email: "1019928979@qq.com", qq: "1019928979", },
 { id: 26, name: "苏佳琪", province: "jilin", city: "长春", school: "吉林财经大学", photo: "56", qq: "942469154", },
 { id: 27, name: "刘翔宇", province: "liaoning", city: "阜新", school: "辽宁工程技术大学", },
 { id: 28, name: "马晓瑞", province: "liaoning", city: "大连", school: "大连大学", detailPage: "4", backgroundPhoto: "0", photo: "4", phone: "13203521625", email: "maxiaorui@foxmail.com", qq: "254360957", },
@@ -101,6 +101,8 @@ mapOfSixteen.main = ( function () {
 { id: 60, name: "王佳颉", province: "tianjin", city: "天津", school: "南开大学", photo: "1", qq: "954628981", },
 { id: 61, name: "王鹤媛", province: "tianjin", city: "天津", school: "南开大学", photo: "12", phone: "15296625164", qq: "2952203838", },
 { id: 62, name: "董宁", province: "zhejiang", city: "杭州", school: "浙江理工大学", photo: "33", phone: "13994338807", qq: "380245935", },
+
+
 
 
         ],
@@ -527,7 +529,7 @@ mapOfSixteen.main = ( function () {
         if ( j.phone ) { allNull = false; $( '#info-phone-box' ).removeClass( 'info-cont-item-off' ); $( '#info-phone' ).text( j.phone ); } else { $( '#info-phone-box' ).addClass( 'info-cont-item-off' ); }
         if ( j.phone2 ) { allNull = false; $( '#info-phone2-box' ).removeClass( 'info-cont-item-off' ); $( '#info-phone2' ).text( j.phone2 ); } else { $( '#info-phone2-box' ).addClass( 'info-cont-item-off' ); }
         if ( j.address ) { allNull = false; $( '#info-address-box' ).removeClass( 'info-cont-item-off' ); $( '#info-address' ).text( j.address ); } else { $( '#info-address-box' ).addClass( 'info-cont-item-off' ); }
-        if ( j.wechat ) { allNull = false; $( '#info-wechat-box' ).removeClass( 'info-cont-item-off' ); $( '#info-wechat' ).text( j.address ); } else { $( '#info-wechat-box' ).addClass( 'info-cont-item-off' ); }
+        if ( j.wechat ) { allNull = false; $( '#info-wechat-box' ).removeClass( 'info-cont-item-off' ); $( '#info-wechat' ).text( j.wechat ); } else { $( '#info-wechat-box' ).addClass( 'info-cont-item-off' ); }
         //if ( j.qq ) { $( '#info-qq-box' ).removeClass( 'info-cont-item-off' ); $( '#info-qq' ).text( j.qq ); } else { $( '#info-qq-box' ).addClass( 'info-cont-item-off' ); }
 
         if ( allNull === true ) {
@@ -708,6 +710,7 @@ mapOfSixteen.main = ( function () {
 
     //Add Events Processor
     var mobileTestResult = mobile_test();
+    //mobileTestResult = false;
 
     $_window.resize( redraw );
 

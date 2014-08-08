@@ -333,6 +333,8 @@ div.ctrl-about {
     background-size: 100% 100%;
     position: relative;
     margin: auto;
+    top: -webkit-calc( 50% - 150px );
+    top: -moz-calc( 50% - 150px );
     top: calc( 50% - 150px );
     box-shadow: #131313 0 0 30px 2px;
 }
@@ -473,6 +475,8 @@ div.ctrl-about {
 
 .maps-ctrl {
     position: absolute;
+    left: -moz-calc( 50% - 130px );
+    left: -webkit-calc( 50% - 130px );
     left: calc( 50% - 130px );
     width: 260px;
     height: 30px;
@@ -786,6 +790,8 @@ div.ctrl-about {
     height: 150px;
     position: absolute;
     top: 0;
+    left: -moz-calc( 50% - 400px );
+    left: -webkit-calc( 50% - 400px );
     left: calc( 50% - 400px );
 }
 
@@ -839,6 +845,8 @@ div.ctrl-about {
     left: 0;
     width: 300%;
     top: 150px;
+    height: -moz-calc( 100% - 150px );
+    height: -webkit-calc( 100% - 150px );
     height: calc( 100% - 150px );
     position: absolute;
     z-index: 0;
@@ -949,6 +957,8 @@ div.ctrl-about {
     }
 
     .info-cont-cont {
+        width: -webkit-calc( 100% - 100px );
+        width: -moz-calc( 100% - 100px );
         width: calc( 100% - 100px );
         display: block;
         float: left;
@@ -1005,6 +1015,8 @@ div.ctrl-about {
     }
 
     .info-cont-cont {
+        width: -moz-calc( 100% - 100px );
+        width: -webkit-calc( 100% - 100px );
         width: calc( 100% - 100px );
         display: block;
         float: left;
@@ -1095,6 +1107,8 @@ div.ctrl-about {
 
 @media only screen and (min-height : 400px) {
     .about-page {
+        top: -moz-calc( 50% - 200px );
+        top: -webkit-calc( 50% - 200px );
         top: calc( 50% - 200px );
     }
 }
@@ -1137,6 +1151,8 @@ div.ctrl-about {
 .about-content {
     width: 90%;
     max-width: 800px;
+    height: -webkit-calc( 100% - 70px );
+    height: -moz-calc( 100% - 70px );
     height: calc( 100% - 70px );
     max-height: 330px;
     margin: 10px auto 10px auto;

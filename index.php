@@ -47,6 +47,8 @@
             height: 150px;
             position: absolute;
             left: 0;
+            top: -webkit-calc(50% - 70px);
+            top: -moz-calc(50% - 70px);
             top: calc(50% - 70px);
         }
 
