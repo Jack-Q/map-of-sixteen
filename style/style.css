@@ -183,6 +183,7 @@ div.ctrl-namelist {
     margin: 30px 10px;
     height: 380px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 div.ctrl-nameitem {
@@ -212,7 +213,7 @@ div.name-photo {
     width: 75px;
     height: 74px;
     margin: auto;
-    border-radius: 50% 50%;
+    border-radius: 15px 15px;
     border: #abc 1px solid;
     overflow: hidden;
     background-color: #fff;
@@ -224,6 +225,7 @@ div.name-photo {
         left: 0;
         width: 75px;
         height: 75px;
+        border-radius: 15px 15px;
     }
 
 div.name-photo-default {
@@ -232,7 +234,7 @@ div.name-photo-default {
     width: 75px;
     height: 74px;
     margin: auto;
-    border-radius: 50% 50%;
+    border-radius: 15px 15px;
     border: #abc 1px solid;
     background-image: url('data:image/svg+xml;base64,DQo8c3ZnIHZlcnNpb249IjEuMSIgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAzMDUuNjI1IDI5Ny4xMjUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMwNS42MjUgMjk3LjEyNTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxwb2x5Z29uIHN0eWxlPSJmaWxsOiMwMDcwQzA7IiBwb2ludHM9IjAsMCAzMDUuNjI1LDAgMzA1LjYyNSwyOTcuMTI1IDAsMjk3LjEyNSAwLDAgCSIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNFMkYwRDk7IiBkPSJNMTA5LjEyNSw5OC40MzhjMC0yOC42ODQsMjIuNjM4LTUxLjkzOCw1MC41NjItNTEuOTM4DQoJCWMyNy45MjUsMCw1MC41NjMsMjMuMjUzLDUwLjU2Myw1MS45MzhzLTIyLjYzOCw1MS45MzgtNTAuNTYzLDUxLjkzOEMxMzEuNzYzLDE1MC4zNzUsMTA5LjEyNSwxMjcuMTIyLDEwOS4xMjUsOTguNDM4DQoJCUwxMDkuMTI1LDk4LjQzOHoiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojRTJGMEQ5OyIgZD0iTTU1Ljc1LDI1OC4yNWMwLTcxLjQ1Miw0My40MjgtMTI5LjM3NSw5Ny0xMjkuMzc1DQoJCXM5Nyw1Ny45MjMsOTcsMTI5LjM3NUg1NS43NUw1NS43NSwyNTguMjV6Ii8+DQoJPHBvbHlnb24gc3R5bGU9ImZpbGw6IzAwNzBDMDsiIHBvaW50cz0iMCwyMzUuODc1IDMwNS42MjUsMjM1Ljg3NSAzMDUuNjI1LDI5Ny4xMjUgMCwyOTcuMTI1IA0KCQkwLDIzNS44NzUgCSIvPg0KPC9zdmc+DQo=');
     box-shadow: #abc 0 0 10px 3px;
@@ -260,7 +262,7 @@ div.name-major {
 }
 
 div.name-linkbox {
-    width: 180px;
+    width: 168px;
     position: absolute;
     left: 80px;
     bottom: 5px;
@@ -399,8 +401,8 @@ div.ctrl-about {
         }
 
         .maps-pop-personlist > span:nth-child(2) {
-            top: 150px;
-            left: 80px;
+            top: 135px;
+            left: 100px;
         }
 
         .maps-pop-personlist > span:nth-child(3) {
@@ -438,10 +440,40 @@ div.ctrl-about {
             left: 100px;
         }
 
+        .maps-pop-personlist > span:nth-child(10) {
+            top: 135px;
+            left: 15px;
+        }
+
+        .maps-pop-personlist > span:nth-child(11) {
+            top: 70px;
+            left: 130px;
+        }
+
+        .maps-pop-personlist > span:nth-child(12) {
+            top: 160px;
+            left: 210px;
+        }
+
+        .maps-pop-personlist > span:nth-child(13) {
+            top: 160px;
+            left: 50px;
+        }
+
+        .maps-pop-personlist > span:nth-child(14) {
+            top: 70px;
+            left: 40px;
+        }
+
+        .maps-pop-personlist > span:nth-child(15) {
+            top: 10px;
+            left: 180px;
+        }
+
 
 .maps-ctrl {
     position: absolute;
-    left: calc( 50% - 150px );
+    left: calc( 50% - 130px );
     width: 260px;
     height: 30px;
     background-color: rgba(0,125,220,0.3);
@@ -487,6 +519,7 @@ div.ctrl-about {
     top: 0;
     left: 30px;
     position: absolute;
+    cursor: pointer;
 }
 
     .maps-ctrl-pos > span {
@@ -521,6 +554,34 @@ div.ctrl-about {
 .maps-ctrl-in {
     right: 0;
 }
+
+.maps-quickBtn {
+    position: absolute;
+    width: 100%;
+    bottom: 40px;
+    height: 20px;
+    text-align: center;
+    z-index: 20;
+}
+
+    .maps-quickBtn > div {
+        display: inline-block;
+        width: 80px;
+        height: 20px;
+        line-height: 20px;
+        color: #fafafa;
+        background-color: rgba(0,110,220,.5);
+        text-align: center;
+        cursor: pointer;
+        -moz-transition: all ease 300ms;
+        -o-transition: all ease 300ms;
+        -webkit-transition: all ease 300ms;
+        transition: all ease 300ms;
+    }
+
+        .maps-quickBtn > div:hover {
+            background-color: rgba(0,110,220,.9);
+        }
 
 .maps-box {
     position: absolute;
@@ -998,6 +1059,7 @@ div.ctrl-about {
         background: transparent;
         width: 100%;
         height: 100%;
+        -webkit-overflow-scrolling: touch;
     }
 
 /*About Page*/

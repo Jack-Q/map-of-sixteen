@@ -137,7 +137,7 @@
             .splash-title > svg {
                 fill: #fff;
                 height: 40px;
-                width:210px;
+                width: 210px;
             }
 
         .splash-text {
@@ -145,8 +145,8 @@
             color: #fff;
             line-height: 20px;
             font-size: 12px;
-            width:300px;
-            margin:auto;
+            width: 300px;
+            margin: auto;
         }
     </style>
 </head>
@@ -728,7 +728,7 @@
             <div class="ctrl-namelist" id="ctrl-namelist">
             </div>
         </div>
-        <div class="ctrl-about" id="ctrl-about">&copy;2014 Jack Q | Last Modified: 2014-08-07</div><!--TODO:Update at release -->
+        <div class="ctrl-about" id="ctrl-about">&copy;2014 Jack Q | Last Modified: 2014-08-08</div><!--TODO:Update at release -->
     </div>
 
     <!--Maps Box (z-0)-->
@@ -740,10 +740,14 @@
                 <div class="maps-pop-personlist" id="maps-pop-personlist"></div>
             </div>
         </div>
+        <div class="maps-quickBtn">
+            <div class="maps-showAll" id="maps-showAll">显示所有</div>
+            <!--<div class="maps-center" id="maps-center">地图居中</div>-->
+        </div>
         <div class="maps-ctrl">
             <div class="maps-ctrl-out" id="maps-ctrl-out">-</div>
-            <div class="maps-ctrl-bar"></div>
-            <div class="maps-ctrl-pos">
+            <div class="maps-ctrl-bar" id="maps-ctrl-bar"></div>
+            <div class="maps-ctrl-pos" id="maps-ctrl-pos">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -752,6 +756,7 @@
             </div>
             <div id="maps-ctrl-cur" class="maps-ctrl-cur"></div>
             <div class="maps-ctrl-in" id="maps-ctrl-in">+</div>
+
         </div>
         <div class="maps-box" id="maps-box">
             <div class="maps-china" id="maps-china"></div>
@@ -846,52 +851,53 @@
             </div>
             <div class="about-content">
                 <p class="about-update">
-                    数据更新时间：2014-08-08 10:00
+                    数据更新时间：2014-08-08 17:00
                     <br />
-                    页面更新时间：2014-08-08 19:30
+                    页面更新时间：2014-08-08 17:00
                 </p>
                 <p>
-                    本次更新添加了个人详细信息页面，详细信息页面的项目，布局，颜色，背景图片等均可自定义（推荐），
-                    当前以下同学的详细信息页面已经上线，大家可以参考建立自己的详细信息页面。
-                    <br />
-                    当前上线列表：王圣元、范江、谷思雨、马晓瑞。
+                    本次更新为当前列表中绝大多数同学添加了照片（部分同学照片数据暂无），可以在左上角的菜单中看到。
+                    如有对目前上线版本照片不满意的同学，请在班群里反馈更换。
+                    目前列表中仅包含已知录取院校信息的同学。
                 </p>
                 <p>
-                    本次更新重写了地图城市标注部分的代码，提升了地图在移动、缩放时的性能。
-                    优化了 “地图定位” 功能和移动端判断功能。
-                    本次更新进行了图片优化和代码压缩，大幅减小了页面加载所需流量，当前加载时所需流量为0.8Mb。
+                    本次更新为尚未建立详细信息页面或未指定自定义背景的同学的详细信息页面添加了随机背景。希望大家积极参与建立自定义的详细信息页面！
+                </p>
+                <p>
+                    本次更新重写了移动端事件处理部分的代码，增加了移动端双指缩放的手势支持，同时缩放状态条支持缩放至指定比例。
+                    鉴于本次更新添加了较多照片，页面整体所需流量较多，当前访问时所需流量为3.0MB。
                 </p>
                 <p>
                     对于部分浏览器下加载至95%是无法进入的问题，可能是所用浏览器未实现此页面所需的某些接口，致使脚本初始化失败而终止；
                     对于页面显示混乱或加载屏幕图片显示为空白的问题，可能是浏览器未支持HTML 5和CSS 3的某些新特性。
-                    建议更换至最新版本浏览器：
+                    建议更换至最新版本浏览器以正常浏览本页面：
                     <ul>
                         <li>
-                            移动端推荐<a href="http://www.google.com/mobile/chrome/"
+                            移动端推荐<a href="http://www.google.com/mobile/chrome/" target="_blank"
                                     title="Chrome for Mobile">Chrome for Mobile</a>（适用于Android 4.0+ 和 iOS 6.0+）;
                         </li>
                         <li>
                             PC端推荐
-                            <a href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-11-worldwide-languages"
+                            <a href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-11-worldwide-languages" target="_blank"
                                title="Internet Explorer 11">Internet Explorer 11</a>（适用于 Windows 7 SP1 和 Windows8.1 ），
-                            <a href="http://www.google.cn/intl/zh-CN/chrome/browser/"
+                            <a href="http://www.google.cn/intl/zh-CN/chrome/browser/" target="_blank"
                                title="Google Chrome">Google Chrome</a>。
                         </li>
                     </ul>
 
                 </p>
                 <p>
-                    此页面当前属于测试版，功能尚未完善，同时可能会有漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20">QiaoBo@outlook.com</a>。
+                    此页面当前属于测试版，功能尚未完善，同时可能会有漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>。
                     <br />
-                    若有需要添加、更新或修正信息，请在QQ群内反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20">QiaoBo@outlook.com</a>;
+                    若有需要添加、更新或修正信息，请在QQ群内反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>;
                     <br />
                     若有任何关于此页面的建议，欢迎大家反馈。
                 </p>
 
                 <p class="about-copy">
-                    &copy;2014 Jack Q | Last Modified: 2014-08-07
+                    &copy;2014 Jack Q | Last Modified: 2014-08-08
                     <br />
-                    This site would never exist without the following JavaScript Libraries: jQuery, jQuery Mobile, Raphaël and jGestures.
+                    This site would never exist without the following JavaScript Libraries: jQuery, jQuery Mobile and Raphaël.
                 </p>
             </div>
         </div>
@@ -908,7 +914,6 @@
     <!--Scripts-->
     <script src="js/lib/jquery-2.1.1.min.js"></script>
     <script src="js/lib/jquery.mobile.custom.min.js"></script>
-    <!--<script src="js/lib/jgestures.js"></script>-->
     <script>
         var mapOfSixteen = mapOfSixteen ? mapOfSixteen : {};
         mapOfSixteen.loader = {
@@ -919,7 +924,7 @@
                 // 20% - Page Script Loaded (This function will be excuted)
                 var loader = mapOfSixteen.loader;
                 loader.progress = 20;
-                loader.splash.text = $( '#splash-progress' ).text( '加载中 - ' + loader.progress + '%' );
+                loader.splash.text = $( '#splash-progress' ).text( '加载中 - ' + loader.progress.toFixed( 1 ) + '%' );
                 loader.splash.bar = $( '.splash-logo-wave' ).animate( { 'top': 0.9 * ( 100 - loader.progress ) + 'px' }, 300, 'swing' );
 
                 //Loading Asset List
@@ -928,7 +933,7 @@
                     loader.list = JSON.parse( data );
                     loader.progress += 5;
                     loader.loadListItem( 1 );
-                    loader.splash.text.text( '加载中 - ' + loader.progress + '%' );
+                    loader.splash.text.text( '加载中 - ' + loader.progress.toFixed( 1 ) + '%' );
                     loader.splash.bar.animate( { 'top': 0.9 * ( 100 - loader.progress ) + 'px' }, 50, 'swing' );
                 } );
 
@@ -953,9 +958,7 @@
                     case 'img':
                         var k = '<img src="' + j.url + '" />';
                         k = $( k ).ready( function () {
-                            //setTimeout( function () {
-                            mapOfSixteen.loader.update( id )
-                            //}, 500 );
+                            mapOfSixteen.loader.update( id );
                         } );
                         k.appendTo( 'div#asset-box' );
                 }
@@ -963,15 +966,17 @@
             update: function ( id ) {
                 var loader = mapOfSixteen.loader;
                 loader.progress += loader.list[id - 1].per;
-                loader.splash.text.text( '加载' + loader.list[id - 1].name + ' - ' + loader.progress + '%' );
+                loader.splash.text.text( '加载' + loader.list[id - 1].name + ' - ' + loader.progress.toFixed( 1 ) + '%' );
                 loader.splash.bar.animate( { 'top': 0.9 * ( 100 - loader.progress ) + 'px' }, 50, 'swing' );
 
                 if ( id !== loader.list.length ) {
-                    setTimeout( function () { loader.loadListItem( id + 1 ) }, 100 );
+                    setTimeout( function () {
+                        loader.loadListItem( id + 1 )
+                    }, 50 );
                 }
 
                 if ( loader.progress >= 95 ) {
-                    loader.splash.text.text( '初始化 - ' + loader.progress + '%' );
+                    loader.splash.text.text( '初始化 - ' + loader.progress.toFixed( 1 ) + '%' );
                     //TODO: List Finished
                     mapOfSixteen.main();
                     setTimeout( loader.finish, 1000 );
@@ -979,7 +984,7 @@
             },
             finish: function () {
                 var loader = mapOfSixteen.loader;
-                loader.splash.text.text( '加载完成 - 100%' );
+                loader.splash.text.text( '加载完成 - 100.0%' );
                 loader.splash.bar.animate( { 'top': '0.1px' }, 50, 'swing' );
                 $( '.splash-wrapper' ).fadeOut( 500 );
                 $( 'div#splash-screen' ).animate( { 'background-color': 'rgba(0,122,204,0)' }, 1200, 'swing', function () { $( this ).css( 'display', 'none' ); } );
@@ -996,5 +1001,4 @@
         window.onload = mapOfSixteen.loader.main;
     </script>
 </body>
-
 </html>
