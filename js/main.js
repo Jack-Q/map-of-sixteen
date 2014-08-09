@@ -55,7 +55,7 @@ mapOfSixteen.main = ( function () {
 { id: 14, name: "范江", province: "jiangsu", city: "镇江", school: "江苏大学", major: "机械电子工程", detailPage: "2", backgroundPhoto: "2", photo: "20", phone: "15203423712", qq: "948302112", },
 { id: 15, name: "刘伟", province: "jiangsu", city: "徐州", school: "中国矿业大学", photo: "39", phone: "13935256023", qq: "704533758", },
 { id: 16, name: "李玲玲", province: "jiangsu", city: "无锡", school: "江南大学", photo: "35", qq: "815117902", },
-{ id: 17, name: "赵晶", province: "jiangsu", city: "南京", school: "南京农业大学", photo: "18", phone: "18168057521", qq: "544415419", },
+{ id: 17, name: "赵晶", province: "jiangsu", city: "南京", school: "南京农业大学", major: "材料成型及控制工程", detailPage: "8", backgroundPhoto: "8", photo: "18", phone: "18168057521", phone2: "0352-3829230", email: "544415419@qq.com", qq: "544415419", },
 { id: 18, name: "武雁伟", province: "jiangsu", city: "徐州", school: "中国矿业大学", photo: "30", },
 { id: 19, name: "崔越", province: "jiangsu", city: "徐州", school: "中国矿业大学", photo: "51", phone: "13383529796", qq: "1051879865", },
 { id: 20, name: "李伯轩", province: "jiangsu", city: "南京", school: "南京大学", photo: "41", qq: "2425631404", },
@@ -101,9 +101,6 @@ mapOfSixteen.main = ( function () {
 { id: 60, name: "王佳颉", province: "tianjin", city: "天津", school: "南开大学", photo: "1", qq: "954628981", },
 { id: 61, name: "王鹤媛", province: "tianjin", city: "天津", school: "南开大学", photo: "12", phone: "15296625164", qq: "2952203838", },
 { id: 62, name: "董宁", province: "zhejiang", city: "杭州", school: "浙江理工大学", photo: "33", phone: "13994338807", qq: "380245935", },
-
-
-
 
 
         ],
