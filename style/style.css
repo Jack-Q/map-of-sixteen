@@ -95,6 +95,65 @@ div.ctrl-listctrl {
     left: 0;
 }
 
+div.ctrl-search-button {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    height: 24px;
+    width: 24px;
+    background-color: #ccc;
+    border-radius: 15px;
+    -moz-transition: all ease 300ms;
+    -o-transition: all ease 300ms;
+    -webkit-transition: all ease 300ms;
+    transition: all ease 300ms;
+    cursor: pointer;
+}
+
+    div.ctrl-search-button:hover {
+        box-shadow: #cdcdcd 0 0 3px 1px;
+        background-color: #fff;
+    }
+
+    div.ctrl-search-button > svg {
+        height: 24px;
+        width: 24px;
+    }
+
+.ctrl-search {
+    margin-top: 10px;
+    height: 10px;
+    overflow: hidden;
+    width: 100%;
+    background-color: #768696;
+    -moz-transition: all ease 300ms;
+    -o-transition: all ease 300ms;
+    -webkit-transition: all ease 300ms;
+    transition: all ease 300ms;
+}
+
+#ctrl-search-text {
+    width: 270px;
+    background-color: rgba(200,200,200,.5);
+    padding: 0 12px;
+    height: 24px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: none;
+    margin: 4px auto 2px auto;
+}
+
+.ctrl-search-description {
+    width: 270px;
+    margin: auto;
+    height: 40px;
+    line-height: 18px;
+    font-size: 14px;
+    letter-spacing: 0;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+
 span.ctrl-button {
     background: #2385B1;
     display: inline-block;
@@ -149,41 +208,19 @@ div.ctrl-list-item {
     cursor: pointer;
 }
 
-.ctrl-list-school-box {
-    position: absolute;
-    top: -350px;
-    width: 80%;
-    left: 20px;
-    margin: 0 auto;
-    overflow: hidden;
-    height: 250px;
-    background-color: #eee;
-    color: #121212;
-    padding: 10px;
-    border: 1px #fff solid;
-    border-radius: 15px;
-    -moz-transition: all ease 700ms;
-    -o-transition: all ease 700ms;
-    -webkit-transition: all ease 700ms;
-    transition: all ease 700ms;
-    box-shadow: #dedede 0 0 10px 2px;
-    z-index: 106;
-}
-
-.ctrl-list-school-box-on {
-    top: 40px !important;
-}
-
-
-div.ctrl-list-item:hover {
-    border-left: #007acc 3px solid;
-}
+    div.ctrl-list-item:hover {
+        border-left: #007acc 3px solid;
+    }
 
 div.ctrl-namelist {
-    margin: 30px 10px;
+    margin: 10px 10px;
     height: 380px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    -moz-transition: all ease 300ms;
+    -o-transition: all ease 300ms;
+    -webkit-transition: all ease 300ms;
+    transition: all ease 300ms;
 }
 
 div.ctrl-nameitem {

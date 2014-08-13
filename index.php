@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="favicon.ico" type="image/x-icon" rel="icon">
     <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
-    <title>Map of Sixteen (Beta)</title><!--TODO:Remove Beta tag at release-->
+    <title>Map of Sixteen (RC)</title><!--, '' ],:Remove Beta tag at release-->
     <style>
         /*Overall*/
         body {
@@ -150,6 +150,64 @@
             width: 300px;
             margin: auto;
         }
+
+        .splansh-tip-wraper {
+            width: 100%;
+            background-color: rgb(220,50,10);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1500;
+        }
+
+        .splansh-tip {
+            width: 90%;
+            max-width: 800px;
+            padding: 10px 0;
+            color: #fff;
+            margin: auto;
+        }
+
+        .splansh-tip-title {
+            width: 100%;
+            border-bottom: 3px #fff solid;
+            font-size: 30px;
+            text-align: left;
+            margin: auto;
+        }
+
+        .splansh-tip-content {
+            width: 100%;
+            font-size: 20px;
+            text-align: justify;
+            text-indent: 2em;
+            margin: auto;
+            height:180px;
+            overflow-y:auto;
+        }
+
+            .splansh-tip-content a {
+                color: #fff;
+            }
+
+        .splansh-tip-button {
+            width: 100%;
+            font-size: 22px;
+            margin: auto;
+            border-top: 3px #aaa solid;
+            text-align: right;
+        }
+
+            .splansh-tip-button > div {
+                display: inline-block;
+                width: 100px;
+                height: 30px;
+                background-color: #007acc;
+                margin-right: 30px;
+                margin-top: 10px;
+                cursor: pointer;
+                text-align: center;
+            }
     </style>
 </head>
 <body>
@@ -431,11 +489,52 @@
 			                C6664.573,458.095,6676.206,489.247,6676.206,523.659z" />
 	                </g>
             </svg>
-                <span style="font-size:0.3em;position:relative;bottom:25px;">BETA</span>
+                <span style="font-size:0.3em;position:relative;bottom:25px;">RC</span>
             </div>
             <div class="splash-text" id="splash-progress">
                 加载中 - 0%
             </div>
+        </div>
+        <!--[if lt IE 9]>
+            <div class="splansh-tip-wraper" id="splansh-tip-wraper">
+            <![endif]-->
+        <!--[if gt IE 8]><!-->
+        <div class="splansh-tip-wraper" id="splansh-tip-wraper" style="display:none;">
+            <!--<![endif]-->
+
+            <div class="splansh-tip">
+                <div class="splansh-tip-title">
+                    浏览器兼容性提示
+                </div>
+                <div class="splansh-tip-content">
+                    <p>您的浏览器不支持部分本页面所需的关键特性，完成加载后很可能无法正常运行。</p>
+                    <p>
+                        建议您更换更适宜的浏览器重新打开此页面。
+                        <ul>
+                            <li>
+                                移动端推荐<a href="http://www.google.com/mobile/chrome/" target="_blank"
+                                        title="Chrome for Mobile">Chrome for Mobile</a>（适用于Android 4.0+ 和 iOS 6.0+）;
+                            </li>
+                            <li>
+                                PC端推荐
+                                <a href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-11-worldwide-languages" target="_blank"
+                                   title="Internet Explorer 11">Internet Explorer 11</a>（适用于 Windows 7 SP1 和 Windows8.1 ），
+                                <a href="http://www.google.cn/intl/zh-CN/chrome/browser/" target="_blank"
+                                   title="Google Chrome">Google Chrome</a>。
+                            </li>
+                        </ul>
+                    </p>
+                    <p id="splansh-tip-detial">
+
+                    </p>
+                </div>
+                <!--[if gt IE 8]><!-->
+                <div class="splansh-tip-button">
+                    <div id="splansh-insist-loading">继续加载</div>
+                </div>
+                <!--<![endif]-->
+            </div>
+
         </div>
     </div>
 
@@ -708,29 +807,37 @@
 	                </g>
                 </g>
             </svg>
-            <span class="ctrl-beta-tag">BETA</span><!--TODO:Remove at release -->
+            <span class="ctrl-beta-tag">RC</span><!--, '' ],:Remove at release -->
         </div>
         <div class="ctrl-list">
             <div class="ctrl-listctrl">
                 <span class="ctrl-button" id="ctrl-nation-button">全国</span>
                 <span>&gt;</span>
                 <span class="ctrl-button" id="ctrl-province-button">选择省份</span>
-                <span id="ctrl-gt" style="display:none;">&gt;</span>
-                <span class="ctrl-button" id="ctrl-school-button" style="display:none;">选择院校</span>
+                <div class="ctrl-search-button" id="ctrl-search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path fill="#00adef" d="M 15.5 5 C 12.463 5 10 7.462 10 10.5 c 0 1.261 0.429 2.419 1.143 3.347 l -0.698 0.698 c -0.048 -0.005 -0.089 -0.025 -0.139 -0.025 c -0.39 0 -0.798 0.166 -1.067 0.436 L 5.44 18.752 c -0.229 0.23 -0.39 0.565 -0.43 0.896 c -0.048 0.391 0.069 0.75 0.33 1.01 C 5.564 20.883 5.855 21 6.183 21 c 0.384 0 0.792 -0.168 1.065 -0.44 l 3.798 -3.798 c 0.239 -0.24 0.395 -0.578 0.428 -0.929 c 0.009 -0.101 0.007 -0.198 -0.004 -0.293 l 0.684 -0.684 C 13.081 15.57 14.239 16 15.5 16 c 3.037 0 5.5 -2.463 5.5 -5.5 C 21 7.462 18.537 5 15.5 5 Z M 15.5 14 c -1.934 0 -3.5 -1.566 -3.5 -3.5 S 13.566 7 15.5 7 c 1.935 0 3.5 1.566 3.5 3.5 S 17.435 14 15.5 14 Z" />
+                    </svg>
+                </div>
             </div>
             <div class="ctrl-list-province-box" id="ctrl-province">
                 <div class="ctrl-list-list">
                 </div>
             </div>
-            <div class="ctrl-list-school-box" id="ctrl-school">
-                <div class="ctrl-list-list" id="ctrl-schoolList">
-                    <div class="ctrl-list-item">TODO:School Name</div>
+            <div class="ctrl-search" id="ctrl-search">
+                <input type="text" placeholder="在这里输入 ... ..." id="ctrl-search-text" />
+                <div class="ctrl-search-description" id="ctrl-search-description">
+                    输入姓名、学校、电话号码等信息以开始。
+                    <br />
+                    支持拼音搜索，结果排在下方列表最前
                 </div>
             </div>
             <div class="ctrl-namelist" id="ctrl-namelist">
             </div>
         </div>
-        <div class="ctrl-about" id="ctrl-about">&copy;2014 Jack Q | Last Modified: 2014-08-08</div><!--TODO:Update at release -->
+        <div class="ctrl-about" id="ctrl-about">
+            &copy;2014 Jack Q | Last Modified: 2014-08-13
+        </div><!--, '' ],:Update at release -->
     </div>
 
     <!--Maps Box (z-0)-->
@@ -744,7 +851,7 @@
         </div>
         <div class="maps-quickBtn">
             <div class="maps-showAll" id="maps-showAll">显示所有</div>
-            <!--<div class="maps-center" id="maps-center">地图居中</div>-->
+            <div class="maps-closeSearch" id="maps-closeSearch">关闭搜索</div>
         </div>
         <div class="maps-ctrl">
             <div class="maps-ctrl-out" id="maps-ctrl-out">-</div>
@@ -772,7 +879,7 @@
             <div id="info-close" class="info-close">x</div>
             <div class="info-banner">
                 <div class="info-picture">
-                    <img width="800" height="600" id="info-banner" alt="BANNER" src="img/banner-default-2.jpg" />
+                    <img width="800" height="600" id="info-banner" alt="BANNER" src="img/background/1.jpg" />
                 </div>
                 <div class="info-name" id="info-name"></div>
                 <div class="info-nav">
@@ -853,43 +960,19 @@
             </div>
             <div class="about-content">
                 <p class="about-update">
-                    数据更新时间：2014-08-09 19:00
+                    数据更新时间：2014-08-13 18:20
                     <br />
-                    页面更新时间：2014-08-08 17:00
+                    页面更新时间：2014-08-13 18:20
                 </p>
                 <p>
-                    本次更新为当前列表中绝大多数同学添加了照片（部分同学照片数据暂无），可以在左上角的菜单中看到。
-                    如有对目前上线版本照片不满意的同学，请在班群里反馈更换。
-                    目前列表中仅包含已知录取院校信息的同学。
+                    本次更新新增了成员列表的搜索功能，支持拼音（包括拼音首字母）搜索姓名、专业，数字搜索电话、QQ号，及文本搜索姓名、专业、学校、城市。
+                    同时，添加了对不支持的浏览器的提示页面。
                 </p>
                 <p>
-                    本次更新为尚未建立详细信息页面或未指定自定义背景的同学的详细信息页面添加了随机背景。希望大家积极参与建立自定义的详细信息页面！
+                    此外本次更新，优化部分CSS属性兼容性，修复了地图初次加载或浏览器窗口大小变化时地图过小的漏洞。
                 </p>
                 <p>
-                    本次更新重写了移动端事件处理部分的代码，增加了移动端双指缩放的手势支持，同时缩放状态条支持缩放至指定比例。
-                    鉴于本次更新添加了较多照片，页面整体所需流量较多，当前访问时所需流量为3.0MB。
-                </p>
-                <p>
-                    对于部分浏览器下加载至95%是无法进入的问题，可能是所用浏览器未实现此页面所需的某些接口，致使脚本初始化失败而终止；
-                    对于页面显示混乱或加载屏幕图片显示为空白的问题，可能是浏览器未支持HTML 5和CSS 3的某些新特性。
-                    建议更换至最新版本浏览器以正常浏览本页面：
-                    <ul>
-                        <li>
-                            移动端推荐<a href="http://www.google.com/mobile/chrome/" target="_blank"
-                                    title="Chrome for Mobile">Chrome for Mobile</a>（适用于Android 4.0+ 和 iOS 6.0+）;
-                        </li>
-                        <li>
-                            PC端推荐
-                            <a href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-11-worldwide-languages" target="_blank"
-                               title="Internet Explorer 11">Internet Explorer 11</a>（适用于 Windows 7 SP1 和 Windows8.1 ），
-                            <a href="http://www.google.cn/intl/zh-CN/chrome/browser/" target="_blank"
-                               title="Google Chrome">Google Chrome</a>。
-                        </li>
-                    </ul>
-
-                </p>
-                <p>
-                    此页面当前属于测试版，功能尚未完善，同时可能会有漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>。
+                    当前，此页面为发布预览版，正式版将基本与此相同。对于此版本的漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>。
                     <br />
                     若有需要添加、更新或修正信息，请在QQ群内反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>;
                     <br />
@@ -897,9 +980,9 @@
                 </p>
 
                 <p class="about-copy">
-                    &copy;2014 Jack Q | Last Modified: 2014-08-08
+                    &copy;2014 Jack Q | Last Modified: 2014-08-13
                     <br />
-                    This site would never exist without the following JavaScript Libraries: jQuery, jQuery Mobile and Raphaël.
+                    This site would never exist without the following JavaScript Libraries: jQuery, jQuery Mobile, Modernizr and Raphaël.
                 </p>
             </div>
         </div>
@@ -914,6 +997,99 @@
     <!--Asset Box (Display:none;)-->
     <div id="asset-box" class="asset-box"></div>
     <!--Scripts-->
+    <script>
+
+        var mapOfSixteen = mapOfSixteen ? mapOfSixteen : {};
+        mapOfSixteen.featureDetect = function () {
+            function mobile_test() {
+                var uaStr = navigator.userAgent.toLowerCase();
+
+                if ( uaStr.indexOf( 'mobile' ) != -1 ) {
+                    return true;
+                }
+                // Check for webkit-based browsers. This will catch modern iPhone, iPod, and Android.
+                if ( ( uaStr.indexOf( "iphone" ) != -1 ||
+                    uaStr.indexOf( "ipod" ) != -1 ||
+                    uaStr.indexOf( "android" ) != -1 ) && uaStr.indexOf( 'applewebkit' ) != -1 ) {
+                    return true;
+                }
+
+                // Check for BlackBerry.
+                if ( uaStr.indexOf( "blackberry" ) != -1 ) {
+                    // BlackBerry 6 or later should be running WebKit
+                    var verStr = /version\/(\d+)/.exec( uaStr );
+                    if ( verStr != null ) {
+                        var bbVer = parseInt( verStr[1] );
+                        if ( bbVer >= 6 && uaStr.indexOf( 'applewebkit' ) != -1 )
+                            return true;
+                    }
+                    return false;
+                }
+                // Check for Windows Phone 7 and IE version at least 9.
+                if ( uaStr.indexOf( 'windows phone os' ) != -1 || uaStr.indexOf( 'iemobile' ) != -1 ) {
+                    var ieStr = /iemobile\/(\d+)/.exec( uaStr );
+                    if ( ieStr != null ) {
+                        var ieVer = parseInt( ieStr[1] );
+                        if ( ieVer >= 9 ) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                // Check for Opera mobile.
+                if ( uaStr.indexOf( 'opera mobi' ) != -1 ) {
+
+                    // Check the presto version to see if supports HTML5.
+                    var presto = /presto\/(\d+\.\d+)/.exec( uaStr );
+                    if ( presto != null ) {
+                        var prestoVer = parseFloat( presto[1] );
+                        if ( prestoVer >= 2.4 ) // 2.4 has a good HTML5 base, indicates Opera 10
+                            return true;
+                    }
+                    return false;
+                }
+
+                // Check for Firefox mobile.
+                if ( uaStr.indexOf( "fennec" ) != -1 ) {
+                    var fennec = /fennec\/(\d+\.\d+)/.exec( uaStr );
+                    if ( fennec != null ) {
+                        var fennecVer = parseFloat( fennec[1] );
+                        if ( fennecVer >= 1.0 )
+                            return true;
+                    }
+                }
+
+
+                // If we make it here, we haven't found a rich-tier mobile browser.
+                return false;
+            }
+            var mobileTestResult = mobile_test();
+            var featureSupport = {
+                touch: ( ( !mobileTestResult ) || ( 'ontouchstart' in window ) || window.DocumentTouch && document instanceof DocumentTouch ) ? true : false,
+                inlineSvg: ( function () {
+                    var div = document.createElement( 'div' );
+                    div.innerHTML = '<svg/>';
+                    return ( div.firstChild && div.firstChild.namespaceURI ) == 'http://www.w3.org/2000/svg';
+                } )(),
+                svg: ( !!document.createElementNS && !!document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) ? true : false,
+            }
+            if ( featureSupport.touch && featureSupport.svg && featureSupport.inlineSvg ) {
+                mapOfSixteen.loader.main();
+                return;
+            }
+            document.getElementById( 'splansh-tip-detial' ).innerHTML = '详细信息：'
+                    + ( mobileTestResult ? '标准触控事件 - ' + ( featureSupport.touch ? "支持，" : "不支持，"
+                    + "<br />(此项目表示在加载完成后可能无法拖动或手势缩放地图，部分位置触及可能无反应)<br />" ) : '' )
+                    + '可缩放矢量图像 - ' + ( featureSupport.svg ? "支持，" : "不支持，" )
+                    + '内联矢量图像 - ' + ( featureSupport.inlineSvg ? "支持。" : "不支持。" );
+            document.getElementById( 'splansh-insist-loading' ).onclick = function () {
+                document.getElementById( 'splansh-tip-wraper' ).style.display = 'none';
+                mapOfSixteen.loader.main;
+            };
+            document.getElementById( 'splansh-tip-wraper' ).style.display = 'block';
+        }
+        window.onload = mapOfSixteen.featureDetect;
+    </script>
     <script src="js/lib/jquery-2.1.1.min.js"></script>
     <script src="js/lib/jquery.mobile.custom.min.js"></script>
     <script>
@@ -977,9 +1153,9 @@
                     }, 50 );
                 }
 
-                if ( loader.progress >= 95 ) {
+                if ( loader.progress >= 94.95 ) {
                     loader.splash.text.text( '初始化 - ' + loader.progress.toFixed( 1 ) + '%' );
-                    //TODO: List Finished
+                    //, '' ],: List Finished
                     mapOfSixteen.main();
                     setTimeout( loader.finish, 1000 );
                 }
@@ -1000,7 +1176,7 @@
             list: []
         };
 
-        window.onload = mapOfSixteen.loader.main;
+
     </script>
 </body>
 </html>

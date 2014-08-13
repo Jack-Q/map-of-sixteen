@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="favicon.ico" type="image/x-icon" rel="icon">
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <title>Map of Sixteen</title>
+    <style>
+        /*Overall*/
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        html, body, div {
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            font-family: 'Microsoft YaHei UI','Microsoft YaHei',sans-serif;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .info-det-box {
+            text-align: center;
+            padding: 15px 10px;
+        }
+
+        .info-det-item, .info-det-item-wide {
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+            .info-det-item:nth-child(4n), .info-det-item:nth-child(4n+1) {
+                background-color: rgba(255,255,255,.2);
+            }
+
+            .info-det-item:nth-child(4n+2), .info-det-item:nth-child(4n+3) {
+                background-color: rgba(255,255,255,.5);
+            }
+
+            .info-det-item-wide:nth-child(2n) {
+                background-color: rgba(255,255,255,.5);
+            }
+
+            .info-det-item-wide:nth-child(2n+1) {
+                background-color: rgba(255,255,255,.2);
+            }
+
+        .info-det-title {
+            height: 100%;
+            float: left;
+            width: 30%;
+            color: #fefefe;
+            background-color: rgba(0, 148, 255,.5);
+        }
+
+        .info-det-cont {
+            float: left;
+            height: 100%;
+            vertical-align: middle;
+            margin: 0;
+            color: #250105;
+            text-shadow: #fff 0 0 3px;
+            font-weight: 800;
+            text-align: left;
+        }
+
+        .info-det-item-wide > .info-det-title {
+            width: 40%;
+            float: none;
+        }
+
+        .info-det-item-wide > .info-det-cont {
+            text-align: center;
+        }
+
+        @media only screen and (min-width: 801px) {
+            .info-det-box {
+                padding: 50px 10px 0 10px;
+            }
+
+            .info-det-item {
+                width: 40%;
+            }
+
+
+            .info-det-item-wide {
+                width: 80%;
+            }
+        }
+
+        @media only screen and (min-width: 650px) and (max-width: 800px) {
+            .info-det-box {
+                padding: 50px 10px 0 10px;
+            }
+
+            .info-det-item {
+                width: 49%;
+            }
+
+            .info-det-item-wide {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 649px) {
+            .info-null {
+                display: none;
+            }
+
+            .info-det-box {
+                padding: 10px 10px 0 10px;
+            }
+
+            .info-det-item {
+                width: 100%;
+            }
+
+            .info-det-item-wide {
+                width: 100%;
+            }
+
+                .info-det-item:nth-child(2n), .info-det-item-wide:nth-child(2n) {
+                    background-color: rgba(255,255,255,.5);
+                }
+
+                .info-det-item:nth-child(2n+1), .info-det-item-wide:nth-child(2n+1) {
+                    background-color: rgba(255,255,255,.2);
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="info-det-box">
+        <div class="info-det-item">
+            <div class="info-det-title">生日</div>
+            <div class="info-det-cont">1995.11.08</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">属相</div>
+            <div class="info-det-cont">猪</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">星座</div>
+            <div class="info-det-cont">天蝎座</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">血型</div>
+            <div class="info-det-cont">A</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">QQ</div>
+            <div class="info-det-cont">904580448</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">手机</div>
+            <div class="info-det-cont">13403643158</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">学校</div>
+            <div class="info-det-cont">太原理工大学</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">专业</div>
+            <div class="info-det-cont">机械及制造及其自动化</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">特长</div>
+            <div class="info-det-cont">体育，电子设备</div>
+        </div>
+        <div class="info-det-item">
+            <div class="info-det-title">爱好</div>
+            <div class="info-det-cont">篮球，折腾数码设备</div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

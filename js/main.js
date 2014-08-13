@@ -6,6 +6,7 @@
 /// <reference path="lib/jquery.color-2.1.2.js" />
 /// <reference path="map.js" />
 /// <reference path="res/chinaMapConfig.js" />
+/// <reference path="data.js" />
 
 // Map of Sixteen : Main Script
 
@@ -19,11 +20,13 @@ mapOfSixteen.main = ( function () {
         'ctrl': false,
         'province': false,
         'school': false,
+        'search': false,
         'infoBox': false,
         'aboutBox': true,//TODO : Toggle this to false at release
         'infoTab': 1,// 1 - Contact Method; 2 - Detailed Information; 3 - Personal Page(Permanently Deprecated)
-        'mapRatio': 1.0,
-        'mapCustomRatio': 1.5,//Customized Zoom Ratio 
+        'mapRatio': 0,//Set to zero to make it smaller than any real ratio so that make 
+        //the initial presentation of the map suit to the screen(window) size.
+        'mapCustomRatio': 1.0,//Customized Zoom Ratio 
         'mapPositionTop': 0,//Customized Map Position (X coordinate)
         'mapPositionLeft': 0,//Customized Map Position (Y Coordinate)
         'mapCenter': [285, 240],
@@ -37,150 +40,85 @@ mapOfSixteen.main = ( function () {
         'mapDragPos': [0, 0],
         'mapPinch': false,
         'mapPinchDist': 0,
-        'personData': [
-            //About This Data: Copied From Excel, Last Updated:August 8th, 2014
-{ id: 1, name: "高靖男", province: "beijing", city: "北京", school: "首都经贸大学", major: "公共管理", detailPage: "5", backgroundPhoto: "5", photo: "73", phone: "13994305596", qq: "549431978", },
-{ id: 2, name: "张亦之", province: "beijing", city: "北京", school: "北京邮电大学(宏福校区)", photo: "31", qq: "739383613", },
-{ id: 3, name: "王慧康", province: "beijing", city: "北京", school: "北京交通大学", photo: "52", },
-{ id: 4, name: "张赟", province: "beijing", city: "北京", school: "北京工商大学", photo: "57", },
-{ id: 5, name: "张彩云", province: "guangdong", city: "珠海", school: "暨南大学", major: "自动化", detailPage: "6", backgroundPhoto: "6.v2", wechat: "A13403428612", photo: "10", phone: "13403428612", email: "13403428612@163.com", qq: "2084498307", },
-{ id: 6, name: "赵明", province: "guangdong", city: "广州", school: "广东工业大学", photo: "46", phone: "13613525998", qq: "927257754", },
-{ id: 7, name: "石文龙", province: "heilongjiang", city: "哈尔滨", school: "东北林业大学", photo: "9", qq: "2285874983", },
-{ id: 8, name: "韩蕾", province: "henan", city: "郑州", school: "郑州大学", photo: "2", qq: "1279456545", },
-{ id: 9, name: "田思琦", province: "hubei", city: "武汉", school: "中南财经政法大学", photo: "16", phone: "13663421203", qq: "907683817", },
-{ id: 10, name: "李佳音", province: "hubei", city: "武汉", school: "中国地质大学(武汉)", photo: "36", qq: "392248358", },
-{ id: 11, name: "高伟", province: "hubei", city: "武汉", school: "武汉工程大学", photo: "29", phone: "18735080770", qq: "936992306", },
-{ id: 12, name: "龚琪", province: "hunan", city: "长沙", school: "中南大学", photo: "6", phone: "13293526449", qq: "1183498100", },
-{ id: 13, name: "任福全", province: "hunan", city: "长沙", school: "国防科技大学", photo: "5", phone: "18535285226", qq: "908347726", },
-{ id: 14, name: "范江", province: "jiangsu", city: "镇江", school: "江苏大学", major: "机械电子工程", detailPage: "2", backgroundPhoto: "2", photo: "20", phone: "15203423712", qq: "948302112", },
-{ id: 15, name: "刘伟", province: "jiangsu", city: "徐州", school: "中国矿业大学", photo: "39", phone: "13935256023", qq: "704533758", },
-{ id: 16, name: "李玲玲", province: "jiangsu", city: "无锡", school: "江南大学", photo: "35", qq: "815117902", },
-{ id: 17, name: "赵晶", province: "jiangsu", city: "南京", school: "南京农业大学", major: "材料成型及控制工程", detailPage: "8", backgroundPhoto: "8", photo: "18", phone: "18168057521", phone2: "0352-3829230", email: "544415419@qq.com", qq: "544415419", },
-{ id: 18, name: "武雁伟", province: "jiangsu", city: "徐州", school: "中国矿业大学", photo: "30", },
-{ id: 19, name: "崔越", province: "jiangsu", city: "徐州", school: "中国矿业大学", photo: "51", phone: "13383529796", qq: "1051879865", },
-{ id: 20, name: "李伯轩", province: "jiangsu", city: "南京", school: "南京大学", photo: "41", qq: "2425631404", },
-{ id: 21, name: "朱诗雅", province: "jiangsu", city: "镇江", school: "江苏大学", photo: "37", },
-{ id: 22, name: "任凯", province: "jilin", city: "吉林", school: "吉林化工大学", photo: "48", qq: "532465106", },
-{ id: 23, name: "王圣元", province: "jilin", city: "长春", school: "长春理工大学", detailPage: "1", backgroundPhoto: "1", photo: "40", phone: "18235227290", qq: "294335470", },
-{ id: 24, name: "许圣华", province: "jilin", city: "长春", school: "吉林大学", photo: "15", qq: "1786404107", },
-{ id: 25, name: "李海", province: "jilin", city: "长春", school: "吉林大学", major: "工商管理", detailPage: "7", backgroundPhoto: "7", wechat: "Y18234250560Y", photo: "21", phone: "18234250560", email: "1019928979@qq.com", qq: "1019928979", },
-{ id: 26, name: "苏佳琪", province: "jilin", city: "长春", school: "吉林财经大学", photo: "56", qq: "942469154", },
-{ id: 27, name: "刘翔宇", province: "liaoning", city: "阜新", school: "辽宁工程技术大学", },
-{ id: 28, name: "马晓瑞", province: "liaoning", city: "大连", school: "大连大学", detailPage: "4", backgroundPhoto: "0", photo: "4", phone: "13203521625", email: "maxiaorui@foxmail.com", qq: "254360957", },
-{ id: 29, name: "谭涛", province: "macau", city: "澳门", school: "澳门大学", photo: "22", phone: "13753229437", qq: "806503357", },
-{ id: 30, name: "晋雪琪", province: "shaanxi", city: "杨凌", school: "西北农林科技大学", photo: "8", },
-{ id: 31, name: "乔波", province: "shaanxi", city: "西安", school: "西安交通大学", major: "软件工程", photo: "11", email: "QiaoBo@outlook.com", qq: "1335288659", },
-{ id: 32, name: "温靖轩", province: "shaanxi", city: "西安", school: "西安电子科技", photo: "27", phone: "13623528001", qq: "853310132", },
-{ id: 33, name: "张文娜", province: "shandong", city: "威海", school: "哈尔滨工业大学(威海)", photo: "23", phone: "18335252440", qq: "2470737208", },
-{ id: 34, name: "张众", province: "shandong", city: "济南", school: "山东大学", photo: "38", phone: "15536211954", qq: "1143982814", },
-{ id: 35, name: "闫艺澎", province: "shandong", city: "威海", school: "哈尔滨工业大学(威海)", photo: "63", },
-{ id: 36, name: "程鑫", province: "shandong", city: "威海", school: "哈尔滨工业大学(威海)", photo: "50", qq: "1209315715", },
-{ id: 37, name: "王玉香", province: "shanghai", city: "上海", school: "上海大学", photo: "47", phone: "18835256569", qq: "362862041", },
-{ id: 38, name: "杨泽鹏", province: "shanghai", city: "上海", school: "上海工程技术大学", photo: "44", phone: "13103425356", },
-{ id: 39, name: "张宇坤", province: "shanghai", city: "上海", school: "上海电力学院", photo: "61", },
-{ id: 40, name: "张蕾", province: "shanghai", city: "上海", school: "华东理工大学", photo: "34", phone: "18735084168", qq: "569755502", },
-{ id: 41, name: "张益民", province: "shanxi", city: "太原", school: "太原理工大学", photo: "71", phone: "13403643158", qq: "964580448", },
-{ id: 42, name: "谷思雨", province: "shanxi", city: "太原", school: "山西大学", major: "工商管理", detailPage: "3", backgroundPhoto: "0", photo: "49", phone: "15234209665", qq: "645776361", },
-{ id: 43, name: "张玮", province: "shanxi", city: "太原", school: "太原理工大学", photo: "25", },
-{ id: 44, name: "张建功", province: "shanxi", city: "太原", school: "太原理工大学", photo: "13", qq: "594981379", },
-{ id: 45, name: "王亚楠", province: "shanxi", city: "太原", school: "太原理工大学", photo: "24", qq: "2464136912", },
-{ id: 46, name: "郭瑞林", province: "shanxi", city: "太原", school: "太原理工大学", photo: "66", },
-{ id: 47, name: "郭靖", province: "shanxi", city: "太原", school: "太原理工大学", photo: "53", },
-{ id: 48, name: "程江", province: "shanxi", city: "太原", school: "太原科技大学", photo: "60", },
-{ id: 49, name: "李鹏", province: "shanxi", city: "太原", school: "山西大学", photo: "19", phone: "13546004515", qq: "1638510549", },
-{ id: 50, name: "张利荣", province: "shanxi", city: "太原", school: "山西财经大学", photo: "58", },
-{ id: 51, name: "冯忠祥", province: "shanxi", city: "太原", school: "山西财经大学", photo: "69", phone: "15110719296", qq: "791134035", },
-{ id: 52, name: "胡鹏冲", province: "sichuan", city: "成都", school: "四川大学", photo: "7", phone: "18734625786", qq: "269049631", },
-{ id: 53, name: "闫艺湃", province: "sichuan", city: "成都", school: "四川大学", photo: "62", qq: "512346740", },
-{ id: 54, name: "乔亚男", province: "sichuan", city: "成都", school: "四川大学", photo: "28", phone: "13834129072", qq: "1196521782", },
-{ id: 55, name: "赵剑喆", province: "sichuan", city: "成都", school: "电子科技大学", photo: "32", qq: "458113051", },
-{ id: 56, name: "刘奇", province: "sichuan", city: "成都", school: "成都信息工程学院", photo: "45", },
-{ id: 57, name: "杨亚琼", province: "tianjin", city: "天津", school: "天津商业大学", photo: "14", qq: "13753229437", },
-{ id: 58, name: "李觊尧", province: "tianjin", city: "天津", school: "天津工业大学", photo: "17", phone: "18335203218", qq: "1160107461", },
-{ id: 59, name: "吴璇", province: "tianjin", city: "天津", school: "天津大学", photo: "3", qq: "382695854", },
-{ id: 60, name: "王佳颉", province: "tianjin", city: "天津", school: "南开大学", photo: "1", qq: "954628981", },
-{ id: 61, name: "王鹤媛", province: "tianjin", city: "天津", school: "南开大学", photo: "12", phone: "15296625164", qq: "2952203838", },
-{ id: 62, name: "董宁", province: "zhejiang", city: "杭州", school: "浙江理工大学", photo: "33", phone: "13994338807", qq: "380245935", },
-
-
-        ],
+        'personData': mapOfSixteen.data,
         'cityList': [
             //About This Data: Copied From Excel, Last Updated:August 8th, 2014
-{ name: 'hangzhou', fullName: '杭州', coordinateX: 475, coordinateY: 301, tipPos: 'bottom', province: 'zhejiang' },
-{ name: 'tianjin', fullName: '天津', coordinateX: 425, coordinateY: 194, tipPos: 'right', province: 'tianjin' },
-{ name: 'chengdu', fullName: '成都', coordinateX: 307, coordinateY: 305, tipPos: 'bottom', province: 'sichuan' },
-{ name: 'taiyuan', fullName: '太原', coordinateX: 380, coordinateY: 217, tipPos: 'top', province: 'shanxi' },
-{ name: 'shanghai', fullName: '上海', coordinateX: 486, coordinateY: 287, tipPos: 'right', province: 'shanghai' },
-{ name: 'weihai', fullName: '威海', coordinateX: 477, coordinateY: 208, tipPos: 'right', province: 'shandong' },
-{ name: 'jinan', fullName: '济南', coordinateX: 430, coordinateY: 221, tipPos: 'top', province: 'shandong' },
-{ name: 'xian', fullName: '西安', coordinateX: 351, coordinateY: 263, tipPos: 'top', province: 'shaanxi' },
-{ name: 'yangling', fullName: '杨凌', coordinateX: 339, coordinateY: 265, tipPos: 'left', province: 'shaanxi' },
-{ name: 'macau', fullName: '澳门', coordinateX: 413, coordinateY: 417, tipPos: 'bottom', province: 'macau' },
-{ name: 'dalian', fullName: '大连', coordinateX: 470, coordinateY: 183, tipPos: 'top', province: 'liaoning' },
-{ name: 'changchun', fullName: '长春', coordinateX: 491, coordinateY: 116, tipPos: 'top', province: 'jilin' },
-{ name: 'jilin', fullName: '吉林', coordinateX: 499, coordinateY: 117, tipPos: 'right', province: 'jilin' },
-{ name: 'zhenjiang', fullName: '镇江', coordinateX: 468, coordinateY: 275, tipPos: 'top', province: 'jiangsu' },
-{ name: 'xuzhou', fullName: '徐州', coordinateX: 442, coordinateY: 254, tipPos: 'top', province: 'jiangsu' },
-{ name: 'wuxi', fullName: '无锡', coordinateX: 474, coordinateY: 281, tipPos: 'right', province: 'jiangsu' },
-{ name: 'nanjing', fullName: '南京', coordinateX: 469, coordinateY: 282, tipPos: 'left', province: 'jiangsu' },
-{ name: 'changsha', fullName: '长沙', coordinateX: 394, coordinateY: 333, tipPos: 'left', province: 'hunan' },
-{ name: 'wuhan', fullName: '武汉', coordinateX: 408, coordinateY: 304, tipPos: 'left', province: 'hubei' },
-{ name: 'zhengzhou', fullName: '郑州', coordinateX: 399, coordinateY: 255, tipPos: 'left', province: 'henan' },
-{ name: 'harbin', fullName: '哈尔滨', coordinateX: 493, coordinateY: 92, tipPos: 'top', province: 'heilongjiang' },
-{ name: 'zhuhai', fullName: '珠海', coordinateX: 408, coordinateY: 411, tipPos: 'left', province: 'guangdong' },
-{ name: 'guangzhou', fullName: '广州', coordinateX: 411, coordinateY: 398, tipPos: 'right', province: 'guangdong' },
-{ name: 'beijing', fullName: '北京', coordinateX: 414, coordinateY: 182, tipPos: 'top', province: 'beijing' },
-{ name: 'fuxin', fullName: '阜新', coordinateX: 464, coordinateY: 149, tipPos: 'left', province: 'liaoning' },
+{ name: 'hangzhou', fullName: '杭州', namePY: 'hang zhou', coordinateX: 475, coordinateY: 301, tipPos: 'bottom', province: 'zhejiang' },
+{ name: 'tianjin', fullName: '天津', namePY: 'tian jin', coordinateX: 425, coordinateY: 194, tipPos: 'right', province: 'tianjin' },
+{ name: 'chengdu', fullName: '成都', namePY: 'cheng du', coordinateX: 307, coordinateY: 305, tipPos: 'bottom', province: 'sichuan' },
+{ name: 'taiyuan', fullName: '太原', namePY: 'tai yuan', coordinateX: 380, coordinateY: 217, tipPos: 'top', province: 'shanxi' },
+{ name: 'shanghai', fullName: '上海', namePY: 'shang hai', coordinateX: 486, coordinateY: 287, tipPos: 'right', province: 'shanghai' },
+{ name: 'weihai', fullName: '威海', namePY: 'wei hai', coordinateX: 477, coordinateY: 208, tipPos: 'right', province: 'shandong' },
+{ name: 'jinan', fullName: '济南', namePY: 'ji nan', coordinateX: 430, coordinateY: 221, tipPos: 'top', province: 'shandong' },
+{ name: 'xian', fullName: '西安', namePY: 'xi an ', coordinateX: 351, coordinateY: 263, tipPos: 'top', province: 'shaanxi' },
+{ name: 'yangling', fullName: '杨凌', namePY: 'yang ling', coordinateX: 339, coordinateY: 265, tipPos: 'left', province: 'shaanxi' },
+{ name: 'macau', fullName: '澳门', namePY: 'ao men', coordinateX: 413, coordinateY: 417, tipPos: 'bottom', province: 'macau' },
+{ name: 'dalian', fullName: '大连', namePY: 'da lian', coordinateX: 470, coordinateY: 183, tipPos: 'top', province: 'liaoning' },
+{ name: 'changchun', fullName: '长春', namePY: 'chang chun', coordinateX: 491, coordinateY: 116, tipPos: 'top', province: 'jilin' },
+{ name: 'jilin', fullName: '吉林', namePY: 'ji lin', coordinateX: 499, coordinateY: 117, tipPos: 'right', province: 'jilin' },
+{ name: 'zhenjiang', fullName: '镇江', namePY: 'zhen jiang', coordinateX: 468, coordinateY: 275, tipPos: 'top', province: 'jiangsu' },
+{ name: 'xuzhou', fullName: '徐州', namePY: 'xu zhou', coordinateX: 442, coordinateY: 254, tipPos: 'top', province: 'jiangsu' },
+{ name: 'wuxi', fullName: '无锡', namePY: 'wu xi ', coordinateX: 474, coordinateY: 281, tipPos: 'right', province: 'jiangsu' },
+{ name: 'nanjing', fullName: '南京', namePY: 'nan jing', coordinateX: 469, coordinateY: 282, tipPos: 'left', province: 'jiangsu' },
+{ name: 'changsha', fullName: '长沙', namePY: 'chang sha', coordinateX: 394, coordinateY: 333, tipPos: 'left', province: 'hunan' },
+{ name: 'wuhan', fullName: '武汉', namePY: 'wu han', coordinateX: 408, coordinateY: 304, tipPos: 'left', province: 'hubei' },
+{ name: 'zhengzhou', fullName: '郑州', namePY: 'zheng zhou', coordinateX: 399, coordinateY: 255, tipPos: 'left', province: 'henan' },
+{ name: 'harbin', fullName: '哈尔滨', namePY: 'ha er bin', coordinateX: 493, coordinateY: 92, tipPos: 'top', province: 'heilongjiang' },
+{ name: 'zhuhai', fullName: '珠海', namePY: 'zhu hai', coordinateX: 408, coordinateY: 411, tipPos: 'left', province: 'guangdong' },
+{ name: 'guangzhou', fullName: '广州', namePY: 'guang zhou', coordinateX: 411, coordinateY: 398, tipPos: 'right', province: 'guangdong' },
+{ name: 'beijing', fullName: '北京', namePY: 'bei jing', coordinateX: 414, coordinateY: 182, tipPos: 'top', province: 'beijing' },
+{ name: 'fuxin', fullName: '阜新', namePY: 'fu xin', coordinateX: 464, coordinateY: 149, tipPos: 'left', province: 'liaoning' },
 
         ],
         'provinceList': [
-            ['heilongjiang', '黑龙江', []],
-            ['jilin', '吉林', []],
-            ['liaoning', '辽宁', []],
-            //['hebei', '河北', []],
-            ['shandong', '山东', []],
-            ['jiangsu', '江苏', []],
-            ['zhejiang', '浙江', []],
-            //['anhui', '安徽', []],
-            ['henan', '河南', []],
-            ['shanxi', '山西', []],
-            ['shaanxi', '陕西', []],
-            //['gansu', '甘肃', []],
-            ['hubei', '湖北', []],
-            //['jiangxi', '江西', []],
-            //['fujian', '福建', []],
-            ['hunan', '湖南', []],
-            //['guizhou', '贵州', []],
-            ['sichuan', '四川', []],
-            //['yunnan', '云南', []],
-            //['qinghai', '青海', []],
-            //['hainan', '海南', []],
-            ['shanghai', '上海', []],
-            //['chongqing', '重庆', []],
-            ['tianjin', '天津', []],
-            ['beijing', '北京', []],
-            //['ningxia', '宁夏', []],
-            //['neimongol', '内蒙古', []],
-            //['guangxi', '广西', []],
-            //['xinjiang', '新疆', []],
-            ['guangdong', '广东', []],
-            ['macau', '澳门', []],
-            //['hongkong', '香港', []],
-            //['taiwan', '台湾', []],
-            //['xizang, '西藏', []],
+            ['heilongjiang', '黑龙江', 'hei long jiang'],
+            ['jilin', '吉林', 'ji lin'],
+            ['liaoning', '辽宁', 'liao ning'],
+            //['hebei', '河北', 'he bei' ],
+            ['shandong', '山东', 'shan dong'],
+            ['jiangsu', '江苏', 'jiang su'],
+            ['zhejiang', '浙江', 'zhe jiang'],
+            //['anhui', '安徽', 'an hui' ],
+            ['henan', '河南', 'he nan'],
+            ['shanxi', '山西', 'shan xi'],
+            ['shaanxi', '陕西', 'shan xi'],
+            //['gansu', '甘肃', 'gan su' ],
+            ['hubei', '湖北', 'hu bei'],
+            //['jiangxi', '江西', 'jiang xi' ],
+            //['fujian', '福建', 'fu jian' ],
+            ['hunan', '湖南', 'hu nan'],
+            //['guizhou', '贵州', 'gui zhou' ],
+            ['sichuan', '四川', 'si chuan'],
+            //['yunnan', '云南', 'yun nan' ],
+            //['qinghai', '青海', 'qing hai' ],
+            //['hainan', '海南', 'hai nan' ],
+            ['shanghai', '上海', 'shang hai'],
+            //['chongqing', '重庆', 'chong qing' ],
+            ['tianjin', '天津', 'tian jin'],
+            ['beijing', '北京', 'bei jing'],
+            //['ningxia', '宁夏', 'ning xia' ],
+            //['neimongol', '内蒙古', 'nei meng gu' ],//NOTICE FOR ITS ENG_NAME
+            //['guangxi', '广西', 'guang xi' ],
+            //['xinjiang', '新疆', 'xin jaing' ],
+            ['guangdong', '广东', 'gaung dong'],
+            ['macau', '澳门', 'ao men'],
+            //['hongkong', '香港', 'xiang gang' ],
+            //['taiwan', '台湾', 'tai wan' ],
+            //['xizang, '西藏', 'xi znag' ],
         ],
         'pointDrawType': {
-            type: 'all',//all province person
+            type: 'all',//all province person 
             info: 0 //all:N/A, province:index of province,person:id of person
         },
         'personFitleType': {
-            type: 'all',//all province 
-            info: 0,//for school case, the value shuold be the name of school
+            type: 'all',//all province search
+            info: 0,//for school case, the value shuold be the name of school, search:Array of the indexes of result
         },
         'provinceSelected': '',
         'mapExternal': {},
     };
     var $_ctrl = $( "div#ctrl-box" ),
+        $_ctrl_search = $( 'div#ctrl-search' ),
         $_ctrl_toggle = $( "span#ctrl-toggle" ),
         $_ctrl_province = $( 'div#ctrl-province' ),
         $_maps_box = $( 'div#maps-box' ),
@@ -252,7 +190,13 @@ mapOfSixteen.main = ( function () {
             sta.mapRatio = windowWidth / mapRaw.width;
         }
 
-        sta.mapCustomRatio = mapRealRatio / sta.mapRatio;
+        if ( mapRealRatio / sta.mapRatio > 1 ) {
+            sta.mapCustomRatio = mapRealRatio / sta.mapRatio
+        } else {
+            sta.mapCustomRatio = 1;
+            mapRealRatio = sta.mapRatio;
+        }
+
         sta.mapPositionTop = windowHeight / 2 - sta.mapCenter[1] * mapRealRatio;
         sta.mapPositionLeft = windowWidth / 2 - sta.mapCenter[0] * mapRealRatio;
 
@@ -277,7 +221,6 @@ mapOfSixteen.main = ( function () {
         mapsCtrl_set();
         province_highlight();
     }
-
     function map_zoomIn( zoomLevel ) {
         if ( !sta.mapCtrl.zoomIn ) { return false; }
         var realRatio = sta.mapRatio * sta.mapCustomRatio;
@@ -492,6 +435,11 @@ mapOfSixteen.main = ( function () {
                     sta.personData[i].node.addClass( 'ctrl-nameitem-off' );
                 }
             }
+        } else if ( sta.personFitleType.type == "search" ) {
+            var list = sta.personFitleType.info;
+            for ( var i = list.length - 1; i >= 0; i-- ) {
+                sta.personData[list[i]].node.prependTo( $( sta.personData[list[i]].node.parent() ) );
+            }
         }
     }
     function infoTab_change() {
@@ -536,18 +484,20 @@ mapOfSixteen.main = ( function () {
             $( 'div#info-cont-nullTip' ).css( 'display', 'none' );
         }
 
+        //Detail Page iFrame
         if ( j.detailPage ) {
             $( '#info-page-tip' ).css( 'display', 'none' );
             $( '#info-page-ext' ).css( 'display', 'block' ).attr( 'src', 'person/page/' + j.detailPage + '.html' );
-            if ( j.backgroundPhoto && j.backgroundPhoto != 0 ) {
-                $( '#info-banner' ).attr( 'src', 'person/img/' + j.backgroundPhoto + '.jpg' );
-            } else {
-                $( '#info-banner' ).attr( 'src', 'img/banner-default-' + ( Math.floor( Math.random() * 6 + 1 ) ).toFixed( 0 ) + '.jpg' );
-            }
         } else {
             $( '#info-page-tip' ).css( 'display', 'block' );
             $( '#info-page-ext' ).css( 'display', 'none' );
-            $( '#info-banner' ).attr( 'src', 'img/banner-default-' + ( Math.random() * 6 + 0.5 ).toFixed( 0 ) + '.jpg' );
+        }
+
+        //Detail Page Background Picture
+        if ( j.backgroundPhoto && j.backgroundPhoto != 0 ) {
+            $( '#info-banner' ).attr( 'src', 'person/img/' + j.backgroundPhoto + '.jpg' );
+        } else {
+            $( '#info-banner' ).attr( 'src', 'img/background/' + ( Math.random() * 9 + 0.5 ).toFixed( 0 ) + '.jpg' );
         }
     }
     function infoBox_show( infoTab ) {
@@ -705,6 +655,245 @@ mapOfSixteen.main = ( function () {
         // If we make it here, we haven't found a rich-tier mobile browser.
         return false;
     }
+    function search_close() {
+        if ( sta.search ) {
+            sta.search = false;
+            $_ctrl_nameList.css( 'height', '380px' );
+            $_ctrl_search.css( {
+                'height': '10px',
+                'margin-top': '10px'
+            } );
+            //Change To National List
+            sta.pointDrawType.type = 'all';
+            $_ctrl_school_btn.css( 'display', 'none' ).text( '选择省份' );
+            $( 'span#ctrl-gt' ).css( 'display', 'none' );
+            point_draw();
+            $_ctrl_province_btn.text( '选择省份' );
+            if ( sta.school ) {
+                $_ctrl_school.removeClass( 'ctrl-list-school-box-on' );
+                sta.school = false;
+            }
+            if ( sta.province ) {
+                $_ctrl_province.removeClass( 'ctrl-list-province-box-on' );
+                sta.province = false;
+            }
+            var fullList = [];
+            for ( var i = 0; i < sta.personData.length; i++ ) {
+                fullList.push( i );
+            }
+            sta.personFitleType.type = 'search';
+            sta.personFitleType.info = fullList;
+            person_fitle();
+            sta.personFitleType.type = 'all';
+            person_fitle();
+
+            sta.provinceSelected = "";
+            province_highlight();
+            $( 'div#maps-closeSearch' ).fadeOut( 300 );
+            $( '#ctrl-search-text' ).val( "" );
+        }
+        return false;
+    }
+    function search_open() {
+
+        sta.search = true;
+        $_ctrl_nameList.css( 'height', '300px' );
+        $_ctrl_search.css( {
+            'height': '70px',
+            'margin-top': '30px'
+        } );
+        //Change To National List
+
+
+        $_ctrl_school_btn.css( 'display', 'none' ).text( '选择省份' );
+        $( 'span#ctrl-gt' ).css( 'display', 'none' );
+
+        $_ctrl_province_btn.text( '选择省份' );
+        if ( sta.school ) {
+            $_ctrl_school.removeClass( 'ctrl-list-school-box-on' );
+            sta.school = false;
+        }
+        if ( sta.province ) {
+            $_ctrl_province.removeClass( 'ctrl-list-province-box-on' );
+            sta.province = false;
+        }
+        sta.provinceSelected = "";
+        province_highlight();
+        $( 'div#maps-showAll' ).fadeOut( 300 );
+        $( 'div#maps-closeSearch' ).fadeIn( 300 );
+        sta.pointDrawType.type = 'all';
+        point_draw();
+
+        sta.personFitleType.type = 'all';
+        person_fitle();
+        var fullList = [];
+        for ( var i = 0; i < sta.personData.length; i++ ) {
+            fullList.push( i );
+        }
+        sta.personFitleType.type = 'search';
+        sta.personFitleType.info = fullList;
+        person_fitle();
+        $( '#ctrl-search-text' ).val( "" );
+
+
+        return false;
+    }
+    function search_search() {
+        var t = $( '#ctrl-search-text' ).val().trim().toLowerCase();
+        var searchDescription = $( 'div#ctrl-search-description' );
+        if ( t == "" ) {
+            searchDescription.html( '输入姓名、学校、电话号码等信息以开始。<br />支持拼音搜索，结果排在下方列表最前' );
+            return false;
+        }
+        var testForInclude = function ( stringBig, stringSmall ) {
+            for ( var i = 0; i < stringSmall.length; i++ ) {
+                if ( stringBig.indexOf( stringSmall[i] ) == -1 ) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        var testForPinYinMatch = function ( PinYin, query ) {
+            var py = PinYin.trim().split( ' ' ), str1 = '', str2 = '', str3 = '';
+            for ( var i = 0; i < py.length; i++ ) {
+                str1 += py[i][0];
+                str2 += py[i].match( /^([zcs][h]|[bpmfdtnlgkhjqxzcsrywae])(.*)$/ )[1];
+                str3 += py[i].match( /^([zcs][h]|[bpmfdtnlgkhjqxzcsryw]|[ae]n[g]?|a[oi]?|e[ir]?)(.*)$/ )[1];
+                if ( py.slice(i,py.length).join( '' ).slice( 0, query.length ) == query ) {
+                    return true;
+                }
+            }
+            if ( str1.indexOf( query ) != -1
+                || str2.indexOf( query ) != -1
+                || str3.indexOf( query ) != -1 ) {
+                return true;
+            }
+            return false;
+        };
+
+        //Search Preparation
+        var resultList = [];
+        var fullList = [], tempList = [];
+        var rt;
+        for ( var i = 0; i < sta.personData.length; i++ ) {
+            fullList.push( i );
+        }
+        //Search Process
+        if ( t.match( /^[0-9]{1,}$/ ) ) {
+            //Number
+
+            //Search the value of phone
+            for ( var i = 0; i < fullList.length; i++ ) {
+                if ( sta.personData[fullList[i]].phone && sta.personData[fullList[i]].phone.toString().slice( 0, t.length ) == t ) {
+                    resultList.push( fullList[i] );
+                } else {
+                    tempList.push( fullList[i] );
+                }
+            }
+            fullList = JSON.parse( JSON.stringify( tempList ) );
+            //tempList=[];
+
+            //Search the value of QQ
+            for ( var i = 0; i < fullList.length; i++ ) {
+                if ( sta.personData[fullList[i]].qq && sta.personData[fullList[i]].qq.toString().slice( 0, t.length ) == t ) {
+                    resultList.push( fullList[i] );
+                }
+                //else {
+                //tempList.push( fullList[i] );
+                //}
+            }
+            //fullList = JSON.parse( JSON.stringify( tempList ) );
+
+
+            rt = "搜索数字:" + t + '(' + resultList.length + '个符合项)<br />依次匹配电话、QQ';
+        } else if ( t.match( /^[a-z]{1,}$/ ) ) {
+            //PinYin
+            //Search the value of name
+            for ( var i = 0; i < fullList.length; i++ ) {
+                if ( testForPinYinMatch( sta.personData[fullList[i]].namePY, t ) ) {
+                    resultList.push( fullList[i] );
+                } else {
+                    tempList.push( fullList[i] );
+                }
+            }
+            fullList = JSON.parse( JSON.stringify( tempList ) );
+            tempList = [];
+            //Search the value of major
+            for ( var i = 0; i < fullList.length; i++ ) {
+                if ( sta.personData[fullList[i]].majorPY && testForPinYinMatch( sta.personData[fullList[i]].majorPY, t ) ) {
+                    resultList.push( fullList[i] );
+                }
+                //else {
+                //tempList.push( fullList[i] );
+                //}
+            }
+            //fullList = JSON.parse( JSON.stringify( tempList ) );
+            //tempList = [];
+            rt = "搜索拼音:" + t + '(' + resultList.length + '个符合项)<br />依次匹配姓名、专业';
+        } else if ( t.match( /^[\u4e00-\u9fa5]{1,}$/ ) ) {
+            //Chinese
+            //Search the value of name (Match Left)
+            for ( var i = 0; i < fullList.length; i++ ) {
+                if ( sta.personData[fullList[i]].name.slice( 0, t.length ) == t ) {
+                    resultList.push( fullList[i] );
+                } else {
+                    tempList.push( fullList[i] );
+                }
+            }
+            fullList = JSON.parse( JSON.stringify( tempList ) );
+            tempList = [];
+            //Search the value of name (Match Any)
+            for ( var i = 0; i < fullList.length; i++ ) {
+                if ( sta.personData[fullList[i]].name.indexOf( t ) != -1 ) {
+                    resultList.push( fullList[i] );
+                } else {
+                    tempList.push( fullList[i] );
+                }
+            }
+            fullList = JSON.parse( JSON.stringify( tempList ) );
+            tempList = [];
+            //Search the value of major
+            for ( var i = 0; i < fullList.length; i++ ) {
+                if ( sta.personData[fullList[i]].major && sta.personData[fullList[i]].major.indexOf( t ) != -1 ) {
+                    resultList.push( fullList[i] );
+                } else {
+                    tempList.push( fullList[i] );
+                }
+            }
+            fullList = JSON.parse( JSON.stringify( tempList ) );
+            tempList = [];
+            //Search the value of school
+            for ( var i = 0; i < fullList.length; i++ ) {
+                if ( testForInclude( sta.personData[fullList[i]].school, t ) ) {
+                    resultList.push( fullList[i] );
+                } else {
+                    tempList.push( fullList[i] );
+                }
+            }
+            fullList = JSON.parse( JSON.stringify( tempList ) );
+            //tempList = [];
+            //Search the value of city
+            for ( var i = 0; i < fullList.length; i++ ) {
+                if ( sta.personData[fullList[i]].city.slice( 0, t.length ) == t ) {
+                    resultList.push( fullList[i] );
+                }
+                //else {
+                //    tempList.push( fullList[i] );
+                //}
+            }
+            rt = "搜索:" + t + '(' + resultList.length + '个符合项)<br />依次匹配姓名、专业、学校、城市';
+        }
+        rt = rt || ( 'Sorry! 没有理解您的输入.<br />尝试输入"'
+            + [133, 150, 186, 170][Math.floor( Math.random() * ( 4 ) )] + '","'
+            + ['beijing', 'ty', 'tianjin', 'shanxidaxue'][Math.floor( Math.random() * ( 4 ) )] + '","'
+            + ['上海', '南大', '工程', '技术'][Math.floor( Math.random() * ( 4 ) )] + '"' );
+        //Search Result Presentation
+        sta.personFitleType.info = resultList;
+        searchDescription.html( rt );
+        person_fitle();
+        return false;
+    }
+
 
     //Add Events Processor
     var mobileTestResult = mobile_test();
@@ -714,6 +903,7 @@ mapOfSixteen.main = ( function () {
 
     $_ctrl_toggle.bind(( mobileTestResult ? 'tap' : 'click' ), function () {
         if ( sta['ctrl'] ) {
+            search_close();
             $_ctrl_toggle.removeClass( 'ctrl-open-on' );
             $_ctrl.removeClass( 'ctrl-box-on' );
             for ( var i = 0; i < sta.personData.length; i++ ) {
@@ -749,15 +939,19 @@ mapOfSixteen.main = ( function () {
         sta.provinceSelected = "";
         province_highlight();
         $( 'div#maps-showAll' ).fadeOut( 300 );
+        search_close();
         return false;
     } );
 
     $_ctrl_province_btn.bind(( mobileTestResult ? 'tap' : 'click' ), function () {
+        search_close();
         if ( sta.school ) {
             $_ctrl_school.removeClass( 'ctrl-list-school-box-on' );
             sta.school = false;
         }
         if ( sta.province ) {
+            $_ctrl_province.removeClass( 'ctrl-list-province-box-on' );
+            sta.province = false;
             return;
         }
         $_ctrl_province.addClass( 'ctrl-list-province-box-on' );
@@ -803,7 +997,7 @@ mapOfSixteen.main = ( function () {
     $( 'div#maps-ctrl-out' ).bind(( mobileTestResult ? 'tap' : 'click' ), map_zoomOut );
 
     $( 'div#maps-showAll' ).fadeOut( 50 );
-
+    $( 'div#maps-closeSearch' ).fadeOut( 50 );
     $( 'div#maps-showAll' ).bind(( mobileTestResult ? 'tap' : 'click' ), function () {
 
         sta.pointDrawType.type = 'all';
@@ -827,6 +1021,30 @@ mapOfSixteen.main = ( function () {
         $( 'div#maps-showAll' ).fadeOut( 300 );
         return false;
     } );
+
+
+    $( 'div#maps-closeSearch' ).bind(( mobileTestResult ? 'tap' : 'click' ), function () {
+        search_close();
+    } );
+
+    $( 'div#ctrl-search-button' ).bind(( mobileTestResult ? 'tap' : 'click' ), function () {
+        if ( sta.search ) {
+            //Close Search
+            search_close();
+        } else {
+            //Open Search
+            search_open();
+        }
+    } );
+
+
+    document.getElementById( 'ctrl-search-text' ).oninput = function () {
+        if ( window.setImmediate ) {
+            setImmediate( search_search );
+        } else {
+            setTimeout( search_search, 20 );
+        }
+    };
 
     if ( mobileTestResult ) {
         $( 'div#maps-points' ).touchstart( function ( e ) {
@@ -967,8 +1185,8 @@ mapOfSixteen.main = ( function () {
 
 //----- JSONP -----
 ( function () {
-    //JSONP : ID = 4
-    var id = 4;
+    //JSONP : ID = 5
+    var id = 5;
     mapOfSixteen.loader.update( id );
 } )()
 
