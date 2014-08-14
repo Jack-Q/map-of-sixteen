@@ -13,7 +13,6 @@ mapOfSixteen.data = [
 //++++++++++++++++++++++++++++++++++++++++++++++++++++
 //COPIED DATA SHOULD BE PASTED BETWEEN THESE TWO LINES
 // OF PLUS TAG (+).
-
 { id: 1, name: "程江", namePY: "cheng jiang", province: "shanxi", city: "太原", school: "太原科技大学", photo: "60", },
 { id: 2, name: "程鑫", namePY: "cheng xin", province: "shandong", city: "威海", school: "哈尔滨工业大学(威海)", photo: "50", qq: "1209315715", },
 { id: 3, name: "崔越", namePY: "cui yue", province: "jiangsu", city: "徐州", school: "中国矿业大学", photo: "51", phone: "13383529796", qq: "1051879865", },
@@ -85,7 +84,7 @@ mapOfSixteen.data = [
 { id: 69, name: "张赟", namePY: "zhang yun", province: "beijing", city: "北京", school: "北京工商大学", photo: "57", },
 { id: 70, name: "张众", namePY: "zhang zhong", province: "shandong", city: "济南", school: "山东大学", backgroundPhoto: "10", photo: "38", phone: "15536211954", qq: "1143982814", },
 { id: 71, name: "赵剑喆", namePY: "zhao jian zhe", province: "sichuan", city: "成都", school: "电子科技大学", photo: "32", qq: "458113051", },
-{ id: 72, name: "赵晶", namePY: "zhao jing", province: "jiangsu", city: "南京", school: "南京农业大学", major: "材料成型及控制工程", majorPY: "cai liao cheng xing ji kong zhi gong cheng", detailPage: "8", backgroundPhoto: "8", photo: "18", phone: "18168057521", phone2: "0352-3829230", email: "544415419@qq.com", qq: "544415419", },
+{ id: 72, name: "赵晶", namePY: "zhao jing", province: "jiangsu", city: "南京", school: "南京农业大学", major: "材料成型及控制工程", majorPY: "cai liao cheng xing ji kong zhi gong cheng", detailPage: "8", backgroundPhoto: "8", photo: "18", phone: "18168057520", phone2: "0352-3829230", email: "544415419@qq.com", qq: "544415419", },
 { id: 73, name: "赵明", namePY: "zhao ming", province: "guangdong", city: "广州", school: "广东工业大学", photo: "46", phone: "13613525998", qq: "927257754", },
 
 { id: 75, name: "朱诗雅", namePY: "zhu shi ya", province: "jiangsu", city: "镇江", school: "江苏大学", photo: "37", },

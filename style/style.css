@@ -130,6 +130,21 @@ div.ctrl-search-button {
     -o-transition: all ease 300ms;
     -webkit-transition: all ease 300ms;
     transition: all ease 300ms;
+    /*color: #81b2e4;
+    color: #6ca6e0;
+    color: #5b9cdc;
+    color: #4a91d9;
+    color: #3d8ad6;
+    color: #3182d3;
+    color: #2b7aca;
+    color: #2975c2;
+    color: #2770b9;
+    color: #256bb1;
+    color: #2466a8;
+    color: #2261a0;
+    color: #215e9c;
+    color: #205c97;
+    color: #1f5993;*/
 }
 
 #ctrl-search-text {
@@ -152,6 +167,10 @@ div.ctrl-search-button {
     letter-spacing: 0;
     -ms-word-break: break-all;
     word-break: break-all;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 span.ctrl-button {
@@ -162,6 +181,10 @@ span.ctrl-button {
     border: solid #bcbcbc 1px;
     border-radius: 5px;
     cursor: pointer;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 div.ctrl-list-province-box {
@@ -221,6 +244,10 @@ div.ctrl-namelist {
     -o-transition: all ease 300ms;
     -webkit-transition: all ease 300ms;
     transition: all ease 300ms;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 div.ctrl-nameitem {
@@ -236,6 +263,10 @@ div.ctrl-nameitem {
     -o-transition: all ease 500ms;
     -webkit-transition: all ease 500ms;
     transition: all ease 500ms;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 div.ctrl-nameitem-off {
@@ -254,10 +285,14 @@ div.name-photo {
     border: #abc 1px solid;
     overflow: hidden;
     background-color: #fff;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
     div.name-photo > img {
-        position: relative;
+        position: absolute;
         top: 0;
         left: 0;
         width: 75px;
@@ -351,6 +386,11 @@ div.ctrl-about {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color:#d2d2d2;
 }
 
 .maps-pop-box-wrapper {
@@ -360,6 +400,10 @@ div.ctrl-about {
     position: absolute;
     overflow: hidden;
     z-index: 60;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .maps-pop-box {
@@ -370,10 +414,15 @@ div.ctrl-about {
     background-size: 100% 100%;
     position: relative;
     margin: auto;
+    top: 35%;
     top: -webkit-calc( 50% - 150px );
     top: -moz-calc( 50% - 150px );
     top: calc( 50% - 150px );
     box-shadow: #131313 0 0 30px 2px;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .maps-pop-close {
@@ -395,6 +444,10 @@ div.ctrl-about {
     -o-transition: all ease 500ms;
     -webkit-transition: all ease 500ms;
     transition: all ease 500ms;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
     .maps-pop-close:hover {
@@ -410,6 +463,10 @@ div.ctrl-about {
     color: #fefefe;
     font-weight: 100;
     text-shadow: #020303 0 0 5px,#3c3c3c 0 0 10px;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .maps-pop-personlist {
@@ -418,6 +475,10 @@ div.ctrl-about {
     left: 0;
     width: 100%;
     height: 100%;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
     .maps-pop-personlist > span {
@@ -432,6 +493,10 @@ div.ctrl-about {
         padding: 3px 5px 3px 2px;
         cursor: pointer;
         width: auto;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
     }
 
         .maps-pop-personlist > span:nth-child(1) {
@@ -522,6 +587,10 @@ div.ctrl-about {
     bottom: 10px;
     overflow: hidden;
     color: #000;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .maps-ctrl-in, .maps-ctrl-out {
@@ -603,6 +672,10 @@ div.ctrl-about {
     height: 20px;
     text-align: center;
     z-index: 20;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
     .maps-quickBtn > div {
@@ -629,15 +702,25 @@ div.ctrl-about {
     overflow: hidden;
     width: 100%;
     height: 100%;
+    background-color:#eaeaea;
 }
 
-.maps-point, .maps-china {
+.maps-point, .maps-china ,.maps-background{
     top: 0;
     left: 0;
     position: absolute;
     overflow: hidden;
 }
+.maps-background {
+    width:100%;
+    height:100%;
 
+}
+.maps-background>svg{
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
 .maps-point {
     width: 100%;
     height: 100%;
@@ -673,6 +756,8 @@ div.ctrl-about {
     border-radius: 5px;
     z-index: 50;
 }
+
+
 
 .maps-tag-top > .maps-infoBox {
     bottom: 20px;
@@ -798,6 +883,10 @@ div.ctrl-about {
     -o-transition: all ease 500ms;
     -webkit-transition: all ease 500ms;
     transition: all ease 500ms;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
     .info-close:hover {
@@ -1179,6 +1268,10 @@ div.ctrl-about {
     -webkit-transition: all ease 500ms;
     transition: all ease 500ms;
     float: right;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
     .about-close:hover {

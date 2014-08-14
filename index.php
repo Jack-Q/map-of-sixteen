@@ -1,12 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
+<head lang="zh-cn">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="favicon.ico" type="image/x-icon" rel="icon">
     <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
-    <title>Map of Sixteen (RC)</title><!--, '' ],:Remove Beta tag at release-->
+    <meta http-equiv="Window-target" content="_top">
+    <meta name="author" content="Jack Q">
+    <title>Map of Sixteen</title>
     <style>
         /*Overall*/
         body {
@@ -15,7 +17,7 @@
             height: 100%;
         }
 
-        html, body, div {
+        html, body, div, input {
             margin: 0;
             padding: 0;
             font-family: 'Microsoft YaHei UI','Microsoft YaHei',sans-serif;
@@ -47,6 +49,7 @@
             height: 150px;
             position: absolute;
             left: 0;
+            top: 30%;
             top: -webkit-calc(50% - 70px);
             top: -moz-calc(50% - 70px);
             top: calc(50% - 70px);
@@ -182,8 +185,9 @@
             text-align: justify;
             text-indent: 2em;
             margin: auto;
-            height:180px;
-            overflow-y:auto;
+            max-height: 300px;
+            height: 100%;
+            overflow-y: auto;
         }
 
             .splansh-tip-content a {
@@ -507,7 +511,9 @@
                     浏览器兼容性提示
                 </div>
                 <div class="splansh-tip-content">
-                    <p>您的浏览器不支持部分本页面所需的关键特性，完成加载后很可能无法正常运行。</p>
+                    <p>
+                        您的浏览器不支持部分本页面所需的关键特性，完成加载后很可能无法正常运行。
+                    </p>
                     <p>
                         建议您更换更适宜的浏览器重新打开此页面。
                         <ul>
@@ -807,7 +813,7 @@
 	                </g>
                 </g>
             </svg>
-            <span class="ctrl-beta-tag">RC</span><!--, '' ],:Remove at release -->
+            <span class="ctrl-beta-tag">RC</span><!--TODO:Remove at release -->
         </div>
         <div class="ctrl-list">
             <div class="ctrl-listctrl">
@@ -836,8 +842,8 @@
             </div>
         </div>
         <div class="ctrl-about" id="ctrl-about">
-            &copy;2014 Jack Q | Last Modified: 2014-08-13
-        </div><!--, '' ],:Update at release -->
+            &copy;2014 Jack Q | Last Modified: 2014-08-14
+        </div><!--TODO:Update at release -->
     </div>
 
     <!--Maps Box (z-0)-->
@@ -868,6 +874,18 @@
 
         </div>
         <div class="maps-box" id="maps-box">
+            <div class="maps-background">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                     xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
+                <linearGradient id="maps-bg-gr" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100%" y2="100%">
+                <stop style="stop-color: rgb(243, 217, 253);" offset="0.0054" />
+                <stop style="stop-color: rgb(70, 167, 218);" offset="1" />
+		            </linearGradient>
+                <g>
+                <rect fill="url(#maps-bg-gr)" width="100%" height="100%" />
+                		            </g>
+                </svg>
+            </div>
             <div class="maps-china" id="maps-china"></div>
             <div class="maps-point" id="maps-points"></div>
         </div>
@@ -929,7 +947,8 @@
                             </div>
                         </div>
                         <div class="info-cont-item" id="info-address-box">
-                            <img class="info-cont-icon" width="100" height="100" src="img/address-icon.png" />
+                            <div class="info-cont-icon" style="background-position:0 0;"></div>
+                            <img width="100" height="100" src="img/address-icon.png" />
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">地址</div>
                                 <div class="info-cont-val-long" id="info-address"></div>
@@ -960,19 +979,15 @@
             </div>
             <div class="about-content">
                 <p class="about-update">
-                    数据更新时间：2014-08-13 18:20
+                    数据更新时间：2014-08-14 20:00
                     <br />
-                    页面更新时间：2014-08-13 18:20
+                    页面更新时间：2014-08-14 20:00
                 </p>
                 <p>
-                    本次更新新增了成员列表的搜索功能，支持拼音（包括拼音首字母）搜索姓名、专业，数字搜索电话、QQ号，及文本搜索姓名、专业、学校、城市。
-                    同时，添加了对不支持的浏览器的提示页面。
+                    本次更新添加了主页的渐变背景，添加了地图省份按同学多少采用不同颜色深度的效果，采用连接图片的方式大幅减少请求，优化了加载速度，此外还优化了部分CSS属性兼容性。
                 </p>
                 <p>
-                    此外本次更新，优化部分CSS属性兼容性，修复了地图初次加载或浏览器窗口大小变化时地图过小的漏洞。
-                </p>
-                <p>
-                    当前，此页面为发布预览版，正式版将基本与此相同。对于此版本的漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>。
+                    当前，此页面为发布预览版，正式版将基本与此相同，目前更新主要在于提升兼容性和优化速度。对于此版本的漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>。
                     <br />
                     若有需要添加、更新或修正信息，请在QQ群内反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>;
                     <br />
@@ -1128,7 +1143,7 @@
                         break;
                     case 'css':
                         var k = document.createElement( 'link' );
-                        k.href = j.url;
+                        k.href = j.url+"?r="+Math.random().toFixed(5);
                         k.rel = "stylesheet";
                         document.body.appendChild( k );
                         setTimeout( function () { mapOfSixteen.loader.update( id ); }, 500 );
@@ -1155,7 +1170,7 @@
 
                 if ( loader.progress >= 94.95 ) {
                     loader.splash.text.text( '初始化 - ' + loader.progress.toFixed( 1 ) + '%' );
-                    //, '' ],: List Finished
+                    //TODO: List Finished
                     mapOfSixteen.main();
                     setTimeout( loader.finish, 1000 );
                 }

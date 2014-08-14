@@ -216,7 +216,43 @@ mapOfSixteen.main = ( function () {
             mapName: 'china',
             mapWidth: mapWidth,
             mapHeight: mapHeight,
-            external: sta.mapExternal
+            external: sta.mapExternal,
+            //stateData: {
+            //    'heilongjiang': { 'stateInitColor': 1 },
+            //    'jilin': { 'stateInitColor': 5 },
+            //    'liaoning': { 'stateInitColor': 2 },
+            //    'shandong': { 'stateInitColor': 4 },
+            //    'jiangsu': { 'stateInitColor': 8 },
+            //    'zhejiang': { 'stateInitColor': 1 },
+            //    'henan': { 'stateInitColor': 1 },
+            //    'shanxi': { 'stateInitColor': 11 },
+            //    'shaanxi': { 'stateInitColor': 3 },
+            //    'hubei': { 'stateInitColor': 3 },
+            //    'hunan': { 'stateInitColor': 2 },
+            //    'sichuan': { 'stateInitColor': 5 },
+            //    'shanghai': { 'stateInitColor': 4 },
+            //    'tianjin': { 'stateInitColor': 5 },
+            //    'beijing': { 'stateInitColor': 4 },
+            //    'guangdong': { 'stateInitColor': 2 },
+            //    'macau': { 'stateInitColor': 1 },
+            //    'hebei': { 'stateInitColor': 0 },
+            //    'anhui': { 'stateInitColor': 0 },
+            //    'gansu': { 'stateInitColor': 0 },
+            //    'jiangxi': { 'stateInitColor': 0 },
+            //    'fujian': { 'stateInitColor': 0 },
+            //    'guizhou': { 'stateInitColor': 0 },
+            //    'qinghai': { 'stateInitColor': 0 },
+            //    'hainan': { 'stateInitColor': 0 },
+            //    'chongqing': { 'stateInitColor': 0 },
+            //    'ningxia': { 'stateInitColor': 0 },
+            //    'neimongol': { 'stateInitColor': 0 },
+            //    'guangxi': { 'stateInitColor': 0 },
+            //    'xinjiang': { 'stateInitColor': 0 },
+            //    'hongkong': { 'stateInitColor': 0 },
+            //    'taiwan': { 'stateInitColor': 0 },
+            //    'xizang': { 'stateInitColor': 0 },
+            //    'yunnan': { 'stateInitColor': 0 },
+            //}
         } );
         mapsCtrl_set();
         province_highlight();
@@ -265,43 +301,61 @@ mapOfSixteen.main = ( function () {
         //Initial Color : AAD5FF
         //Highlight Color feb41c
         var provinceAll = [
-            'heilongjiang',
-            'jilin',
-            'liaoning',
-            'hebei',
-            'shandong',
-            'jiangsu',
-            'zhejiang',
-            'anhui',
-            'henan',
-            'shanxi',
-            'shaanxi',
-            'gansu',
-            'hubei',
-            'jiangxi',
-            'fujian',
-            'hunan',
-            'guizhou',
-            'sichuan',
-            'yunnan',
-            'qinghai',
-            'hainan',
-            'shanghai',
-            'chongqing',
-            'tianjin',
-            'beijing',
-            'ningxia',
-            'neimongol',
-            'guangxi',
-            'xinjiang',
-            'xizang',
-            'guangdong',
-            'hongkong',
-            'taiwan',
-            'macau'
-        ]
+            ['heilongjiang', 1],
+            ['jilin', 5],
+            ['liaoning', 2],
+            ['shandong', 4],
+            ['jiangsu', 8],
+            ['zhejiang', 1],
+            ['henan', 1],
+            ['shanxi', 11],
+            ['shaanxi', 3],
+            ['hubei', 3],
+            ['hunan', 2],
+            ['sichuan', 5],
+            ['shanghai', 4],
+            ['tianjin', 5],
+            ['beijing', 4],
+            ['guangdong', 2],
+            ['macau', 1],
+            ['hebei', 0],
+            ['anhui', 0],
+            ['gansu', 0],
+            ['jiangxi', 0],
+            ['fujian', 0],
+            ['guizhou', 0],
+            ['qinghai', 0],
+            ['hainan', 0],
+            ['chongqing', 0],
+            ['ningxia', 0],
+            ['neimongol', 0],
+            ['guangxi', 0],
+            ['xinjiang', 0],
+            ['hongkong', 0],
+            ['taiwan', 0],
+            ['xizang', 0],
+            ['yunnan', 0]
+        ];
+        var colors = [
+                "81b2e4",
+                "6ca6e0",
+                "5b9cdc",
+                "4a91d9",
+                "3d8ad6",
+                "3182d3",
+                "2b7aca",
+                "2975c2",
+                "2770b9",
+                "256bb1",
+                "2466a8",
+                "2261a0",
+                "215e9c",
+                "205c97",
+                "1f5993",
+        ];
+
         for ( var i = 0; i < provinceAll.length; i++ ) {
-            sta.mapExternal[provinceAll[i]].attr( { fill: '#AAD5FF' } );
+            sta.mapExternal[provinceAll[i][0]].attr( { fill: '#' + colors[provinceAll[i][1]] } );
         }
         if ( sta.provinceSelected == "" ) {
             return;
@@ -568,8 +622,17 @@ mapOfSixteen.main = ( function () {
         for ( var i = 0, j; i < sta.personData.length; i++ ) {
             j = '<div class="ctrl-nameitem">',
                k = sta.personData[i];
-            j += '<div class="name-photo'
-                + ( k.photo ? '"><img src="img/photo/' + k.photo + '.jpg"></div>' : '-default"></div>' );
+            j += '<div class="name-photo';
+            if ( k.photo ) {
+                //if ( k.photo <= 30 ) {
+                    j += '" style=\'background:url("img/photo/photoGroup.jpg") no-repeat;background-position:-' + ( 75 * k.photo-75 ) + 'px 0;\'></div>';
+                //} else {
+                //    j += '"><img src="img/photo/' + k.photo + '.jpg"></div>';
+                //}
+
+            } else {
+                j += '-default"></div>';
+            }
             j += '<div class="name-name">' + k.name + '</div>';
             j += '<div class="name-school">' + ( k.school ? k.school : '' ) + '</div>';
             j += '<div class="name-major">' + ( k.major ? k.major : '' ) + '</div>';
@@ -759,7 +822,7 @@ mapOfSixteen.main = ( function () {
                 str1 += py[i][0];
                 str2 += py[i].match( /^([zcs][h]|[bpmfdtnlgkhjqxzcsrywae])(.*)$/ )[1];
                 str3 += py[i].match( /^([zcs][h]|[bpmfdtnlgkhjqxzcsryw]|[ae]n[g]?|a[oi]?|e[ir]?)(.*)$/ )[1];
-                if ( py.slice(i,py.length).join( '' ).slice( 0, query.length ) == query ) {
+                if ( py.slice( i, py.length ).join( '' ).slice( 0, query.length ) == query ) {
                     return true;
                 }
             }
@@ -1104,7 +1167,7 @@ mapOfSixteen.main = ( function () {
             sta.mapDrag = false;
             sta.mapPinch = false;
         } );
-        point_initialize( true );
+        point_initialize( mobileTestResult );
 
         $( 'div#maps-ctrl-pos' ).click( function ( e ) {
             var zoomLevel = e.offsetX;
@@ -1167,7 +1230,7 @@ mapOfSixteen.main = ( function () {
         } );
 
         //City Points Initialization
-        point_initialize( false );
+        point_initialize( mobileTestResult );
 
         //Mouse Wheel Controled Zoom Function
         $( 'div#maps-points' ).mousewheel( function ( e, d ) {
