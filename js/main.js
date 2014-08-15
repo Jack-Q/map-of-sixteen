@@ -42,32 +42,32 @@ mapOfSixteen.main = ( function () {
         'mapPinchDist': 0,
         'personData': mapOfSixteen.data,
         'cityList': [
-            //About This Data: Copied From Excel, Last Updated:August 8th, 2014
-{ name: 'hangzhou', fullName: '杭州', namePY: 'hang zhou', coordinateX: 475, coordinateY: 301, tipPos: 'bottom', province: 'zhejiang' },
-{ name: 'tianjin', fullName: '天津', namePY: 'tian jin', coordinateX: 425, coordinateY: 194, tipPos: 'right', province: 'tianjin' },
-{ name: 'chengdu', fullName: '成都', namePY: 'cheng du', coordinateX: 307, coordinateY: 305, tipPos: 'bottom', province: 'sichuan' },
-{ name: 'taiyuan', fullName: '太原', namePY: 'tai yuan', coordinateX: 380, coordinateY: 217, tipPos: 'top', province: 'shanxi' },
-{ name: 'shanghai', fullName: '上海', namePY: 'shang hai', coordinateX: 486, coordinateY: 287, tipPos: 'right', province: 'shanghai' },
-{ name: 'weihai', fullName: '威海', namePY: 'wei hai', coordinateX: 477, coordinateY: 208, tipPos: 'right', province: 'shandong' },
-{ name: 'jinan', fullName: '济南', namePY: 'ji nan', coordinateX: 430, coordinateY: 221, tipPos: 'top', province: 'shandong' },
-{ name: 'xian', fullName: '西安', namePY: 'xi an ', coordinateX: 351, coordinateY: 263, tipPos: 'top', province: 'shaanxi' },
-{ name: 'yangling', fullName: '杨凌', namePY: 'yang ling', coordinateX: 339, coordinateY: 265, tipPos: 'left', province: 'shaanxi' },
-{ name: 'macau', fullName: '澳门', namePY: 'ao men', coordinateX: 413, coordinateY: 417, tipPos: 'bottom', province: 'macau' },
-{ name: 'dalian', fullName: '大连', namePY: 'da lian', coordinateX: 470, coordinateY: 183, tipPos: 'top', province: 'liaoning' },
-{ name: 'changchun', fullName: '长春', namePY: 'chang chun', coordinateX: 491, coordinateY: 116, tipPos: 'top', province: 'jilin' },
-{ name: 'jilin', fullName: '吉林', namePY: 'ji lin', coordinateX: 499, coordinateY: 117, tipPos: 'right', province: 'jilin' },
-{ name: 'zhenjiang', fullName: '镇江', namePY: 'zhen jiang', coordinateX: 468, coordinateY: 275, tipPos: 'top', province: 'jiangsu' },
-{ name: 'xuzhou', fullName: '徐州', namePY: 'xu zhou', coordinateX: 442, coordinateY: 254, tipPos: 'top', province: 'jiangsu' },
-{ name: 'wuxi', fullName: '无锡', namePY: 'wu xi ', coordinateX: 474, coordinateY: 281, tipPos: 'right', province: 'jiangsu' },
-{ name: 'nanjing', fullName: '南京', namePY: 'nan jing', coordinateX: 469, coordinateY: 282, tipPos: 'left', province: 'jiangsu' },
-{ name: 'changsha', fullName: '长沙', namePY: 'chang sha', coordinateX: 394, coordinateY: 333, tipPos: 'left', province: 'hunan' },
-{ name: 'wuhan', fullName: '武汉', namePY: 'wu han', coordinateX: 408, coordinateY: 304, tipPos: 'left', province: 'hubei' },
-{ name: 'zhengzhou', fullName: '郑州', namePY: 'zheng zhou', coordinateX: 399, coordinateY: 255, tipPos: 'left', province: 'henan' },
-{ name: 'harbin', fullName: '哈尔滨', namePY: 'ha er bin', coordinateX: 493, coordinateY: 92, tipPos: 'top', province: 'heilongjiang' },
-{ name: 'zhuhai', fullName: '珠海', namePY: 'zhu hai', coordinateX: 408, coordinateY: 411, tipPos: 'left', province: 'guangdong' },
-{ name: 'guangzhou', fullName: '广州', namePY: 'guang zhou', coordinateX: 411, coordinateY: 398, tipPos: 'right', province: 'guangdong' },
-{ name: 'beijing', fullName: '北京', namePY: 'bei jing', coordinateX: 414, coordinateY: 182, tipPos: 'top', province: 'beijing' },
-{ name: 'fuxin', fullName: '阜新', namePY: 'fu xin', coordinateX: 464, coordinateY: 149, tipPos: 'left', province: 'liaoning' },
+            //About This Data: Copied From Excel, Last Updated:August 15th, 2014
+{ name: 'hangzhou', fullName: '杭州', namePY: 'hang zhou', picture: 1, coordinateX: 475, coordinateY: 301, tipPos: 'bottom', province: 'zhejiang' },
+{ name: 'tianjin', fullName: '天津', namePY: 'tian jin', picture: 2, coordinateX: 425, coordinateY: 194, tipPos: 'right', province: 'tianjin' },
+{ name: 'chengdu', fullName: '成都', namePY: 'cheng du', picture: 3, coordinateX: 307, coordinateY: 305, tipPos: 'bottom', province: 'sichuan' },
+{ name: 'taiyuan', fullName: '太原', namePY: 'tai yuan', picture: 4, coordinateX: 380, coordinateY: 217, tipPos: 'top', province: 'shanxi' },
+{ name: 'shanghai', fullName: '上海', namePY: 'shang hai', picture: 5, coordinateX: 486, coordinateY: 287, tipPos: 'right', province: 'shanghai' },
+{ name: 'weihai', fullName: '威海', namePY: 'wei hai', picture: 6, coordinateX: 477, coordinateY: 208, tipPos: 'right', province: 'shandong' },
+{ name: 'jinan', fullName: '济南', namePY: 'ji nan', picture: 7, coordinateX: 430, coordinateY: 221, tipPos: 'top', province: 'shandong' },
+{ name: 'xian', fullName: '西安', namePY: 'xi an ', picture: 8, coordinateX: 351, coordinateY: 263, tipPos: 'top', province: 'shaanxi' },
+{ name: 'yangling', fullName: '杨凌', namePY: 'yang ling', picture: 9, coordinateX: 339, coordinateY: 265, tipPos: 'left', province: 'shaanxi' },
+{ name: 'macau', fullName: '澳门', namePY: 'ao men', picture: 10, coordinateX: 413, coordinateY: 417, tipPos: 'bottom', province: 'macau' },
+{ name: 'dalian', fullName: '大连', namePY: 'da lian', picture: 11, coordinateX: 470, coordinateY: 183, tipPos: 'top', province: 'liaoning' },
+{ name: 'changchun', fullName: '长春', namePY: 'chang chun', picture: 12, coordinateX: 491, coordinateY: 116, tipPos: 'top', province: 'jilin' },
+{ name: 'jilin', fullName: '吉林', namePY: 'ji lin', picture: 13, coordinateX: 499, coordinateY: 117, tipPos: 'right', province: 'jilin' },
+{ name: 'zhenjiang', fullName: '镇江', namePY: 'zhen jiang', picture: 14, coordinateX: 468, coordinateY: 275, tipPos: 'top', province: 'jiangsu' },
+{ name: 'xuzhou', fullName: '徐州', namePY: 'xu zhou', picture: 15, coordinateX: 442, coordinateY: 254, tipPos: 'top', province: 'jiangsu' },
+{ name: 'wuxi', fullName: '无锡', namePY: 'wu xi ', picture: 16, coordinateX: 474, coordinateY: 281, tipPos: 'right', province: 'jiangsu' },
+{ name: 'nanjing', fullName: '南京', namePY: 'nan jing', picture: 17, coordinateX: 469, coordinateY: 282, tipPos: 'left', province: 'jiangsu' },
+{ name: 'changsha', fullName: '长沙', namePY: 'chang sha', picture: 18, coordinateX: 394, coordinateY: 333, tipPos: 'left', province: 'hunan' },
+{ name: 'wuhan', fullName: '武汉', namePY: 'wu han', picture: 19, coordinateX: 408, coordinateY: 304, tipPos: 'left', province: 'hubei' },
+{ name: 'zhengzhou', fullName: '郑州', namePY: 'zheng zhou', picture: 20, coordinateX: 399, coordinateY: 255, tipPos: 'left', province: 'henan' },
+{ name: 'harbin', fullName: '哈尔滨', namePY: 'ha er bin', picture: 21, coordinateX: 493, coordinateY: 92, tipPos: 'top', province: 'heilongjiang' },
+{ name: 'zhuhai', fullName: '珠海', namePY: 'zhu hai', picture: 22, coordinateX: 408, coordinateY: 411, tipPos: 'left', province: 'guangdong' },
+{ name: 'guangzhou', fullName: '广州', namePY: 'guang zhou', picture: 23, coordinateX: 411, coordinateY: 398, tipPos: 'right', province: 'guangdong' },
+{ name: 'beijing', fullName: '北京', namePY: 'bei jing', picture: 24, coordinateX: 414, coordinateY: 182, tipPos: 'top', province: 'beijing' },
+{ name: 'fuxin', fullName: '阜新', namePY: 'fu xin', picture: 25, coordinateX: 464, coordinateY: 149, tipPos: 'left', province: 'liaoning' },
 
         ],
         'provinceList': [
@@ -570,7 +570,7 @@ mapOfSixteen.main = ( function () {
     function cityList_show( id ) {
         var city = sta.cityList[id];
         $( 'div#maps-pop-title' ).text( city.fullName );
-        $( 'div#maps-pop-box' ).css( 'background-image', 'url("img/city/' + city.name + '.jpg")' );
+        $( 'div#maps-pop-box' ).css( 'background-position-x', '-' + (city.picture-1)*300 + 'px' );
         var listBox = $( 'div.maps-pop-personlist' );
         listBox.empty();
         for ( var i = 0; i < sta.personData.length; i++ ) {
@@ -625,7 +625,7 @@ mapOfSixteen.main = ( function () {
             j += '<div class="name-photo';
             if ( k.photo ) {
                 //if ( k.photo <= 30 ) {
-                    j += '" style=\'background:url("img/photo/photoGroup.jpg") no-repeat;background-position:-' + ( 75 * k.photo-75 ) + 'px 0;\'></div>';
+                    j += '" style=\'background:url("img/photoGroup.jpg") no-repeat;background-position:-' + ( 75 * k.photo-75 ) + 'px 0;\'></div>';
                 //} else {
                 //    j += '"><img src="img/photo/' + k.photo + '.jpg"></div>';
                 //}

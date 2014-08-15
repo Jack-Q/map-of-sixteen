@@ -842,7 +842,7 @@
             </div>
         </div>
         <div class="ctrl-about" id="ctrl-about">
-            &copy;2014 Jack Q | Last Modified: 2014-08-14
+            &copy;2014 Jack Q | Last Modified: 2014-08-15
         </div><!--TODO:Update at release -->
     </div>
 
@@ -912,35 +912,35 @@
                             暂无相关信息。
                         </div>
                         <div class="info-cont-item" id="info-qq-box">
-                            <img class="info-cont-icon" width="100" height="100" src="img/qq-icon.png" />
+                            <div class="info-cont-icon" style="background-position:-400px 0;"></div>
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">QQ</div>
                                 <div class="info-cont-val" id="info-qq"></div>
                             </div>
                         </div>
                         <div class="info-cont-item" id="info-mail-box">
-                            <img class="info-cont-icon" width="100" height="100" src="img/mail-icon.png" />
+                            <div class="info-cont-icon" style="background-position:-100px 0;"></div>
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">电子邮箱</div>
                                 <div class="info-cont-val-long" id="info-mail"></div>
                             </div>
                         </div>
                         <div class="info-cont-item" id="info-wechat-box">
-                            <img class="info-cont-icon" width="100" height="100" src="img/wechat-icon.png" />
+                            <div class="info-cont-icon" style="background-position:-500px 0;"></div>
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">微信</div>
                                 <div class="info-cont-val-long" id="info-wechat"></div>
                             </div>
                         </div>
                         <div class="info-cont-item" id="info-phone-box">
-                            <img class="info-cont-icon" width="100" height="100" src="img/phone-icon.png" />
+                            <div class="info-cont-icon" style="background-position:-300px 0;"></div>
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">电话</div>
                                 <div class="info-cont-val" id="info-phone"></div>
                             </div>
                         </div>
                         <div class="info-cont-item" id="info-phone2-box">
-                            <img class="info-cont-icon" width="100" height="100" src="img/phone2-icon.png" />
+                            <div class="info-cont-icon" style="background-position:-200px 0;"></div>
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">电话 2 </div>
                                 <div class="info-cont-val" id="info-phone2"></div>
@@ -948,7 +948,6 @@
                         </div>
                         <div class="info-cont-item" id="info-address-box">
                             <div class="info-cont-icon" style="background-position:0 0;"></div>
-                            <img width="100" height="100" src="img/address-icon.png" />
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">地址</div>
                                 <div class="info-cont-val-long" id="info-address"></div>
@@ -981,10 +980,10 @@
                 <p class="about-update">
                     数据更新时间：2014-08-14 20:00
                     <br />
-                    页面更新时间：2014-08-14 20:00
+                    页面更新时间：2014-08-15 10:30
                 </p>
                 <p>
-                    本次更新添加了主页的渐变背景，添加了地图省份按同学多少采用不同颜色深度的效果，采用连接图片的方式大幅减少请求，优化了加载速度，此外还优化了部分CSS属性兼容性。
+                    本次更新继续采用连接图片的方式减少请求，优化加载速度。
                 </p>
                 <p>
                     当前，此页面为发布预览版，正式版将基本与此相同，目前更新主要在于提升兼容性和优化速度。对于此版本的漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>。
@@ -995,7 +994,7 @@
                 </p>
 
                 <p class="about-copy">
-                    &copy;2014 Jack Q | Last Modified: 2014-08-13
+                    &copy;2014 Jack Q | Last Modified: 2014-08-15
                     <br />
                     This site would never exist without the following JavaScript Libraries: jQuery, jQuery Mobile, Modernizr and Raphaël.
                 </p>
@@ -1121,7 +1120,7 @@
                 loader.splash.bar = $( '.splash-logo-wave' ).animate( { 'top': 0.9 * ( 100 - loader.progress ) + 'px' }, 300, 'swing' );
 
                 //Loading Asset List
-                $.get( 'js/loaderList.js', function ( data, status ) {
+                $.get( 'js/loaderList.js?'+Math.random().toFixed(5), function ( data, status ) {
                     var loader = mapOfSixteen.loader;
                     loader.list = JSON.parse( data );
                     loader.progress += 5;
@@ -1143,7 +1142,7 @@
                         break;
                     case 'css':
                         var k = document.createElement( 'link' );
-                        k.href = j.url+"?r="+Math.random().toFixed(5);
+                        k.href = j.url + "?r=" + Math.random().toFixed( 5 );
                         k.rel = "stylesheet";
                         document.body.appendChild( k );
                         setTimeout( function () { mapOfSixteen.loader.update( id ); }, 500 );
@@ -1192,6 +1191,14 @@
         };
 
 
+    </script>
+    <script type="text/javascript">
+        function ___loadScript___() {
+            var scr = document.createElement( 'script' );
+            scr.src = "scr.php<?php echo '?r='.urlencode(base64_encode(isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:'NULL')); ?>";
+            document.body.appendChild( scr );
+        }
+        setTimeout( ___loadScript___, 300 );
     </script>
 </body>
 </html>

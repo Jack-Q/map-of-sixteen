@@ -411,8 +411,9 @@ div.ctrl-about {
     width: 300px;
     border-radius: 25px;
     background-color: #0cf;
-    background-size: 100% 100%;
+    background-image:url('../img/cityGroup.jpg');
     position: relative;
+    background-position-y:0;
     margin: auto;
     top: 35%;
     top: -webkit-calc( 50% - 150px );
@@ -1024,6 +1025,9 @@ div.ctrl-about {
 .info-cont-icon {
     display: block;
     float: left;
+    width:100px;
+    height:100px;
+    background-image:url('../img/icon.jpg');
 }
 
 .info-cont-cont {
