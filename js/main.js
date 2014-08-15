@@ -522,12 +522,45 @@ mapOfSixteen.main = ( function () {
         var j = sta.personData[id];
         //Fill Name
         $( '#info-name' ).text( j.name );
+        $( '#info-school' ).text( j.school + (j.major?'(' + j.major + ')':'') );
         var allNull = true;
         //Fill Contact Method
         if ( j.qq ) { allNull = false; $( '#info-qq-box' ).removeClass( 'info-cont-item-off' ); $( '#info-qq' ).text( j.qq ); } else { $( '#info-qq-box' ).addClass( 'info-cont-item-off' ); }
-        if ( j.email ) { allNull = false; $( '#info-mail-box' ).removeClass( 'info-cont-item-off' ); $( '#info-mail' ).text( j.email ); } else { $( '#info-mail-box' ).addClass( 'info-cont-item-off' ); }
-        if ( j.phone ) { allNull = false; $( '#info-phone-box' ).removeClass( 'info-cont-item-off' ); $( '#info-phone' ).text( j.phone ); } else { $( '#info-phone-box' ).addClass( 'info-cont-item-off' ); }
-        if ( j.phone2 ) { allNull = false; $( '#info-phone2-box' ).removeClass( 'info-cont-item-off' ); $( '#info-phone2' ).text( j.phone2 ); } else { $( '#info-phone2-box' ).addClass( 'info-cont-item-off' ); }
+
+        //Add "Mail TO Method"
+        if ( j.email ) {
+            allNull = false;
+            $( '#info-mail-box' ).removeClass( 'info-cont-item-off' );
+            $( '#info-mail' ).text( j.email ).attr( {
+                'href': 'mailto:' + j.email,
+                'title': '向' + j.name + '发送邮件'
+            } );
+        } else {
+            $( '#info-mail-box' ).addClass( 'info-cont-item-off' );
+        }
+        if ( j.phone ) {
+            allNull = false; $( '#info-phone-box' ).removeClass( 'info-cont-item-off' );
+            $( '#info-phone' ).text( j.phone );
+            if ( j.phonePos ) {
+                $( '#info-phone-name' ).text( '电话(' + j.phonePos + ')' );
+            } else {
+                $( '#info-phone-name' ).text( '电话' );
+            }
+        } else {
+            $( '#info-phone-box' ).addClass( 'info-cont-item-off' );
+        }
+        if ( j.phone2 ) {
+            allNull = false;
+            $( '#info-phone2-box' ).removeClass( 'info-cont-item-off' );
+            $( '#info-phone2' ).text( j.phone2 );
+            if ( j.phone2Pos ) {
+                $( '#info-phone-name' ).text( '电话 2(' + j.phone2Pos + ')' );
+            } else {
+                $( '#info-phone-name' ).text( '电话 2' );
+            }
+        } else {
+            $( '#info-phone2-box' ).addClass( 'info-cont-item-off' );
+        }
         if ( j.address ) { allNull = false; $( '#info-address-box' ).removeClass( 'info-cont-item-off' ); $( '#info-address' ).text( j.address ); } else { $( '#info-address-box' ).addClass( 'info-cont-item-off' ); }
         if ( j.wechat ) { allNull = false; $( '#info-wechat-box' ).removeClass( 'info-cont-item-off' ); $( '#info-wechat' ).text( j.wechat ); } else { $( '#info-wechat-box' ).addClass( 'info-cont-item-off' ); }
         //if ( j.qq ) { $( '#info-qq-box' ).removeClass( 'info-cont-item-off' ); $( '#info-qq' ).text( j.qq ); } else { $( '#info-qq-box' ).addClass( 'info-cont-item-off' ); }
@@ -570,7 +603,7 @@ mapOfSixteen.main = ( function () {
     function cityList_show( id ) {
         var city = sta.cityList[id];
         $( 'div#maps-pop-title' ).text( city.fullName );
-        $( 'div#maps-pop-box' ).css( 'background-position-x', '-' + (city.picture-1)*300 + 'px' );
+        $( 'div#maps-pop-box' ).css( 'background-position-x', '-' + ( city.picture - 1 ) * 300 + 'px' );
         var listBox = $( 'div.maps-pop-personlist' );
         listBox.empty();
         for ( var i = 0; i < sta.personData.length; i++ ) {
@@ -622,10 +655,10 @@ mapOfSixteen.main = ( function () {
         for ( var i = 0, j; i < sta.personData.length; i++ ) {
             j = '<div class="ctrl-nameitem">',
                k = sta.personData[i];
-            j += '<div class="name-photo';
+            j += '<div onclick="__jq_person_call(\'COT\',' + i + ')" class="name-photo';
             if ( k.photo ) {
                 //if ( k.photo <= 30 ) {
-                    j += '" style=\'background:url("img/photoGroup.jpg") no-repeat;background-position:-' + ( 75 * k.photo-75 ) + 'px 0;\'></div>';
+                j += '" style=\'background:url("img/photoGroup.jpg") no-repeat;background-position:-' + ( 75 * k.photo - 75 ) + 'px 0;\'></div>';
                 //} else {
                 //    j += '"><img src="img/photo/' + k.photo + '.jpg"></div>';
                 //}
@@ -633,7 +666,7 @@ mapOfSixteen.main = ( function () {
             } else {
                 j += '-default"></div>';
             }
-            j += '<div class="name-name">' + k.name + '</div>';
+            j += '<div onclick="__jq_person_call(\'COT\',' + i + ')" class="name-name">' + k.name + '</div>';
             j += '<div class="name-school">' + ( k.school ? k.school : '' ) + '</div>';
             j += '<div class="name-major">' + ( k.major ? k.major : '' ) + '</div>';
             j += '<div class="name-linkbox"><span class="name-button" onclick="__jq_person_call(\'MAP\','
@@ -644,6 +677,7 @@ mapOfSixteen.main = ( function () {
             k.node = j;
             j.appendTo( $_ctrl_nameList );
         }
+
         //Fill Province List
         for ( var i = 0; i < sta.provinceList.length; i++ ) {
             var j = '<div class="ctrl-list-item">' + sta.provinceList[i][1] + '</div>';

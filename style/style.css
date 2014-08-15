@@ -390,7 +390,7 @@ div.ctrl-about {
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    background-color:#d2d2d2;
+    background-color: #d2d2d2;
 }
 
 .maps-pop-box-wrapper {
@@ -411,9 +411,9 @@ div.ctrl-about {
     width: 300px;
     border-radius: 25px;
     background-color: #0cf;
-    background-image:url('../img/cityGroup.jpg');
+    background-image: url('../img/cityGroup.jpg');
     position: relative;
-    background-position-y:0;
+    background-position-y: 0;
     margin: auto;
     top: 35%;
     top: -webkit-calc( 50% - 150px );
@@ -670,7 +670,7 @@ div.ctrl-about {
     position: absolute;
     width: 100%;
     bottom: 40px;
-    height: 20px;
+    height: 25px;
     text-align: center;
     z-index: 20;
     -moz-user-select: none;
@@ -681,11 +681,12 @@ div.ctrl-about {
 
     .maps-quickBtn > div {
         display: inline-block;
-        width: 80px;
-        height: 20px;
-        line-height: 20px;
+        width: 120px;
+        height: 25px;
+        line-height: 25px;
+        font-size:23px;
         color: #fafafa;
-        background-color: rgba(0,110,220,.5);
+        background-color: rgba(150,0,110,.5);
         text-align: center;
         cursor: pointer;
         -moz-transition: all ease 300ms;
@@ -703,25 +704,27 @@ div.ctrl-about {
     overflow: hidden;
     width: 100%;
     height: 100%;
-    background-color:#eaeaea;
+    background-color: #eaeaea;
 }
 
-.maps-point, .maps-china ,.maps-background{
+.maps-point, .maps-china, .maps-background {
     top: 0;
     left: 0;
     position: absolute;
     overflow: hidden;
 }
-.maps-background {
-    width:100%;
-    height:100%;
 
+.maps-background {
+    width: 100%;
+    height: 100%;
 }
-.maps-background>svg{
-    width:100%;
-    height:100%;
-    z-index:-1;
-}
+
+    .maps-background > svg {
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
 .maps-point {
     width: 100%;
     height: 100%;
@@ -912,6 +915,15 @@ div.ctrl-about {
     text-shadow: #3c3c3c 0 0 10px,#1d1d1d 0 0 7px,#020303 0 0 5px;
 }
 
+.info-school {
+    position: absolute;
+    top: 95px;
+    left: 11%;
+    font-size: 15px;
+    color: #acacac;
+    text-shadow: #3c3c3c 0 0 10px,#1d1d1d 0 0 7px,#020303 0 0 5px;
+}
+
 .info-picture {
     width: 800px;
     height: 150px;
@@ -1025,9 +1037,9 @@ div.ctrl-about {
 .info-cont-icon {
     display: block;
     float: left;
-    width:100px;
-    height:100px;
-    background-image:url('../img/icon.jpg');
+    width: 100px;
+    height: 100px;
+    background-image: url('../img/icon.jpg');
 }
 
 .info-cont-cont {
@@ -1035,6 +1047,10 @@ div.ctrl-about {
     float: left;
     text-align: left;
 }
+
+    .info-cont-cont a {
+        color: #000;
+    }
 
 .info-cont-type {
     font-size: 25px;

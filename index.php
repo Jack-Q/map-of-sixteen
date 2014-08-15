@@ -831,7 +831,7 @@
                 </div>
             </div>
             <div class="ctrl-search" id="ctrl-search">
-                <input type="text" placeholder="在这里输入 ... ..." id="ctrl-search-text" />
+                <input type="text" placeholder="在这里输入 ··· ···" id="ctrl-search-text" />
                 <div class="ctrl-search-description" id="ctrl-search-description">
                     输入姓名、学校、电话号码等信息以开始。
                     <br />
@@ -900,6 +900,8 @@
                     <img width="800" height="600" id="info-banner" alt="BANNER" src="img/background/1.jpg" />
                 </div>
                 <div class="info-name" id="info-name"></div>
+                <div class="info-school" id="info-school"></div>
+
                 <div class="info-nav">
                     <span id="info-link-1" class="info-link info-link-on">联系方式</span>
                     <span id="info-link-2" class="info-link">详细信息</span>
@@ -922,7 +924,10 @@
                             <div class="info-cont-icon" style="background-position:-100px 0;"></div>
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">电子邮箱</div>
-                                <div class="info-cont-val-long" id="info-mail"></div>
+                                <div class="info-cont-val-long">
+                                    <a id="info-mail" title="" href="">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="info-cont-item" id="info-wechat-box">
@@ -935,14 +940,14 @@
                         <div class="info-cont-item" id="info-phone-box">
                             <div class="info-cont-icon" style="background-position:-300px 0;"></div>
                             <div class="info-cont-cont">
-                                <div class="info-cont-type">电话</div>
+                                <div class="info-cont-type" id="info-phone-name">电话</div>
                                 <div class="info-cont-val" id="info-phone"></div>
                             </div>
                         </div>
                         <div class="info-cont-item" id="info-phone2-box">
                             <div class="info-cont-icon" style="background-position:-200px 0;"></div>
                             <div class="info-cont-cont">
-                                <div class="info-cont-type">电话 2 </div>
+                                <div class="info-cont-type" id="info-phone2-name">电话 2 </div>
                                 <div class="info-cont-val" id="info-phone2"></div>
                             </div>
                         </div>
@@ -958,7 +963,7 @@
                 <div class="info-page">
                     <div class="info-det-box">
                         <div class="info-page-tip" id="info-page-tip">
-                            页面建设中···
+                            页面待建设···
                         </div>
                         <div class="info-page-external">
                             <iframe id="info-page-ext"></iframe>
@@ -980,10 +985,10 @@
                 <p class="about-update">
                     数据更新时间：2014-08-14 20:00
                     <br />
-                    页面更新时间：2014-08-15 10:30
+                    页面更新时间：2014-08-15 14:30
                 </p>
                 <p>
-                    本次更新继续采用连接图片的方式减少请求，优化加载速度。
+                    本次更新继续采用连接图片的方式减少请求，优化加载速度。同时对个人页面的细节进行了优化，联系方式里电话号码显示归属地，邮箱优化为mailto连接。
                 </p>
                 <p>
                     当前，此页面为发布预览版，正式版将基本与此相同，目前更新主要在于提升兼容性和优化速度。对于此版本的漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>。
@@ -1098,7 +1103,7 @@
                     + '内联矢量图像 - ' + ( featureSupport.inlineSvg ? "支持。" : "不支持。" );
             document.getElementById( 'splansh-insist-loading' ).onclick = function () {
                 document.getElementById( 'splansh-tip-wraper' ).style.display = 'none';
-                mapOfSixteen.loader.main;
+                mapOfSixteen.loader.main();
             };
             document.getElementById( 'splansh-tip-wraper' ).style.display = 'block';
         }
@@ -1120,7 +1125,7 @@
                 loader.splash.bar = $( '.splash-logo-wave' ).animate( { 'top': 0.9 * ( 100 - loader.progress ) + 'px' }, 300, 'swing' );
 
                 //Loading Asset List
-                $.get( 'js/loaderList.js?'+Math.random().toFixed(5), function ( data, status ) {
+                $.get( 'js/loaderList.js?' + Math.random().toFixed( 5 ), function ( data, status ) {
                     var loader = mapOfSixteen.loader;
                     loader.list = JSON.parse( data );
                     loader.progress += 5;
