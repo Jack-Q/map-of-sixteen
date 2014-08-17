@@ -842,7 +842,7 @@
             </div>
         </div>
         <div class="ctrl-about" id="ctrl-about">
-            &copy;2014 Jack Q | Last Modified: 2014-08-15
+            &copy;2014 Jack Q | Last Modified: 2014-08-17
         </div><!--TODO:Update at release -->
     </div>
 
@@ -983,15 +983,16 @@
             </div>
             <div class="about-content">
                 <p class="about-update">
-                    数据更新时间：2014-08-14 20:00
+                    数据更新时间：2014-08-17 23:00
                     <br />
-                    页面更新时间：2014-08-15 14:30
+                    页面更新时间：2014-08-17 23:00
+                    <!--TODO:Update at release -->
                 </p>
                 <p>
-                    本次更新继续采用连接图片的方式减少请求，优化加载速度。同时对个人页面的细节进行了优化，联系方式里电话号码显示归属地，邮箱优化为mailto连接。
+                    本次更新添加了9名同学的院校录取信息及相应的城市、省份信息，截至目前，已录入71名16班同学的信息，希望能尽快将数据收集完整，同时对部分细节处的显示作了优化。
                 </p>
                 <p>
-                    当前，此页面为发布预览版，正式版将基本与此相同，目前更新主要在于提升兼容性和优化速度。对于此版本的漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>。
+                    当前，此页面为发布预览版，正式版将基本与此相同。对于此版本的漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>。
                     <br />
                     若有需要添加、更新或修正信息，请在QQ群内反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>;
                     <br />
@@ -999,7 +1000,7 @@
                 </p>
 
                 <p class="about-copy">
-                    &copy;2014 Jack Q | Last Modified: 2014-08-15
+                    &copy;2014 Jack Q | Last Modified: 2014-08-17 <!--TODO:Update at release -->
                     <br />
                     This site would never exist without the following JavaScript Libraries: jQuery, jQuery Mobile, Modernizr and Raphaël.
                 </p>

@@ -68,6 +68,9 @@ mapOfSixteen.main = ( function () {
 { name: 'guangzhou', fullName: '广州', namePY: 'guang zhou', picture: 23, coordinateX: 411, coordinateY: 398, tipPos: 'right', province: 'guangdong' },
 { name: 'beijing', fullName: '北京', namePY: 'bei jing', picture: 24, coordinateX: 414, coordinateY: 182, tipPos: 'top', province: 'beijing' },
 { name: 'fuxin', fullName: '阜新', namePY: 'fu xin', picture: 25, coordinateX: 464, coordinateY: 149, tipPos: 'left', province: 'liaoning' },
+{ name: 'hefei', fullName: '合肥', namePY: 'he fei', picture: 26, coordinateX: 436, coordinateY: 284, tipPos: 'left', province: 'anhui' },
+{ name: 'fuzhou', fullName: '福州', namePY: 'fu zhou', picture: 27, coordinateX: 472, coordinateY: 355, tipPos: 'top', province: 'fujian' },
+{ name: 'wuhu', fullName: '芜湖', namePY: 'wu hu', picture: 28, coordinateX: 447, coordinateY: 290, tipPos: 'right', province: 'anhui' },
 
         ],
         'provinceList': [
@@ -78,14 +81,14 @@ mapOfSixteen.main = ( function () {
             ['shandong', '山东', 'shan dong'],
             ['jiangsu', '江苏', 'jiang su'],
             ['zhejiang', '浙江', 'zhe jiang'],
-            //['anhui', '安徽', 'an hui' ],
+            ['anhui', '安徽', 'an hui' ],
             ['henan', '河南', 'he nan'],
             ['shanxi', '山西', 'shan xi'],
             ['shaanxi', '陕西', 'shan xi'],
             //['gansu', '甘肃', 'gan su' ],
             ['hubei', '湖北', 'hu bei'],
             //['jiangxi', '江西', 'jiang xi' ],
-            //['fujian', '福建', 'fu jian' ],
+            ['fujian', '福建', 'fu jian' ],
             ['hunan', '湖南', 'hu nan'],
             //['guizhou', '贵州', 'gui zhou' ],
             ['sichuan', '四川', 'si chuan'],
@@ -301,28 +304,28 @@ mapOfSixteen.main = ( function () {
         //Initial Color : AAD5FF
         //Highlight Color feb41c
         var provinceAll = [
-            ['heilongjiang', 1],
-            ['jilin', 5],
-            ['liaoning', 2],
-            ['shandong', 4],
+            ['shanxi', 12],
             ['jiangsu', 8],
-            ['zhejiang', 1],
-            ['henan', 1],
-            ['shanxi', 11],
+            ['tianjin', 6],
+            ['jilin', 5],
+            ['sichuan', 5],
+            ['shanghai', 5],
+            ['shandong', 4],
+            ['beijing', 4],
+            ['liaoning', 3],
             ['shaanxi', 3],
             ['hubei', 3],
+            ['heilongjiang', 2],
+            ['zhejiang', 2],
             ['hunan', 2],
-            ['sichuan', 5],
-            ['shanghai', 4],
-            ['tianjin', 5],
-            ['beijing', 4],
             ['guangdong', 2],
+            ['anhui', 2],
+            ['henan', 1],
             ['macau', 1],
+            ['fujian', 1],
             ['hebei', 0],
-            ['anhui', 0],
             ['gansu', 0],
             ['jiangxi', 0],
-            ['fujian', 0],
             ['guizhou', 0],
             ['qinghai', 0],
             ['hainan', 0],
@@ -334,7 +337,8 @@ mapOfSixteen.main = ( function () {
             ['hongkong', 0],
             ['taiwan', 0],
             ['xizang', 0],
-            ['yunnan', 0]
+            ['yunnan', 0],
+
         ];
         var colors = [
                 "81b2e4",
@@ -554,9 +558,9 @@ mapOfSixteen.main = ( function () {
             $( '#info-phone2-box' ).removeClass( 'info-cont-item-off' );
             $( '#info-phone2' ).text( j.phone2 );
             if ( j.phone2Pos ) {
-                $( '#info-phone-name' ).text( '电话 2(' + j.phone2Pos + ')' );
+                $( '#info-phone2-name' ).text( '电话 2(' + j.phone2Pos + ')' );
             } else {
-                $( '#info-phone-name' ).text( '电话 2' );
+                $( '#info-phone2-name' ).text( '电话 2' );
             }
         } else {
             $( '#info-phone2-box' ).addClass( 'info-cont-item-off' );

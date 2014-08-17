@@ -22,14 +22,14 @@ mapOfSixteen.data = [
 { id: 7, name: "冯忠祥", namePY: "feng zhong xiang", province: "shanxi", city: "太原", school: "山西财经大学", photo: "69", phone: "15110719296", phonePos: "山西大同", qq: "791134035", },
 { id: 8, name: "高靖男", namePY: "gao jing nan", province: "beijing", city: "北京", school: "首都经贸大学", major: "公共管理", majorPY: "gong gong guan li", detailPage: "5", backgroundPhoto: "5", photo: "73", phone: "13994305596", phonePos: "山西大同", qq: "549431978", },
 { id: 9, name: "高伟", namePY: "gao wei", province: "hubei", city: "武汉", school: "武汉工程大学", photo: "29", phone: "18735080770", phonePos: "山西大同", qq: "936992306", },
-
+{ id: 10, name: "高岩", namePY: "gao yan", province: "anhui", city: "合肥", school: "陆军军官学院", photo: "68", },
 { id: 11, name: "龚琪", namePY: "gong qi", province: "hunan", city: "长沙", school: "中南大学", photo: "6", phone: "13293526449", phonePos: "山西大同", qq: "1183498100", },
 { id: 12, name: "谷思雨", namePY: "gu si yu", province: "shanxi", city: "太原", school: "山西大学", major: "工商管理", majorPY: "gong shang guan li", detailPage: "3", backgroundPhoto: "0", photo: "49", phone: "15234209665", phonePos: "山西大同", qq: "645776361", },
 { id: 13, name: "郭靖", namePY: "guo jing", province: "shanxi", city: "太原", school: "太原理工大学", photo: "53", },
-
+{ id: 14, name: "郭科", namePY: "guo ke", province: "heilongjiang", city: "哈尔滨", school: "哈尔滨理工大学", photo: "70", phone: "18735265347", phonePos: "山西大同", qq: "2467196302", },
 { id: 15, name: "郭瑞林", namePY: "guo rui lin", province: "shanxi", city: "太原", school: "太原理工大学", photo: "66", },
 { id: 16, name: "韩蕾", namePY: "han lei", province: "henan", city: "郑州", school: "郑州大学", photo: "2", qq: "1279456545", },
-
+{ id: 17, name: "韩鹏", namePY: "han peng", province: "liaoning", city: "大连", school: "大连大学", photo: "64", },
 { id: 18, name: "胡鹏冲", namePY: "hu peng chong", province: "sichuan", city: "成都", school: "四川大学", photo: "7", phone: "18734625786", phonePos: "山西大同", qq: "269049631", },
 { id: 19, name: "晋雪琪", namePY: "jin xue qi", province: "shaanxi", city: "杨凌", school: "西北农林科技大学", photo: "8", },
 { id: 20, name: "李伯轩", namePY: "li bo xuan", province: "jiangsu", city: "南京", school: "南京大学", photo: "41", qq: "2425631404", },
@@ -44,11 +44,11 @@ mapOfSixteen.data = [
 { id: 29, name: "刘奇", namePY: "liu qi", province: "sichuan", city: "成都", school: "成都信息工程学院", photo: "45", },
 { id: 30, name: "刘伟", namePY: "liu wei", province: "jiangsu", city: "徐州", school: "中国矿业大学", photo: "39", phone: "13935256023", phonePos: "山西大同", qq: "704533758", },
 { id: 31, name: "刘翔宇", namePY: "liu xiang yu", province: "liaoning", city: "阜新", school: "辽宁工程技术大学", },
-
+{ id: 32, name: "刘啸晨", namePY: "liu xiao chen", province: "fujian", city: "福州", school: "福建农林大学", photo: "55", },
 { id: 33, name: "马晓瑞", namePY: "ma xiao rui", province: "liaoning", city: "大连", school: "大连大学", detailPage: "4", backgroundPhoto: "0", photo: "4", phone: "13203521625", phonePos: "山西大同", email: "maxiaorui@foxmail.com", qq: "254360957", },
 { id: 34, name: "乔波", namePY: "qiao bo", province: "shaanxi", city: "西安", school: "西安交通大学", major: "软件工程", majorPY: "ruan jian gong cheng", detailPage: "12", backgroundPhoto: "12", photo: "11", email: "QiaoBo@outlook.com", qq: "1335288659", },
 { id: 35, name: "乔亚男", namePY: "qiao ya nan", province: "sichuan", city: "成都", school: "四川大学", major: "计算机类", majorPY: "ji suan ji lei", detailPage: "11", backgroundPhoto: "11", photo: "28", phone: "13834129072", phonePos: "山西大同", qq: "1196521782", },
-
+{ id: 36, name: "任超", namePY: "ren chao", province: "zhejiang", city: "杭州", school: "浙江科技学院", major: "化工与制药类", majorPY: "hua gong yu zhi yao lei", photo: "59", phone: "13935218561", phonePos: "山西大同", qq: "983242613", },
 { id: 37, name: "任福全", namePY: "ren fu quan", province: "hunan", city: "长沙", school: "国防科技大学", photo: "5", phone: "18535285226", phonePos: "山西大同", qq: "908347726", },
 { id: 38, name: "任凯", namePY: "ren kai", province: "jilin", city: "吉林", school: "吉林化工大学", photo: "48", qq: "532465106", },
 { id: 39, name: "石文龙", namePY: "shi wen long", province: "heilongjiang", city: "哈尔滨", school: "东北林业大学", photo: "9", qq: "2285874983", },
@@ -62,18 +62,18 @@ mapOfSixteen.data = [
 { id: 47, name: "王亚楠", namePY: "wang ya nan", province: "shanxi", city: "太原", school: "太原理工大学", photo: "24", qq: "2464136912", },
 { id: 48, name: "王玉香", namePY: "wang yu xiang", province: "shanghai", city: "上海", school: "上海大学", photo: "47", phone: "18835256569", phonePos: "山西大同", qq: "362862041", },
 { id: 49, name: "温靖轩", namePY: "wen jing xuan", province: "shaanxi", city: "西安", school: "西安电子科技大学", photo: "27", phone: "13623528001", phonePos: "山西大同", qq: "853310132", },
-
+{ id: 50, name: "吴建新", namePY: "wu jian xin", province: "tianjin", city: "天津", school: "天津科技大学", photo: "67", },
 { id: 51, name: "吴璇", namePY: "wu xuan", province: "tianjin", city: "天津", school: "天津大学", photo: "3", qq: "382695854", },
 { id: 52, name: "武雁伟", namePY: "wu yan wei", province: "jiangsu", city: "徐州", school: "中国矿业大学", photo: "30", },
 { id: 53, name: "许圣华", namePY: "xu sheng hua", province: "jilin", city: "长春", school: "吉林大学", photo: "15", qq: "1786404107", },
-
+{ id: 54, name: "闫俊杰", namePY: "yan jun jie", province: "shanghai", city: "上海", school: "上海应用技术学院", photo: "72", qq: "734592627", },
 { id: 55, name: "闫艺湃", namePY: "yan yi pai", province: "sichuan", city: "成都", school: "四川大学", photo: "62", qq: "512346740", },
 { id: 56, name: "闫艺澎", namePY: "yan yi peng", province: "shandong", city: "威海", school: "哈尔滨工业大学(威海)", photo: "63", },
 { id: 57, name: "杨亚琼", namePY: "yang ya qiong", province: "tianjin", city: "天津", school: "天津商业大学", photo: "14", qq: "13753229437", },
 { id: 58, name: "杨泽鹏", namePY: "yang ze peng", province: "shanghai", city: "上海", school: "上海工程技术大学", photo: "44", phone: "13103425356", phonePos: "山西大同", },
 { id: 59, name: "张彩云", namePY: "zhang cai yun", province: "guangdong", city: "珠海", school: "暨南大学", major: "自动化", majorPY: "zi dong hua", detailPage: "6", backgroundPhoto: "6.v2", wechat: "A13403428612", photo: "10", phone: "13403428612", phonePos: "山西大同", email: "13403428612@163.com", qq: "2084498307", },
 { id: 60, name: "张建功", namePY: "zhang jian gong", province: "shanxi", city: "太原", school: "太原理工大学", photo: "13", qq: "594981379", },
-
+{ id: 61, name: "张静宜", namePY: "zhang jing yi", province: "anhui", city: "芜湖", school: "安徽师范大学", photo: "54", },
 { id: 62, name: "张蕾", namePY: "zhang lei", province: "shanghai", city: "上海", school: "华东理工大学", photo: "34", phone: "18735084168", phonePos: "山西大同", qq: "569755502", },
 { id: 63, name: "张利荣", namePY: "zhang li rong", province: "shanxi", city: "太原", school: "山西财经大学", photo: "58", },
 { id: 64, name: "张玮", namePY: "zhang wei", province: "shanxi", city: "太原", school: "太原理工大学", photo: "25", },
@@ -86,7 +86,7 @@ mapOfSixteen.data = [
 { id: 71, name: "赵剑喆", namePY: "zhao jian zhe", province: "sichuan", city: "成都", school: "电子科技大学", photo: "32", qq: "458113051", },
 { id: 72, name: "赵晶", namePY: "zhao jing", province: "jiangsu", city: "南京", school: "南京农业大学", major: "材料成型及控制工程", majorPY: "cai liao cheng xing ji kong zhi gong cheng", detailPage: "8", backgroundPhoto: "8", photo: "18", phone: "18168057520", phonePos: "江苏南京", phone2: "0352-3829230", phone2Pos: "山西大同", email: "544415419@qq.com", qq: "544415419", },
 { id: 73, name: "赵明", namePY: "zhao ming", province: "guangdong", city: "广州", school: "广东工业大学", photo: "46", phone: "13613525998", phonePos: "山西大同", qq: "927257754", },
-
+{ id: 74, name: "赵鑫", namePY: "zhao xin", province: "shanxi", city: "太原", school: "太原理工大学现代科技学院", qq: "1172729000", },
 { id: 75, name: "朱诗雅", namePY: "zhu shi ya", province: "jiangsu", city: "镇江", school: "江苏大学", photo: "37", },
 
 

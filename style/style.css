@@ -411,7 +411,7 @@ div.ctrl-about {
     width: 300px;
     border-radius: 25px;
     background-color: #0cf;
-    background-image: url('../img/cityGroup.jpg');
+    background-image: url('../img/cityGroup.v2.jpg');
     position: relative;
     background-position-y: 0;
     margin: auto;
@@ -920,8 +920,8 @@ div.ctrl-about {
     top: 95px;
     left: 11%;
     font-size: 15px;
-    color: #acacac;
-    text-shadow: #3c3c3c 0 0 10px,#1d1d1d 0 0 7px,#020303 0 0 5px;
+    color: #cacaca;
+    text-shadow: #2c2c2c 0 0 10px,#0a0a0a 0 0 7px,#020303 0 0 5px;
 }
 
 .info-picture {

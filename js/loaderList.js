@@ -4,7 +4,7 @@
 { "id": 4, "name": "Map of Sixteen data file", "url": "js/data.js", "per": 2, "type": "jsonp" },
 { "id": 5, "name": "Map of Sixteen JS file", "url": "js/main.min.js", "per": 5, "type": "jsonp" },
 { "id": 6, "name": "Map of Sixteen CSS file", "url": "style/style.min.css", "per": 5, "type": "css" },
-{ "id": 7, "name": "City Picture Group", "url": "img/cityGroup.jpg", "per": 10, "type": "img" },
+{ "id": 7, "name": "City Picture Group", "url": "img/cityGroup.v2.jpg", "per": 10, "type": "img" },
 { "id": 32, "name": "Default background - 1", "url": "img/background/1.jpg", "per": 1, "type": "img" },
 { "id": 33, "name": "Default background - 2", "url": "img/background/2.jpg", "per": 1, "type": "img" },
 { "id": 34, "name": "Default background - 3", "url": "img/background/3.jpg", "per": 1, "type": "img" },
