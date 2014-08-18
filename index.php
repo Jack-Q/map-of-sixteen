@@ -11,7 +11,7 @@
     <title>Map of Sixteen</title>
     <style>
         /*Overall*/
-        body {
+        html,body {
             overflow: hidden;
             width: 100%;
             height: 100%;
@@ -271,7 +271,6 @@
                 </div>
             </div>
             <div class="splash-title">
-
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                      viewBox="800 0 5900 1000" xml:space="preserve">
                 <g>
@@ -493,7 +492,6 @@
 			                C6664.573,458.095,6676.206,489.247,6676.206,523.659z" />
 	                </g>
             </svg>
-                <span style="font-size:0.3em;position:relative;bottom:25px;">RC</span>
             </div>
             <div class="splash-text" id="splash-progress">
                 加载中 - 0%
@@ -813,7 +811,6 @@
 	                </g>
                 </g>
             </svg>
-            <span class="ctrl-beta-tag">RC</span><!--TODO:Remove at release -->
         </div>
         <div class="ctrl-list">
             <div class="ctrl-listctrl">
@@ -842,7 +839,8 @@
             </div>
         </div>
         <div class="ctrl-about" id="ctrl-about">
-            &copy;2014 Jack Q | Last Modified: 2014-08-18
+
+            &copy;2014 Jack Q | Click or tap here for more infomation.
         </div><!--TODO:Update at release -->
     </div>
 
@@ -911,7 +909,7 @@
                 <div class="info-page ">
                     <div class="info-cont-box">
                         <div class="info-cont-nullTip" id="info-cont-nullTip">
-                            暂无相关信息。
+                            信息待完善···
                         </div>
                         <div class="info-cont-item" id="info-qq-box">
                             <div class="info-cont-icon" style="background-position:-400px 0;"></div>
@@ -975,32 +973,45 @@
     </div>
 
     <!--About Box (z-500)-->
-    <div class="about-box about-box-on" id="about-box">
+    <div class="about-box" id="about-box">
         <div class="about-page">
             <div class="about-title">
                 <div class="about-close" id="about-close">x</div>
-                关于本页面
+                关于Map of Sixteen
             </div>
             <div class="about-content">
-                <p class="about-update">
-                    数据更新时间：2014-08-18 9:30
-                    <br />
-                    页面更新时间：2014-08-17 23:00
-                    <!--TODO:Update at release -->
+                <p style="font-size:1.5em;font-style:italic;font-weight:100;">
+                    以地图的形式，记录这个集体。
                 </p>
                 <p>
-                    本次更新添加了部分数据和照片，截至目前，已录入71名16班同学的信息，希望能尽快将数据收集完整，完成 Map of Sixteen。
+                    <ul>
+                        <li>
+                            项目构想：张彩云
+                        </li>
+                        <li>
+                            设计制作：乔波、王圣元
+                        </li>
+                        <li>
+                            数据整理、维护：乔波、王圣元
+                        </li>
+                        <li>
+                            页面版本:1.0 (2014-08-18 18：00更新)
+                        </li>
+                        <li>
+                            数据版本:1.0 (2014-08-18 18：00更新)
+                        </li>
+                        <!--TODO:Update it -->
+                    </ul>
                 </p>
                 <p>
-                    当前，此页面为发布预览版，正式版将基本与此相同。对于此版本的漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>。
-                    <br />
-                    若有需要添加、更新或修正信息，请在QQ群内反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>;
-                    <br />
-                    若有任何关于此页面的建议，欢迎大家反馈。
+                    如需更新数据或反馈页面漏洞，请发送邮件至
+                    <a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">
+                        QiaoBo@outlook.com
+                    </a>。
                 </p>
 
                 <p class="about-copy">
-                    &copy;2014 Jack Q | Last Modified: 2014-08-18 <!--TODO:Update at release -->
+                    &copy;2014 Jack Q | Last Modified: 2014-08-18 <!--TODO:Update it-->
                     <br />
                     This site would never exist without the following JavaScript Libraries: jQuery, jQuery Mobile, Modernizr and Raphaël.
                 </p>
@@ -1009,8 +1020,23 @@
     </div>
 
     <!--Welcome Screen (z-800)-->
-    <div class="welcome-screen">
+    <div class="welcome-screen" id="welcome-screen">
+        <div class="welcome-page" id="welcome-ctrl">
+            <div class="welcome-page-btn" id="welcome-page-btn">
+
+            </div>
+        </div>
         <div class="welcome-page" id="welcome-page-1">
+
+        </div>
+        <div class="welcome-page" id="welcome-page-2">
+
+        </div>
+        <div class="welcome-page" id="welcome-page-3">
+
+        </div>
+        <div class="welcome-page" id="welcome-page-4">
+
         </div>
     </div>
 
@@ -1175,9 +1201,9 @@
 
                 if ( loader.progress >= 94.95 ) {
                     loader.splash.text.text( '初始化 - ' + loader.progress.toFixed( 1 ) + '%' );
-                    //TODO: List Finished
-                    mapOfSixteen.main();
-                    setTimeout( loader.finish, 1000 );
+                    setTimeout( mapOfSixteen.main, 100 );//Initialize this site.
+                    setTimeout( mapOfSixteen.welcome, 200 );//Start Welcome Function
+                    setTimeout( loader.finish, 800 );    //End the splansh screen
                 }
             },
             finish: function () {

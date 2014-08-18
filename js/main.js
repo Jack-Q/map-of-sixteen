@@ -22,7 +22,7 @@ mapOfSixteen.main = ( function () {
         'school': false,
         'search': false,
         'infoBox': false,
-        'aboutBox': true,//TODO : Toggle this to false at release
+        'aboutBox': false,
         'infoTab': 1,// 1 - Contact Method; 2 - Detailed Information; 3 - Personal Page(Permanently Deprecated)
         'mapRatio': 0,//Set to zero to make it smaller than any real ratio so that make 
         //the initial presentation of the map suit to the screen(window) size.
@@ -81,14 +81,14 @@ mapOfSixteen.main = ( function () {
             ['shandong', '山东', 'shan dong'],
             ['jiangsu', '江苏', 'jiang su'],
             ['zhejiang', '浙江', 'zhe jiang'],
-            ['anhui', '安徽', 'an hui' ],
+            ['anhui', '安徽', 'an hui'],
             ['henan', '河南', 'he nan'],
             ['shanxi', '山西', 'shan xi'],
             ['shaanxi', '陕西', 'shan xi'],
             //['gansu', '甘肃', 'gan su' ],
             ['hubei', '湖北', 'hu bei'],
             //['jiangxi', '江西', 'jiang xi' ],
-            ['fujian', '福建', 'fu jian' ],
+            ['fujian', '福建', 'fu jian'],
             ['hunan', '湖南', 'hu nan'],
             //['guizhou', '贵州', 'gui zhou' ],
             ['sichuan', '四川', 'si chuan'],
@@ -526,7 +526,7 @@ mapOfSixteen.main = ( function () {
         var j = sta.personData[id];
         //Fill Name
         $( '#info-name' ).text( j.name );
-        $( '#info-school' ).text( j.school + (j.major?'(' + j.major + ')':'') );
+        $( '#info-school' ).text( j.school + ( j.major ? '(' + j.major + ')' : '' ) );
         var allNull = true;
         //Fill Contact Method
         if ( j.qq ) { allNull = false; $( '#info-qq-box' ).removeClass( 'info-cont-item-off' ); $( '#info-qq' ).text( j.qq ); } else { $( '#info-qq-box' ).addClass( 'info-cont-item-off' ); }
@@ -992,6 +992,7 @@ mapOfSixteen.main = ( function () {
         sta.personFitleType.info = resultList;
         searchDescription.html( rt );
         person_fitle();
+        $_ctrl_nameList.scrollTop( 0 );
         return false;
     }
 
@@ -1283,6 +1284,34 @@ mapOfSixteen.main = ( function () {
     redraw(); control_fill(); cityList_hide();
 } );
 
+//Welcome Screen
+mapOfSixteen.welcome = ( function () {
+    var welcomePages = [
+        $( '#welcome-page-1' ),
+        $( '#welcome-page-2' ),
+        $( '#welcome-page-3' ),
+        $( '#welcome-page-4' ),
+    ];
+    var cur = 0;
+
+    $( '#welcome-page-btn' ).click( function () {
+        //welcomePages[cur].fadeOut( 1600 );
+        welcomePages[cur].addClass( 'welcome-page-out' );
+        cur++;
+        if ( cur == welcomePages.length ) {
+            setTimeout( function () {
+                $( '#welcome-screen' ).fadeOut( 50 );
+            }, 1500 )
+
+        } else {
+            //setTimeout( function () {
+            //    welcomePages[cur].fadeIn( 1050 );
+            //}, 950 )
+            //welcomePages[cur].addClass( 'welcome-page-out' );
+        }
+    } );
+    //$( '#welcome-screen' ).fadeOut( 50 );
+} );
 
 //----- JSONP -----
 ( function () {
