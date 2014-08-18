@@ -842,7 +842,7 @@
             </div>
         </div>
         <div class="ctrl-about" id="ctrl-about">
-            &copy;2014 Jack Q | Last Modified: 2014-08-17
+            &copy;2014 Jack Q | Last Modified: 2014-08-18
         </div><!--TODO:Update at release -->
     </div>
 
@@ -983,13 +983,13 @@
             </div>
             <div class="about-content">
                 <p class="about-update">
-                    数据更新时间：2014-08-17 23:00
+                    数据更新时间：2014-08-18 9:30
                     <br />
                     页面更新时间：2014-08-17 23:00
                     <!--TODO:Update at release -->
                 </p>
                 <p>
-                    本次更新添加了9名同学的院校录取信息及相应的城市、省份信息，截至目前，已录入71名16班同学的信息，希望能尽快将数据收集完整，同时对部分细节处的显示作了优化。
+                    本次更新添加了部分数据和照片，截至目前，已录入71名16班同学的信息，希望能尽快将数据收集完整，完成 Map of Sixteen。
                 </p>
                 <p>
                     当前，此页面为发布预览版，正式版将基本与此相同。对于此版本的漏洞，请大家在QQ群内进行反馈或发邮件至<a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">QiaoBo@outlook.com</a>。
@@ -1000,7 +1000,7 @@
                 </p>
 
                 <p class="about-copy">
-                    &copy;2014 Jack Q | Last Modified: 2014-08-17 <!--TODO:Update at release -->
+                    &copy;2014 Jack Q | Last Modified: 2014-08-18 <!--TODO:Update at release -->
                     <br />
                     This site would never exist without the following JavaScript Libraries: jQuery, jQuery Mobile, Modernizr and Raphaël.
                 </p>

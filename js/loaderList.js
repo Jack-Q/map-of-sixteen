@@ -24,4 +24,4 @@
 { "id": 78, "name": "Picture of background - 10", "url": "person/img/10.jpg", "per": 2, "type": "img" },
 { "id": 78, "name": "Picture of background - 11", "url": "person/img/11.jpg", "per": 2, "type": "img" },
 { "id": 78, "name": "Picture of background - 12", "url": "person/img/12.jpg", "per": 2, "type": "img" },
-{ "id": 79, "name": "Photo Group", "url": "img/photoGroup.jpg", "per": 10, "type": "img" }]
+{ "id": 79, "name": "Photo Group", "url": "img/photoGroup.v2.jpg", "per": 10, "type": "img" }]

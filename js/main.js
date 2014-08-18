@@ -662,7 +662,7 @@ mapOfSixteen.main = ( function () {
             j += '<div onclick="__jq_person_call(\'COT\',' + i + ')" class="name-photo';
             if ( k.photo ) {
                 //if ( k.photo <= 30 ) {
-                j += '" style=\'background:url("img/photoGroup.jpg") no-repeat;background-position:-' + ( 75 * k.photo - 75 ) + 'px 0;\'></div>';
+                j += '" style=\'background:url("img/photoGroup.v2.jpg") no-repeat;background-position:-' + ( 75 * k.photo - 75 ) + 'px 0;\'></div>';
                 //} else {
                 //    j += '"><img src="img/photo/' + k.photo + '.jpg"></div>';
                 //}
