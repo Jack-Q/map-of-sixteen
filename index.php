@@ -839,8 +839,7 @@
             </div>
         </div>
         <div class="ctrl-about" id="ctrl-about">
-
-            &copy;2014 Jack Q | Click or tap here for more infomation.
+            &copy;2014 Jack Q | 点击这里了解更多信息。
         </div><!--TODO:Update at release -->
     </div>
 
@@ -995,10 +994,10 @@
                             数据整理、维护：乔波、王圣元
                         </li>
                         <li>
-                            页面版本:1.0 (2014-08-18 18：00更新)
+                            页面版本:1.0.1 (2014-08-22 13:00更新)
                         </li>
                         <li>
-                            数据版本:1.0 (2014-08-18 18：00更新)
+                            数据版本:1.0.0 (2014-08-18 18:00更新)
                         </li>
                         <!--TODO:Update it -->
                     </ul>
@@ -1007,11 +1006,11 @@
                     如需更新数据或反馈页面漏洞，请发送邮件至
                     <a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">
                         QiaoBo@outlook.com
-                    </a>。
+                    </a>。(请尽量发送邮件而不是发送QQ消息；由于暂没有笔记本进行数据更新，可能每次更新的周期较长)
                 </p>
 
                 <p class="about-copy">
-                    &copy;2014 Jack Q | Last Modified: 2014-08-18 <!--TODO:Update it-->
+                    &copy;2014 Jack Q | Last Modified: 2014-08-22 <!--TODO:Update it-->
                     <br />
                     This site would never exist without the following JavaScript Libraries: jQuery, jQuery Mobile, Modernizr and Raphaël.
                 </p>
