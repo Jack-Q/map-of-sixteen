@@ -914,7 +914,10 @@
                             <div class="info-cont-icon" style="background-position:-400px 0;"></div>
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">QQ</div>
-                                <div class="info-cont-val" id="info-qq"></div>
+                                <div class="info-cont-val" id="">
+                                    <a id="info-qq" target="_blank" title="" href="">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="info-cont-item" id="info-mail-box">
@@ -922,7 +925,7 @@
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">电子邮箱</div>
                                 <div class="info-cont-val-long">
-                                    <a id="info-mail" title="" href="">
+                                    <a id="info-mail" target="_blank" title="" href="">
                                     </a>
                                 </div>
                             </div>
@@ -994,10 +997,10 @@
                             数据整理、维护：乔波、王圣元
                         </li>
                         <li>
-                            页面版本:1.0.1 (2014-08-22 13:00更新)
+                            页面版本:1.0.2 (2014-09-20 16:30更新)
                         </li>
                         <li>
-                            数据版本:1.0.0 (2014-08-18 18:00更新)
+                            数据版本:1.0.1 (2014-09-20 16:30更新)
                         </li>
                         <!--TODO:Update it -->
                     </ul>
@@ -1006,7 +1009,9 @@
                     如需更新数据或反馈页面漏洞，请发送邮件至
                     <a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">
                         QiaoBo@outlook.com
-                    </a>。(请尽量发送邮件而不是发送QQ消息；由于暂没有笔记本进行数据更新，可能每次更新的周期较长)
+                    </a>或发QQ消息至我的<a target="_blank" href="tencent://message/?uin=1335288659" target="_blank">
+                        QQ 1335288659
+                    </a>。
                 </p>
 
                 <p class="about-copy">

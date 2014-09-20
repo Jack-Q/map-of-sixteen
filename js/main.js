@@ -529,7 +529,16 @@ mapOfSixteen.main = ( function () {
         $( '#info-school' ).text( j.school + ( j.major ? '(' + j.major + ')' : '' ) );
         var allNull = true;
         //Fill Contact Method
-        if ( j.qq ) { allNull = false; $( '#info-qq-box' ).removeClass( 'info-cont-item-off' ); $( '#info-qq' ).text( j.qq ); } else { $( '#info-qq-box' ).addClass( 'info-cont-item-off' ); }
+        if ( j.qq ) {
+             allNull = false; 
+             $( '#info-qq-box' ).removeClass( 'info-cont-item-off' ); 
+             $( '#info-qq' ).text( j.qq ).attr( {
+                'href': 'tencent://message/?uin=' + j.qq,
+                'title': '向' + j.name + '发起即时聊天'
+            } );//Protocal : tencent://message/?uin= 
+       } else { 
+             $( '#info-qq-box' ).addClass( 'info-cont-item-off' ); 
+       }
 
         //Add "Mail TO Method"
         if ( j.email ) {
@@ -558,9 +567,9 @@ mapOfSixteen.main = ( function () {
             $( '#info-phone2-box' ).removeClass( 'info-cont-item-off' );
             $( '#info-phone2' ).text( j.phone2 );
             if ( j.phone2Pos ) {
-                $( '#info-phone2-name' ).text( '电话 2(' + j.phone2Pos + ')' );
+                $( '#info-phone2-name' ).text( '电话(' + j.phone2Pos + ')' );
             } else {
-                $( '#info-phone2-name' ).text( '电话 2' );
+                $( '#info-phone2-name' ).text( '电话' );
             }
         } else {
             $( '#info-phone2-box' ).addClass( 'info-cont-item-off' );
