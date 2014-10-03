@@ -1323,10 +1323,13 @@ mapOfSixteen.welcome = ( function () {
 } );
 
 //----- JSONP -----
+if ( !mapOfSixteen.loaderInformation.isCache ) {
 ( function () {
     //JSONP : ID = 5
     var id = 5;
     mapOfSixteen.loader.update( id );
 } )()
+}
+
 
 

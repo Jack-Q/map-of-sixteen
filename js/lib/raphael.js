@@ -8116,8 +8116,10 @@
     return R;
 } ) );
 
-( function () {
-    //JSONP : ID = 1
-    var id = 1;
-    mapOfSixteen.loader.update( id )
-} )();
+if ( !mapOfSixteen.loaderInformation.isCache ) {
+    ( function () {
+        //JSONP : ID = 1
+        var id = 1;
+        mapOfSixteen.loader.update( id )
+    } )();
+}

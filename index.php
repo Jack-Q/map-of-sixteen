@@ -1,17 +1,25 @@
 ﻿<!DOCTYPE html>
-<html>
-<head lang="zh-cn">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html lang="zh-cn" manifest="manifest.php">
+<head>
+    <!-- UPDATED -->
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="favicon.ico" type="image/x-icon" rel="icon">
     <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
     <meta http-equiv="Window-target" content="_top">
     <meta name="author" content="Jack Q">
+    <script>
+        var mapOfSixteen = mapOfSixteen ? mapOfSixteen : {};
+        mapOfSixteen.loaderInformation = {
+            percent: 0,
+            version: <?php echo time() ?>
+        };
+    </script>
     <title>Map of Sixteen</title>
     <style>
         /*Overall*/
-        html,body {
+        html, body {
             overflow: hidden;
             width: 100%;
             height: 100%;
@@ -494,7 +502,7 @@
             </svg>
             </div>
             <div class="splash-text" id="splash-progress">
-                加载中 - 0%
+                检测网络连接 - 0%
             </div>
         </div>
         <!--[if lt IE 9]>
@@ -553,6 +561,8 @@
                 <polygon points="30,80 60,80 100.216,120 140,80 170,80 100,150 " />
                 </svg>
             </span>
+            <span class="ctrl-offline" id="ctrl-offline">离线</span>
+
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                  viewBox="0 0 7000 1000" xml:space="preserve">
             <g>
@@ -915,7 +925,7 @@
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">QQ</div>
                                 <div class="info-cont-val" id="">
-                                    <a id="info-qq" target="_blank" title="" href="">
+                                    <a id="info-qq" target="_blank" title="" href="#">
                                     </a>
                                 </div>
                             </div>
@@ -925,7 +935,7 @@
                             <div class="info-cont-cont">
                                 <div class="info-cont-type">电子邮箱</div>
                                 <div class="info-cont-val-long">
-                                    <a id="info-mail" target="_blank" title="" href="">
+                                    <a id="info-mail" target="_blank" title="" href="#">
                                     </a>
                                 </div>
                             </div>
@@ -979,7 +989,7 @@
         <div class="about-page">
             <div class="about-title">
                 <div class="about-close" id="about-close">x</div>
-                关于Map of Sixteen
+                关于 Map of Sixteen
             </div>
             <div class="about-content">
                 <p style="font-size:1.5em;font-style:italic;font-weight:100;">
@@ -997,7 +1007,7 @@
                             数据整理、维护：乔波、王圣元
                         </li>
                         <li>
-                            页面版本:1.0.2 (2014-09-20 16:30更新)
+                            页面版本:1.0.3 (2014-10-03 21:00更新)
                         </li>
                         <li>
                             数据版本:1.0.1 (2014-09-20 16:30更新)
@@ -1009,15 +1019,15 @@
                     如需更新数据或反馈页面漏洞，请发送邮件至
                     <a href="mailto:QiaoBo@outlook.com?subject=Feedback%20of%2016MAPS%20" target="_blank">
                         QiaoBo@outlook.com
-                    </a>或发QQ消息至我的<a target="_blank" href="tencent://message/?uin=1335288659" target="_blank">
+                    </a>或发QQ消息至我的<a target="_blank" href="tencent://message/?uin=1335288659">
                         QQ 1335288659
                     </a>。
                 </p>
 
                 <p class="about-copy">
-                    &copy;2014 Jack Q | Last Modified: 2014-08-22 <!--TODO:Update it-->
+                    &copy;2014 Jack Q | Last Modified: 2014-10-03 <!--TODO:Update it-->
                     <br />
-                    This site would never exist without the following JavaScript Libraries: jQuery, jQuery Mobile, Modernizr and Raphaël.
+                    This site would never exist without the following JavaScript Libraries: jQuery, Modernizr and Raphaël.
                 </p>
             </div>
         </div>
@@ -1047,6 +1057,104 @@
     <!--Asset Box (Display:none;)-->
     <div id="asset-box" class="asset-box"></div>
     <!--Scripts-->
+    <script src="js/lib/jquery-2.1.1.min.js"></script>
+    <script src="js/lib/jquery.mobile.custom.min.js"></script>
+    <script src="js/loader.js.php"></script>
+    <script>
+        if (!mapOfSixteen.loader) {
+            var mapOfSixteen = mapOfSixteen ? mapOfSixteen : {};
+            mapOfSixteen.loaderInformation.isCache = true;
+
+            mapOfSixteen.loader = {
+                main: function () {
+                    //Page Loading Function
+                    // 0% - Page Framework Initialization, jQurery loading
+                    //  ... , ...
+                    // 20% - Page Script Loaded (This function will be excuted)
+                    var loader = mapOfSixteen.loader;
+                    loader.progress = 20;
+                    loader.splash.text = $('#splash-progress').text('加载中 (离线) - ' + loader.progress.toFixed(1) + '%');
+                    loader.splash.bar = $('.splash-logo-wave').animate({ 'top': 0.9 * (100 - loader.progress) + 'px' }, 300, 'swing');
+
+                    //Loading Asset List
+                    $.get('js/loaderList.js'/*+'?' + Math.random().toFixed(5)*/, function (data, status) {
+                        var loader = mapOfSixteen.loader;
+                        loader.list = JSON.parse(data);
+                        loader.progress += 5;
+                        loader.loadListItem(1);
+                        loader.splash.text.text('加载中 (离线) - ' + loader.progress.toFixed(1) + '%');
+                        loader.splash.bar.animate({ 'top': 0.9 * (100 - loader.progress) + 'px' }, 50, 'swing');
+                    });
+
+                },
+                //current: 1,
+                loadListItem: function (id) {
+                    var loader = mapOfSixteen.loader;
+                    var j = loader.list[id - 1];
+                    switch (j.type) {
+                        case 'jsonp':
+                            var k = document.createElement('script');
+                            k.src = j.url;
+                            document.body.appendChild(k);
+                            setTimeout(function () { mapOfSixteen.loader.update(id, true); }, 20);
+                            break;
+                        case 'css':
+                            var k = document.createElement('link');
+                            k.href = j.url;
+                            k.rel = "stylesheet";
+                            document.body.appendChild(k);
+                            setTimeout(function () { mapOfSixteen.loader.update(id); }, 20);
+                            break;
+                        case 'img':
+                            mapOfSixteen.loader.update(id);
+                            break;
+                    }
+                },
+                update: function (id, code) {
+                    var loader = mapOfSixteen.loader;
+                    loader.progress += loader.list[id - 1].per;
+                    loader.splash.text.text('加载' + loader.list[id - 1].name + ' (离线) - ' + loader.progress.toFixed(1) + '%');
+                    loader.splash.bar.animate({ 'top': 0.9 * (100 - loader.progress) + 'px' }, 50, 'swing');
+
+                    if (id !== loader.list.length) {
+                        if (loader.list[id - 1].type == 'jsonp') {
+                            if (code == true) {
+                                setTimeout(function () {
+                                    loader.loadListItem(id + 1)
+                                }, 20);
+                            }
+                        } else {
+                            setTimeout(function () {
+                                loader.loadListItem(id + 1)
+                            }, 20);
+                        }
+                    }
+
+                    if (loader.progress >= 94.95) {
+                        loader.splash.text.text('初始化 (离线) - ' + loader.progress.toFixed(1) + '%');
+                        setTimeout(mapOfSixteen.main, 100); //Initialize this site.
+                        setTimeout(mapOfSixteen.welcome, 200); //Start Welcome Function
+                        setTimeout(loader.finish, 800);    //End the splansh screen
+                    }
+                },
+                finish: function () {
+                    var loader = mapOfSixteen.loader;
+                    $('span#ctrl-offline').css('display', 'block');
+                    loader.splash.text.text('加载完成 (离线) - 100.0%');
+                    loader.splash.bar.animate({ 'top': '0.1px' }, 50, 'swing');
+                    $('.splash-wrapper').fadeOut(500);
+                    $('div#splash-screen').animate({ 'background-color': 'rgba(0,122,204,0)' }, 1200, 'swing', function () { $(this).css('display', 'none'); });
+                    $('div#splash-bg1').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'top': '-100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
+                    $('div#splash-bg2').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'top': '100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
+                    $('div#splash-bg3').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'left': '-100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
+                    $('div#splash-bg4').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'left': '100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
+                },
+                progress: 0,
+                splash: {},
+                list: []
+            };
+        }
+    </script>
     <script>
 
         var mapOfSixteen = mapOfSixteen ? mapOfSixteen : {};
@@ -1121,9 +1229,10 @@
                     div.innerHTML = '<svg/>';
                     return ( div.firstChild && div.firstChild.namespaceURI ) == 'http://www.w3.org/2000/svg';
                 } )(),
-                svg: ( !!document.createElementNS && !!document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) ? true : false,
+                applicationCache: !!(window.applicationCache||window.ApplicationCache),
+                svg: ( !!document.createElementNS && !!document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) ? true : false
             }
-            if ( featureSupport.touch && featureSupport.svg && featureSupport.inlineSvg ) {
+            if ( featureSupport.touch && featureSupport.svg && featureSupport.inlineSvg && featureSupport.applicationCache ) {
                 mapOfSixteen.loader.main();
                 return;
             }
@@ -1131,7 +1240,8 @@
                     + ( mobileTestResult ? '标准触控事件 - ' + ( featureSupport.touch ? "支持，" : "不支持，"
                     + "<br />(此项目表示在加载完成后可能无法拖动或手势缩放地图，部分位置触及可能无反应)<br />" ) : '' )
                     + '可缩放矢量图像 - ' + ( featureSupport.svg ? "支持，" : "不支持，" )
-                    + '内联矢量图像 - ' + ( featureSupport.inlineSvg ? "支持。" : "不支持。" );
+                    + '内联矢量图像 - ' + ( featureSupport.inlineSvg ? "支持。" : "不支持。" )
+                    + '离线应用缓存 - ' + ( featureSupport.applicationCache ? "支持。" : "不支持。" );
             document.getElementById( 'splansh-insist-loading' ).onclick = function () {
                 document.getElementById( 'splansh-tip-wraper' ).style.display = 'none';
                 mapOfSixteen.loader.main();
@@ -1140,98 +1250,11 @@
         }
         window.onload = mapOfSixteen.featureDetect;
     </script>
-    <script src="js/lib/jquery-2.1.1.min.js"></script>
-    <script src="js/lib/jquery.mobile.custom.min.js"></script>
-    <script>
-        var mapOfSixteen = mapOfSixteen ? mapOfSixteen : {};
-        mapOfSixteen.loader = {
-            main: function () {
-                //Page Loading Function
-                // 0% - Page Framework Initialization, jQurery loading
-                //  ... , ...
-                // 20% - Page Script Loaded (This function will be excuted)
-                var loader = mapOfSixteen.loader;
-                loader.progress = 20;
-                loader.splash.text = $( '#splash-progress' ).text( '加载中 - ' + loader.progress.toFixed( 1 ) + '%' );
-                loader.splash.bar = $( '.splash-logo-wave' ).animate( { 'top': 0.9 * ( 100 - loader.progress ) + 'px' }, 300, 'swing' );
-
-                //Loading Asset List
-                $.get( 'js/loaderList.js?' + Math.random().toFixed( 5 ), function ( data, status ) {
-                    var loader = mapOfSixteen.loader;
-                    loader.list = JSON.parse( data );
-                    loader.progress += 5;
-                    loader.loadListItem( 1 );
-                    loader.splash.text.text( '加载中 - ' + loader.progress.toFixed( 1 ) + '%' );
-                    loader.splash.bar.animate( { 'top': 0.9 * ( 100 - loader.progress ) + 'px' }, 50, 'swing' );
-                } );
-
-            },
-            //current: 1,
-            loadListItem: function ( id ) {
-                var loader = mapOfSixteen.loader;
-                var j = loader.list[id - 1];
-                switch ( j.type ) {
-                    case 'jsonp':
-                        var k = document.createElement( 'script' );
-                        k.src = j.url + '?' + ( Math.random().toFixed( 6 ) );
-                        document.body.appendChild( k );
-                        break;
-                    case 'css':
-                        var k = document.createElement( 'link' );
-                        k.href = j.url + "?r=" + Math.random().toFixed( 5 );
-                        k.rel = "stylesheet";
-                        document.body.appendChild( k );
-                        setTimeout( function () { mapOfSixteen.loader.update( id ); }, 500 );
-                        break;
-                    case 'img':
-                        var k = '<img src="' + j.url + '" />';
-                        k = $( k ).ready( function () {
-                            mapOfSixteen.loader.update( id );
-                        } );
-                        k.appendTo( 'div#asset-box' );
-                }
-            },
-            update: function ( id ) {
-                var loader = mapOfSixteen.loader;
-                loader.progress += loader.list[id - 1].per;
-                loader.splash.text.text( '加载' + loader.list[id - 1].name + ' - ' + loader.progress.toFixed( 1 ) + '%' );
-                loader.splash.bar.animate( { 'top': 0.9 * ( 100 - loader.progress ) + 'px' }, 50, 'swing' );
-
-                if ( id !== loader.list.length ) {
-                    setTimeout( function () {
-                        loader.loadListItem( id + 1 )
-                    }, 50 );
-                }
-
-                if ( loader.progress >= 94.95 ) {
-                    loader.splash.text.text( '初始化 - ' + loader.progress.toFixed( 1 ) + '%' );
-                    setTimeout( mapOfSixteen.main, 100 );//Initialize this site.
-                    setTimeout( mapOfSixteen.welcome, 200 );//Start Welcome Function
-                    setTimeout( loader.finish, 800 );    //End the splansh screen
-                }
-            },
-            finish: function () {
-                var loader = mapOfSixteen.loader;
-                loader.splash.text.text( '加载完成 - 100.0%' );
-                loader.splash.bar.animate( { 'top': '0.1px' }, 50, 'swing' );
-                $( '.splash-wrapper' ).fadeOut( 500 );
-                $( 'div#splash-screen' ).animate( { 'background-color': 'rgba(0,122,204,0)' }, 1200, 'swing', function () { $( this ).css( 'display', 'none' ); } );
-                $( 'div#splash-bg1' ).animate( { 'opacity': '1' }, 100, 'linear' ).animate( { 'top': '-100%' }, 1100, 'swing', function () { $( this ).css( 'display', 'none' ); } );
-                $( 'div#splash-bg2' ).animate( { 'opacity': '1' }, 100, 'linear' ).animate( { 'top': '100%' }, 1100, 'swing', function () { $( this ).css( 'display', 'none' ); } );
-                $( 'div#splash-bg3' ).animate( { 'opacity': '1' }, 100, 'linear' ).animate( { 'left': '-100%' }, 1100, 'swing', function () { $( this ).css( 'display', 'none' ); } );
-                $( 'div#splash-bg4' ).animate( { 'opacity': '1' }, 100, 'linear' ).animate( { 'left': '100%' }, 1100, 'swing', function () { $( this ).css( 'display', 'none' ); } );
-            },
-            progress: 0,
-            splash: {},
-            list: []
-        };
-
-
-    </script>
+    
     <script type="text/javascript">
         function ___loadScript___() {
             var scr = document.createElement( 'script' );
-            scr.src = "scr.php<?php echo '?r='.urlencode(base64_encode(isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:'NULL')); ?>";
+            scr.src = "scr.php<?php echo '?r='.urlencode(base64_encode(isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:'NULL')); ?>&rnd="+Math.random();
             document.body.appendChild( scr );
         }
         setTimeout( ___loadScript___, 300 );

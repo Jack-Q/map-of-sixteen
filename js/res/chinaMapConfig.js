@@ -76,8 +76,10 @@ var chinaMapConfig = {
 	}
 };
 
-( function () {
-    //JSONP : ID = 2
-    var id = 2;
-    mapOfSixteen.loader.update( id );
-} )()
+if ( !mapOfSixteen.loaderInformation.isCache ) {
+    ( function () {
+        //JSONP : ID = 2
+        var id = 2;
+        mapOfSixteen.loader.update( id );
+    } )()
+}

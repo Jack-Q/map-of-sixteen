@@ -5,8 +5,8 @@ header('Content-Type: application/javascript');
 if((strpos($_SERVER["SERVER_NAME"],'localhost')!==FALSE)
     || (strpos($_SERVER["SERVER_NAME"],'192.168.0.200')!==FALSE)){
     define('DATABASE_HOST','localhost');
-    define('DATABASE_USER','16maps_locU3ve4');
-    define('DATABASE_PASSWORD','Y.fl[/@:DcLt');
+    define('DATABASE_USER','16maps_locUhsqr');
+    define('DATABASE_PASSWORD','C||1-ISHl9*(');
     define('DATABASE_NAME','16maps_local');
 }else{
     define('DATABASE_HOST','10.0.16.16:4066');
@@ -147,7 +147,7 @@ $pageURL =isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:'NULL';
 $jsonResult=file_get_contents('http://ip.taobao.com/service/getIpInfo.php?ip='.$ip);
 
 $arr=json_decode($jsonResult);
-if($arr->code!=0){
+if($arr && $arr->code&& $arr->code!=0){
     $geo_country = "";	//国家
     $geo_area =  "";	//区域
     $geo_region =  "";	//省份
@@ -172,12 +172,12 @@ $query.=' `userAgent` TEXT , ';					//UA
 $query.=' `system` TEXT , ';					//System
 $query.=' `referer` TEXT , ';					//referer
 $query.=' `pageURL` TEXT , ';					//pageURL
-$query.=' `geo_country` TEXT , ';					//pageURL
-$query.=' `geo_area` TEXT , ';					//pageURL
-$query.=' `geo_region` TEXT , ';					//pageURL
-$query.=' `geo_city` TEXT , ';					//pageURL
-$query.=' `geo_county` TEXT , ';					//pageURL
-$query.=' `geo_isp` TEXT , ';					//pageURL
+$query.=' `geo_country` TEXT , ';					//geo_country
+$query.=' `geo_area` TEXT , ';					//geo_area
+$query.=' `geo_region` TEXT , ';					//geo_region
+$query.=' `geo_city` TEXT , ';					//geo_city
+$query.=' `geo_county` TEXT , ';					//geo_county
+$query.=' `geo_isp` TEXT , ';					//geo_isp
 
 $query.=" PRIMARY KEY (id))";
 

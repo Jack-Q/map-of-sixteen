@@ -96,9 +96,11 @@ mapOfSixteen.data = [
 // KEEP THIS PART WHEN COPY DATA FROM EXCEL
 ];
 //----- JSONP -----
-( function () {
-    //JSONP : ID = 4
-    var id = 4;
-    mapOfSixteen.loader.update( id );
-} )()
+if ( !mapOfSixteen.loaderInformation.isCache ) {
+    ( function () {
+        //JSONP : ID = 4
+        var id = 4;
+        mapOfSixteen.loader.update( id );
+    } )()
+}
 //=====================================================

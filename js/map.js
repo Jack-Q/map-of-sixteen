@@ -1231,9 +1231,10 @@
 
 } ) );
 
-
-( function () {
-    //JSONP : ID = 3
-    var id = 3;
-    mapOfSixteen.loader.update( id );
-} )()
+if ( !mapOfSixteen.loaderInformation.isCache ) {
+    ( function () {
+        //JSONP : ID = 3
+        var id = 3;
+        mapOfSixteen.loader.update( id );
+    } )()
+}
