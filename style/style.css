@@ -112,6 +112,10 @@ div.ctrl-search-button {
     -webkit-transition: all ease 300ms;
     transition: all ease 300ms;
     cursor: pointer;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
     div.ctrl-search-button:hover {
@@ -952,6 +956,10 @@ div.ctrl-about {
     height: 25px;
     border-top: 1px rgba(0, 122, 204, .7) solid;
     border-left: 1px rgba(0, 122, 204, .7) solid;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .info-link {
@@ -969,6 +977,10 @@ div.ctrl-about {
     -webkit-transition: all ease-in-out 200ms;
     transition: all ease-in-out 200ms;
     z-index: 1;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .info-link-on {
@@ -1030,6 +1042,11 @@ div.ctrl-about {
     border-radius: 17px;
     top: 150px;
     font-weight: 100;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor:default;
 }
 
 .info-cont-item {

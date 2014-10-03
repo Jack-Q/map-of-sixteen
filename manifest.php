@@ -5,9 +5,13 @@
 header("Content-type:text/cache-manifest");
 ?>
 CACHE MANIFEST
-#app-version 1.0.3###
+# Map of Sixteen Manifest
+# App Version: 1.0.3
+#Data Version: 1.0.2
+#      Update: 2014 10 03 22:30 
 CACHE:
     /favicon.ico
+    /index.php
     /style/style.min.css
     /img/icon.jpg
     /img/cityGroup.v2.jpg
