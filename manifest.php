@@ -4,12 +4,11 @@
 // Set Header
 header("Content-type:text/cache-manifest");
 ?>
-
 CACHE MANIFEST
 # Map of Sixteen Manifest
-# App Version: 1.1.0
+# App Version: 1.1.1
 #Data Version: 1.0.3
-#      Update: 2015 02 01 17:00
+#      Update: 2015 02 01 17:20
 CACHE:
     /favicon.ico
     /index.php
@@ -53,7 +52,7 @@ CACHE:
     /img/photoGroup.v2.jpg
     /js/loaderList.js
     /js/lib/raphael.min.js
-    /js/lib/jquery-2.1.1.min.js
+    /js/lib/jquery-2.1.3.min.js
     /js/lib/jquery.mobile.custom.min.js
     /js/res/chinaMapConfig.min.js
     /js/map.min.js

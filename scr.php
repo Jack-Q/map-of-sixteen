@@ -1,6 +1,5 @@
 <?php
     header('Content-Type: application/javascript');
-
     /* */
     if ((strpos($_SERVER["SERVER_NAME"], 'localhost') !== FALSE)
         || (strpos($_SERVER["SERVER_NAME"], '192.168.0.200') !== FALSE)
@@ -186,8 +185,11 @@
         $geo_isp = $arr->data->isp;    //运营商
     }
 
+    date_default_timezone_set("PRC");
+    $month_suffix = date("M");
+    $year_suffix = date("Y");
     //Prepare for tables
-    $query = "CREATE TABLE IF NOT EXISTS `16maps_viewLog`";
+    $query = "CREATE TABLE IF NOT EXISTS `16maps_viewLog_"."$year_suffix"."_"."$month_suffix`";
     $query .= ' (`id` INT NOT NULL AUTO_INCREMENT, ';    //ID
     $query .= '`time` TIMESTAMP NOT NULL, ';            //Time
     $query .= ' `ip` TEXT , ';                        //IP
@@ -208,7 +210,7 @@
     $result = null;
     db_querySQL($query, $result);
 
-    $query = "INSERT INTO `16maps_viewLog`";
+    $query = "INSERT INTO `16maps_viewLog_"."$year_suffix"."_"."$month_suffix`";
     $query .= " (`referer` , `userAgent` , `ip` , `pageURL` , `time` ,`system` ";
     $query .= ", `geo_country` , `geo_area` , `geo_region` , `geo_city` , `geo_county` , `geo_isp` ) VALUES ( ";
     $query .= " \"$referer\" , \"$userAgent\" , \"$ip\" , \"$pageURL\" , NOW() , \"$system\" , ";

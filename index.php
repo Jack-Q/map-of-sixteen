@@ -1046,7 +1046,7 @@
                     </li>
                     <li>数据整理、维护：乔波、王圣元
                     </li>
-                    <li>页面版本:1.1.0 (2015-02-01 17:00更新)
+                    <li>页面版本:1.1.1 (2015-02-01 17:20更新)
                     </li>
                     <li>数据版本:1.0.3 (2014-02-01 17:00更新)
                     </li>
@@ -1072,7 +1072,7 @@
     </div>
 
     <!--Welcome Screen (z-800)-->
-    <div class="welcome-screen" id="welcome-screen" style="display:none">
+    <div class="welcome-screen" id="welcome-screen">
         <div class="welcome-page" id="welcome-ctrl">
             <div class="welcome-page-btn" id="welcome-page-btn">
             </div>
@@ -1280,7 +1280,7 @@
                 })(),
                 applicationCache: !!(window.applicationCache || window.ApplicationCache),
                 svg: ( !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect ) ? true : false
-            }
+            };
             if (featureSupport.touch && featureSupport.svg && featureSupport.inlineSvg && featureSupport.applicationCache) {
                 mapOfSixteen.loader.main();
                 return;
@@ -1296,7 +1296,7 @@
                 mapOfSixteen.loader.main();
             };
             document.getElementById('splash-tip-wrapper').style.display = 'block';
-        }
+        };
         window.onload = mapOfSixteen.featureDetect;
     </script>
 
