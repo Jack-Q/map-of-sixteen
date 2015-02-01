@@ -87,7 +87,7 @@ div.ctrl-list {
     position: relative;
 }
 
-div.ctrl-listctrl {
+div.ctrl-listCtrl {
     height: 30px;
     width: 100%;
     background-color: #768696;
@@ -243,7 +243,7 @@ div.ctrl-list-item {
         border-left: #007acc 3px solid;
     }
 
-div.ctrl-namelist {
+div.ctrl-nameList {
     margin: 10px 10px;
     height: 380px;
     overflow-y: auto;
@@ -258,7 +258,7 @@ div.ctrl-namelist {
     user-select: none;
 }
 
-div.ctrl-nameitem {
+div.ctrl-nameItem {
     border: 1px solid #adadad;
     width: 250px;
     height: 100px;
@@ -277,7 +277,7 @@ div.ctrl-nameitem {
     user-select: none;
 }
 
-div.ctrl-nameitem-off {
+div.ctrl-nameItem-off {
     height: 0;
     margin: 0;
     border: none;
@@ -297,8 +297,15 @@ div.name-photo {
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    background-repeat:no-repeat;
+    background-position-x:0;
+    background-position-y:0;
 }
 
+    /*
+       Deprecated: From single small img to 
+        compounted imgs
+    */
     div.name-photo > img {
         position: absolute;
         top: 0;
@@ -341,7 +348,7 @@ div.name-major {
     line-height: 14px;
 }
 
-div.name-linkbox {
+div.name-linkBox {
     width: 168px;
     position: absolute;
     left: 80px;
@@ -353,7 +360,7 @@ div.name-linkbox {
     overflow: hidden;
 }
 
-.name-button {
+div.name-linkBox > span {
     display: block;
     float: left;
     width: 55px;
@@ -371,7 +378,7 @@ div.name-linkbox {
     text-shadow: 0 0 3px #fff;
 }
 
-    .name-button:hover {
+    div.name-linkBox > span:hover {
         color: #fcd209;
         text-shadow: 0 0 3px #123;
         background-color: #bcbcbc;
@@ -400,13 +407,12 @@ div.ctrl-about {
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    background-color: #d2d2d2;
 }
 
 .maps-pop-box-wrapper {
     height: 100%;
     width: 100%;
-    background-color: rgba(0,110,225,.7);
+    background-color: rgba(0,110,225,.5);
     position: absolute;
     overflow: hidden;
     z-index: 60;
@@ -420,8 +426,7 @@ div.ctrl-about {
     height: 225px;
     width: 300px;
     border-radius: 25px;
-    background-color: #0cf;
-    background-image: url('../img/cityGroup.v2.jpg');
+    background: #0cf url('../img/cityGroup.v2.jpg');
     position: relative;
     background-position-y: 0;
     margin: auto;
@@ -480,7 +485,7 @@ div.ctrl-about {
     user-select: none;
 }
 
-.maps-pop-personlist {
+.maps-pop-personList {
     position: absolute;
     top: 0;
     left: 0;
@@ -492,7 +497,7 @@ div.ctrl-about {
     user-select: none;
 }
 
-    .maps-pop-personlist > span {
+    .maps-pop-personList > span {
         font-size: 20px;
         display: block;
         height: 23px;
@@ -510,77 +515,77 @@ div.ctrl-about {
         user-select: none;
     }
 
-        .maps-pop-personlist > span:nth-child(1) {
+        .maps-pop-personList > span:nth-child(1) {
             top: 125px;
             left: 180px;
         }
 
-        .maps-pop-personlist > span:nth-child(2) {
+        .maps-pop-personList > span:nth-child(2) {
             top: 135px;
             left: 100px;
         }
 
-        .maps-pop-personlist > span:nth-child(3) {
+        .maps-pop-personList > span:nth-child(3) {
             top: 180px;
             left: 20px;
         }
 
-        .maps-pop-personlist > span:nth-child(4) {
+        .maps-pop-personList > span:nth-child(4) {
             top: 50px;
             left: 200px;
         }
 
-        .maps-pop-personlist > span:nth-child(5) {
+        .maps-pop-personList > span:nth-child(5) {
             top: 190px;
             left: 190px;
         }
 
-        .maps-pop-personlist > span:nth-child(6) {
+        .maps-pop-personList > span:nth-child(6) {
             top: 100px;
             left: 90px;
         }
 
-        .maps-pop-personlist > span:nth-child(7) {
+        .maps-pop-personList > span:nth-child(7) {
             top: 95px;
             left: 10px;
         }
 
-        .maps-pop-personlist > span:nth-child(8) {
+        .maps-pop-personList > span:nth-child(8) {
             top: 90px;
             left: 200px;
         }
 
-        .maps-pop-personlist > span:nth-child(9) {
+        .maps-pop-personList > span:nth-child(9) {
             top: 185px;
             left: 100px;
         }
 
-        .maps-pop-personlist > span:nth-child(10) {
+        .maps-pop-personList > span:nth-child(10) {
             top: 135px;
             left: 15px;
         }
 
-        .maps-pop-personlist > span:nth-child(11) {
+        .maps-pop-personList > span:nth-child(11) {
             top: 70px;
             left: 130px;
         }
 
-        .maps-pop-personlist > span:nth-child(12) {
+        .maps-pop-personList > span:nth-child(12) {
             top: 160px;
             left: 210px;
         }
 
-        .maps-pop-personlist > span:nth-child(13) {
+        .maps-pop-personList > span:nth-child(13) {
             top: 160px;
             left: 50px;
         }
 
-        .maps-pop-personlist > span:nth-child(14) {
+        .maps-pop-personList > span:nth-child(14) {
             top: 70px;
             left: 40px;
         }
 
-        .maps-pop-personlist > span:nth-child(15) {
+        .maps-pop-personList > span:nth-child(15) {
             top: 10px;
             left: 180px;
         }
@@ -661,6 +666,7 @@ div.ctrl-about {
     width: 8px;
     background-color: rgba(0, 125, 220,0.8);
     z-index: 5;
+    cursor:url('data:image/bmp;base64,AAACAAEAICACAAgACAAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8AAAA/AAAAfwAAAP+AAAH/gAAB/8AAA//AAAd/wAAGf+AAAH9gAADbYAAA2yAAAZsAAAGbAAAAGAAAAAAAAA//////////////////////////////////////////////////////////////////////////////////////gH///4B///8Af//+AD///AA///wAH//4AB//8AAf//AAD//5AA///gAP//4AD//8AF///AB///5A////5///8=') /*../img/hand.bmp*/ 8 8, default;
 }
 
 .maps-ctrl-unable {
@@ -711,20 +717,24 @@ div.ctrl-about {
 
 .maps-box {
     position: absolute;
-    overflow: hidden;
     width: 100%;
     height: 100%;
-    background-color: #eaeaea;
+    -moz-transition: none;
+    -o-transition: none;
+    -webkit-transition: none;
+    transition: none;
 }
 
 .maps-point, .maps-china, .maps-background {
     top: 0;
     left: 0;
     position: absolute;
-    overflow: hidden;
 }
 
 .maps-background {
+    position: absolute;
+    overflow: hidden;
+    z-index: -10;
     width: 100%;
     height: 100%;
 }
@@ -743,15 +753,23 @@ div.ctrl-about {
     cursor: move;
 }
 
+
 .maps-tag {
     cursor: pointer;
     position: absolute;
-    width: 30px;
-    height: 45px;
-    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iJiN4NTZGRTsmI3g1QzQyO18xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiDQoJIHk9IjBweCIgdmlld0JveD0iMCAwIDE0MiAyMDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE0MiAyMDA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiNGRjFEMjU7IiBkPSJNODMuNDY3LDcwLjY1OEM4My4xMjMsNzcuMjU0LDc3LjY4Miw4Mi41LDcxLDgyLjVjLTUuNzE0LDAtMTAuNTIzLTMuODM5LTEyLjAxMy05LjA3NQ0KCWMtMjMuMzkyLDkuNzI2LTM1LjQ0NiwzOC40MzctMjIuMjY4LDYyLjkxTDcxLDIwMGwzOS4zNDUtNzMuMDY5QzEyMy4wMzUsMTAzLjM2NCwxMDguNDYsNzUuMjI2LDgzLjQ2Nyw3MC42NTh6Ii8+DQo8cmFkaWFsR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBjeD0iNzEiIGN5PSI3MS44MDE4IiByPSI3Mi42NjE0IiBmeD0iNjkuNjQ0NCIgZnk9IjEwNS44MjgxIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+DQoJPHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6I0ZGQ0RDRCIvPg0KCTxzdG9wICBvZmZzZXQ9IjAuMDY1OSIgc3R5bGU9InN0b3AtY29sb3I6I0ZGQjhCOSIvPg0KCTxzdG9wICBvZmZzZXQ9IjAuMjgzOSIgc3R5bGU9InN0b3AtY29sb3I6I0ZGNzY3QSIvPg0KCTxzdG9wICBvZmZzZXQ9IjAuNDY3MyIgc3R5bGU9InN0b3AtY29sb3I6I0ZGNDY0QyIvPg0KCTxzdG9wICBvZmZzZXQ9IjAuNjA2OCIgc3R5bGU9InN0b3AtY29sb3I6I0ZGMjgzMCIvPg0KCTxzdG9wICBvZmZzZXQ9IjAuNjg1OCIgc3R5bGU9InN0b3AtY29sb3I6I0ZGMUQyNSIvPg0KPC9yYWRpYWxHcmFkaWVudD4NCjxwYXRoIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfMV8pO3N0cm9rZTojRkYwMDAwO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgZD0iTTEzOC45OTIsNTMuOTczDQoJYy01LjkzNS0yNS4xODItMjUuNzgzLTQ1LjAzLTUwLjk2Ni01MC45NjZDMzkuMzQzLTguNDY3LTMuNjgxLDMwLjkxMSwxLjQxMSw3OC42ODhjMy40NzMsMzIuNTksMjkuMzExLDU4LjQyOCw2MS45MDEsNjEuOTAxDQoJQzExMS4wODksMTQ1LjY4MSwxNTAuNDY3LDEwMi42NTcsMTM4Ljk5Miw1My45NzN6IE03MSw4Mi41Yy02LjkwNCwwLTEyLjUtNS41OTYtMTIuNS0xMi41UzY0LjA5Niw1Ny41LDcxLDU3LjVTODMuNSw2My4wOTYsODMuNSw3MA0KCVM3Ny45MDQsODIuNSw3MSw4Mi41eiIvPg0KPC9zdmc+DQo=');
+    /*Map tag should be 20*30. When changing, need to change the script(function point_drew)*/
+    font-size:15px;
+    font-weight:800;
+    line-height:22px;
+    color:#256695;
+    text-shadow:#cdcdcd 0 0 2px;
+    text-align:center;
+    width: 20px;
+    height: 30px;
     background-position-x: center;
     background-position-y: bottom;
-    background-repeat: no-repeat;
+    background: no-repeat;
+    background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDIwMCAzMDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwMCAzMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGVsbGlwc2UgZmlsbD0iI0ZGNEMyQyIgY3g9IjEwMCIgY3k9IjI5NSIgcng9IjMwIiByeT0iNSIvPg0KPHBvbHlnb24gZmlsbD0iI0ZGNEMyQyIgcG9pbnRzPSI1MiwxODYgMTAwLDI5NSAxNDgsMTg2ICIvPg0KPHBhdGggZmlsbD0iI0ZGNEMyQyIgZD0iTTEwMCwxOTkuOUwxMDAsMTk5LjljLTU1LDAtMTAwLTQ1LTEwMC0xMDB2MGMwLTU1LDQ1LTEwMCwxMDAtMTAwaDBjNTUsMCwxMDAsNDUsMTAwLDEwMHYwDQoJQzIwMCwxNTQuOSwxNTUsMTk5LjksMTAwLDE5OS45eiIvPg0KPC9zdmc+');
     background-size: 20px 30px;
 }
 
@@ -760,37 +778,38 @@ div.ctrl-about {
     height: 15px;
     padding: 1px;
     box-shadow: #cdcdcd 0 0 5px 1px;
-    font-weight: 800;
+    font-weight: 900;
     text-align: center;
     font-size: 13px;
     color: #3d3d3d;
     position: absolute;
-    background-color: rgba(222, 222, 222,.3);
+    background-color: rgba(222, 222, 222,.5);
     text-shadow: #cfcfcf 0 0 2px;
     border-radius: 5px;
     z-index: 50;
+    line-height:15px;
 }
 
 
 
 .maps-tag-top > .maps-infoBox {
-    bottom: 20px;
-    left: -7px;
+    bottom: 25px;
+    left: -10px;
 }
 
 .maps-tag-bottom > .maps-infoBox {
-    bottom: 0;
-    left: -7px;
+    bottom: -10px;
+    left: -10px;
 }
 
 .maps-tag-left > .maps-infoBox {
-    bottom: 13px;
-    left: -18px;
+    bottom: 8px;
+    left: -25px;
 }
 
 .maps-tag-right > .maps-infoBox {
-    bottom: 13px;
-    left: 5px;
+    bottom: 8px;
+    left: 18px;
 }
 
 .stateTip, #StateTip {
@@ -801,7 +820,6 @@ div.ctrl-about {
     border: 2px solid #2385B1;
     border-radius: 4px;
     font-size: 12px;
-    font-family: Tahoma;
     color: #333;
 }
 
@@ -815,7 +833,6 @@ div.ctrl-about {
     background: #aeaeae;
     color: #fff;
     font-size: 11px;
-    font-family: Tahoma;
     -webkit-border-radius: 15px;
     border-radius: 15px;
     text-align: center;
@@ -1046,7 +1063,7 @@ div.ctrl-about {
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    cursor:default;
+    cursor: default;
 }
 
 .info-cont-item {
@@ -1388,13 +1405,13 @@ div.ctrl-about {
     -webkit-transform-origin: left;
     transform-origin: left;
     opacity: 1;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
     -ms-background-size: contain;
     -o-background-size: contain;
     -webkit-background-size: contain;
     background-size: contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-attachment:fixed;
 }
 
 
@@ -1449,26 +1466,26 @@ div.welcome-page-bar {
 }
 
 #welcome-page-1 {
-    background-image: url('../img/welcome/welcome-1.png');
     background-color: #83e01a;
+    background-image: url('../img/welcome/welcome-1.png');
     z-index: 850;
 }
 
 #welcome-page-2 {
-    background-image: url('../img/welcome/welcome-2.png');
     background-color: #8360ea;
+    background-image: url('../img/welcome/welcome-2.png');
     z-index: 840;
 }
 
 #welcome-page-3 {
-    background-image: url('../img/welcome/welcome-3.png');
     background-color: #23e0ca;
+    background-image: url('../img/welcome/welcome-3.png');
     z-index: 830;
 }
 
 #welcome-page-4 {
-    background-image: url('../img/welcome/welcome-4.png');
     background-color: #f320ba;
+    background-image: url('../img/welcome/welcome-4.png');
     z-index: 820;
 }
 

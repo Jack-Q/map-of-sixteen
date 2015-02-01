@@ -1,9 +1,9 @@
-<?php
+/*<?php
 // This File Contains Application Cache Configuration
 
 //Set Header
 header("Content-type:text/javascript");
-?>
+?>*/
         var mapOfSixteen = mapOfSixteen ? mapOfSixteen : {};
         mapOfSixteen.loaderInformation.isCache = 
             Math.abs(<?php echo time(); ?> - mapOfSixteen.loaderInformation.version)>60;
@@ -71,7 +71,7 @@ header("Content-type:text/javascript");
                                 mapOfSixteen.loader.update(id);
                             });
                             k.attr('src', j.url );
-                            k.appendTo('div#asset-box');
+                            k.appendTo('#asset-box');
                         }
                 }
             },
@@ -105,7 +105,7 @@ header("Content-type:text/javascript");
                     loader.splash.text.text('初始化 - ' + loader.progress.toFixed(1) + '%');
                     setTimeout(mapOfSixteen.main, 100); //Initialize this site.
                     setTimeout(mapOfSixteen.welcome, 200); //Start Welcome Function
-                    setTimeout(loader.finish, 800);    //End the splansh screen
+                    setTimeout(loader.finish, 800);    //End the splash screen
                 }
             },
             finish: function () {
@@ -113,11 +113,11 @@ header("Content-type:text/javascript");
                 loader.splash.text.text('加载完成 - 100.0%');
                 loader.splash.bar.animate({ 'top': '0.1px' }, 50, 'swing');
                 $('.splash-wrapper').fadeOut(500);
-                $('div#splash-screen').animate({ 'background-color': 'rgba(0,122,204,0)' }, 1200, 'swing', function () { $(this).css('display', 'none'); });
-                $('div#splash-bg1').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'top': '-100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
-                $('div#splash-bg2').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'top': '100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
-                $('div#splash-bg3').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'left': '-100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
-                $('div#splash-bg4').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'left': '100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
+                $('#splash-screen').animate({ 'background-color': 'rgba(0,122,204,0)' }, 1200, 'swing', function () { $(this).css('display', 'none'); });
+                $('#splash-bg1').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'top': '-100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
+                $('#splash-bg2').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'top': '100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
+                $('#splash-bg3').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'left': '-100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
+                $('#splash-bg4').animate({ 'opacity': '1' }, 100, 'linear').animate({ 'left': '100%' }, 1100, 'swing', function () { $(this).css('display', 'none'); });
             },
             progress: 0,
             splash: {},

@@ -272,69 +272,69 @@
                         fill: initColor
                     } );
 
-                    obj.hover( function ( e ) {
-                        if ( this != current ) {
-                            this.animate( {
-                                fill: stateColor[this.id].hoverColor
-                            }, 250 );
-                        }
-                        if ( opt.showTip ) {
-                            clearTimeout( reTimer );
-                            if ( $( '.stateTip' ).length == 0 ) {
-                                $( document.body ).append( '<div class="stateTip"></div' );
-                            }
-                            $( '.stateTip' ).html( opt.stateTipHtml( stateData, this ) );
-                            var _offsetXY = new offsetXY( e );
+                    //obj.hover( function ( e ) {
+                    //    if ( this != current ) {
+                    //        this.animate( {
+                    //            fill: stateColor[this.id].hoverColor
+                    //        }, 250 );
+                    //    }
+                    //    if ( opt.showTip ) {
+                    //        clearTimeout( reTimer );
+                    //        if ( $( '.stateTip' ).length == 0 ) {
+                    //            $( document.body ).append( '<div class="stateTip"></div' );
+                    //        }
+                    //        $( '.stateTip' ).html( opt.stateTipHtml( stateData, this ) );
+                    //        var _offsetXY = new offsetXY( e );
 
-                            $( '.stateTip' ).css( {
-                                width: opt.stateTipWidth || 'auto',
-                                height: opt.stateTipHeight || 'auto',
-                                left: _offsetXY[0],
-                                top: _offsetXY[1]
-                            } ).show();
-                        }
+                    //        $( '.stateTip' ).css( {
+                    //            width: opt.stateTipWidth || 'auto',
+                    //            height: opt.stateTipHeight || 'auto',
+                    //            left: _offsetXY[0],
+                    //            top: _offsetXY[1]
+                    //        } ).show();
+                    //    }
 
-                        opt.hoverCallback( stateData, this );
-                    } );
+                    //    opt.hoverCallback( stateData, this );
+                    //} );
 
-                    obj.mouseout( function () {
-                        if ( this != current ) {
-                            this.animate( {
-                                fill: stateColor[this.id].initColor
-                            }, 250 );
-                        }
-                        // $('.stateTip').hide();
-                        if ( opt.showTip ) {
-                            reTimer = setTimeout( function () {
-                                $( '.stateTip' ).remove();
-                            }, 100 );
-                        }
-                    } );
+                    //obj.mouseout( function () {
+                    //    if ( this != current ) {
+                    //        this.animate( {
+                    //            fill: stateColor[this.id].initColor
+                    //        }, 250 );
+                    //    }
+                    //    // $('.stateTip').hide();
+                    //    if ( opt.showTip ) {
+                    //        reTimer = setTimeout( function () {
+                    //            $( '.stateTip' ).remove();
+                    //        }, 100 );
+                    //    }
+                    //} );
 
-                    obj.mouseup( function ( e ) {
-                        if ( current ) {
-                            current.animate( {
-                                fill: stateColor[current.id].initColor
-                            }, 250 );
-                        }
+                    //obj.mouseup( function ( e ) {
+                    //    if ( current ) {
+                    //        current.animate( {
+                    //            fill: stateColor[current.id].initColor
+                    //        }, 250 );
+                    //    }
 
-                        this.animate( {
-                            fill: stateColor[this.id].selectedColor
-                        }, 250 );
+                    //    this.animate( {
+                    //        fill: stateColor[this.id].selectedColor
+                    //    }, 250 );
 
-                        current = this;
-                        opt.clickCallback( stateData, this );
-                    } );
+                    //    current = this;
+                    //    opt.clickCallback( stateData, this );
+                    //} );
                 }
                 r.changeSize( opt.mapWidth, opt.mapHeight, false, false );
             }
-            document.body.onmousemove = function ( e ) {
-                var _offsetXY = new offsetXY( e );
-                $( '.stateTip' ).css( {
-                    left: _offsetXY[0],
-                    top: _offsetXY[1]
-                } );
-            };
+            //document.body.onmousemove = function ( e ) {
+            //    var _offsetXY = new offsetXY( e );
+            //    $( '.stateTip' ).css( {
+            //        left: _offsetXY[0],
+            //        top: _offsetXY[1]
+            //    } );
+            //};
         }
         return SVGMap;
     } )();

@@ -1,14 +1,15 @@
 <?php
 // This File Contains Application Cache Configuration
-//TODO: Update this file.
-//Set Header
+// TODO: Update this file.
+// Set Header
 header("Content-type:text/cache-manifest");
 ?>
+
 CACHE MANIFEST
 # Map of Sixteen Manifest
-# App Version: 1.0.3
-#Data Version: 1.0.2
-#      Update: 2014 10 03 22:30 
+# App Version: 1.1.0
+#Data Version: 1.0.3
+#      Update: 2015 02 01 17:00
 CACHE:
     /favicon.ico
     /index.php
