@@ -5,8 +5,8 @@
 header("Content-type:text/javascript");
 ?>*/
         var mapOfSixteen = mapOfSixteen ? mapOfSixteen : {};
-        mapOfSixteen.loaderInformation.isCache = 
-            Math.abs(<?php echo time(); ?> - mapOfSixteen.loaderInformation.version)>60;
+        mapOfSixteen.loaderInformation.isCache = false;
+            //Math.abs(<?php echo time(); ?> - mapOfSixteen.loaderInformation.version)>60;
         mapOfSixteen.loader = {
             main: function () {
                 //Page Loading Function

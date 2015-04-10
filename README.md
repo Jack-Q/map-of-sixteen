@@ -4,6 +4,10 @@ By Jack Q
 
 Update Log
 ---
+* v1.2.0 2015-04-10 r26
+1. Remove server side scripts to suit the pure-static environment.
+2. Fix update date typo in index.html
+
 * v1.1.1 2015-02-01 r25
 1. Fix manifest file error
 1. Fix welcome screen error
