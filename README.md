@@ -2,6 +2,11 @@ Map of Sixteen
 ===
 By Jack Q
 
+>> This is the original migrated version of 'Map of Sixteen' 
+   from JD app engine including the configurations and assets
+   only available within [JAE](http://16maps.jd-app.com).(Maybe unaccessible).
+   Newer updates or major versions will not sync to this branch.
+
 Update Log
 ---
 * v1.1.1 2015-02-01 r25
